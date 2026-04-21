@@ -1,0 +1,6 @@
+[project]
+name = "whisky-scanner-backend"
+version = "0.1.0"
+description = "Backend for Whisky Scanner MVP"
+requires-python = ">=3.12"
+
