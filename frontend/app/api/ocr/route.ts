@@ -26,6 +26,7 @@ function getVisionClient() {
   if (credentialsJson) {
     visionClient = new ImageAnnotatorClient({
       credentials: JSON.parse(credentialsJson),
+      fallback: true,
       projectId,
     });
     return visionClient;
@@ -37,12 +38,13 @@ function getVisionClient() {
         client_email: clientEmail,
         private_key: privateKey,
       },
+      fallback: true,
       projectId,
     });
     return visionClient;
   }
 
-  visionClient = new ImageAnnotatorClient({ projectId });
+  visionClient = new ImageAnnotatorClient({ fallback: true, projectId });
   return visionClient;
 }
 
