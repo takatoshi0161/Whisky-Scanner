@@ -62,6 +62,10 @@ OCR quality, image preprocessing, and bottle matching precision can be improved 
 
 - Do not commit directly to `main`.
 - Create a feature branch for every change.
+- Do not push implementation or documentation changes directly to `main`.
+- Do not merge a working branch into `main` before a Pull Request is created.
+- Create a Pull Request after implementation is complete.
+- Wait for explicit user confirmation before merging any Pull Request.
 - Use descriptive branch names.
   - Feature work: `feature/...`
   - Documentation work: `docs/...`
@@ -86,6 +90,10 @@ Examples:
 ## Pull Request Rules
 
 Every PR should target `main` unless the user explicitly says otherwise.
+
+Pull Requests are mandatory for all changes. Even when the user asks to
+"merge to main" or "push to main", first create a working branch and Pull
+Request, then wait for the user's confirmation before merging.
 
 Every PR description should include:
 
