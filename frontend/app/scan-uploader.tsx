@@ -2,6 +2,11 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
+import {
+  findDistilleryCandidate,
+  normalizeOcrText,
+} from "./lib/ocr-distillery";
+
 type OcrResponse = {
   text: string;
 };
@@ -11,6 +16,8 @@ export function ScanUploader() {
   const [ocrResult, setOcrResult] = useState<OcrResponse | null>(null);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const normalizedText = ocrResult ? normalizeOcrText(ocrResult.text) : "";
+  const distilleryCandidate = findDistilleryCandidate(normalizedText);
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
@@ -75,6 +82,23 @@ export function ScanUploader() {
         <div className="resultCard">
           <h3>OCR 結果</h3>
           <pre className="helper">{ocrResult.text}</pre>
+          <h3>整形後のOCRテキスト</h3>
+          <pre className="helper normalizedText">{normalizedText || "Unknown"}</pre>
+          <article className="distilleryCandidateCard">
+            <div>
+              <p className="candidateLabel">蒸留所候補</p>
+              <h3>{distilleryCandidate.name}</h3>
+            </div>
+            <button
+              className="button"
+              onClick={() => {
+                console.log("Selected distillery candidate:", distilleryCandidate);
+              }}
+              type="button"
+            >
+              このボトルで見る
+            </button>
+          </article>
         </div>
       ) : null}
     </section>
