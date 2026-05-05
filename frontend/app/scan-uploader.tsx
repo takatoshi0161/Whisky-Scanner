@@ -18,6 +18,7 @@ export function ScanUploader() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const normalizedText = ocrResult ? normalizeOcrText(ocrResult.text) : "";
   const distilleryCandidate = findDistilleryCandidate(normalizedText);
+  const bottleCandidate = distilleryCandidate.bottles[0] ?? { name: "Unknown" };
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
@@ -88,15 +89,23 @@ export function ScanUploader() {
             <div>
               <p className="candidateLabel">蒸留所候補</p>
               <h3>{distilleryCandidate.name}</h3>
+              <p className="candidateMeta">{distilleryCandidate.region}</p>
+            </div>
+            <div className="bottleCandidateCard">
+              <p className="candidateLabel">ボトル候補</p>
+              <h3>{bottleCandidate.name}</h3>
             </div>
             <button
               className="button"
               onClick={() => {
-                console.log("Selected distillery candidate:", distilleryCandidate);
+                console.log("Selected bottle candidate:", {
+                  distillery: distilleryCandidate,
+                  bottle: bottleCandidate,
+                });
               }}
               type="button"
             >
-              このボトルで見る
+              詳細を見る
             </button>
           </article>
         </div>

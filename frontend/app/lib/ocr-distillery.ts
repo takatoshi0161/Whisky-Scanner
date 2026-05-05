@@ -1,9 +1,14 @@
 import { distilleries, Distillery } from "../data/distilleries";
 
-export type DistilleryCandidate = Pick<Distillery, "name">;
+export type DistilleryCandidate = Pick<
+  Distillery,
+  "name" | "region" | "bottles"
+>;
 
 export const unknownDistillery: DistilleryCandidate = {
   name: "Unknown",
+  region: "Unknown",
+  bottles: [{ name: "Unknown" }],
 };
 
 export function normalizeOcrText(text: string) {
