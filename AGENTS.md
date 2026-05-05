@@ -128,3 +128,11 @@ Use the sections as follows:
 When working with planning or UX guidance from ChatGPT, align implementation with the updated product direction above.
 
 If older docs or code refer to the app mainly as an OCR scanner, treat that as legacy MVP framing unless the user says otherwise.
+
+## Reporting Rules
+
+When the user asks for a daily development report, use:
+
+- `docs/templates/daily-report.md`
+
+Fill the report based on available git history, PR history, issue references, and current conversation context.
