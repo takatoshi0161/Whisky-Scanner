@@ -2,29 +2,20 @@
 
 import { ChangeEvent, FormEvent, useState } from "react";
 
-type ScanCandidate = {
-  name: string;
-  score: number;
+type OcrResponse = {
+  text: string;
 };
-
-type ScanResponse = {
-  filename: string;
-  ocr_text: string;
-  candidates: ScanCandidate[];
-};
-
-const apiBaseUrl =
-  process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:8000";
 
 export function ScanUploader() {
   const [file, setFile] = useState<File | null>(null);
-  const [result, setResult] = useState<ScanResponse | null>(null);
+  const [ocrResult, setOcrResult] = useState<OcrResponse | null>(null);
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
     setFile(nextFile);
+    setOcrResult(null);
     setError("");
   }
 
@@ -40,24 +31,24 @@ export function ScanUploader() {
     formData.append("image", file);
 
     setIsSubmitting(true);
+    setOcrResult(null);
     setError("");
 
     try {
-      const response = await fetch(`${apiBaseUrl}/scan`, {
+      const response = await fetch("/api/ocr", {
         method: "POST",
         body: formData,
       });
       const data = await response.json();
+      console.log("OCR response:", data);
 
       if (!response.ok) {
-        setResult(null);
-        setError(data.detail ?? "スキャンに失敗しました。");
+        setError(data.error ?? "OCR に失敗しました。");
         return;
       }
 
-      setResult(data);
+      setOcrResult(data as OcrResponse);
     } catch {
-      setResult(null);
       setError("API に接続できませんでした。");
     } finally {
       setIsSubmitting(false);
@@ -80,18 +71,10 @@ export function ScanUploader() {
       {file ? <p className="helper">選択中: {file.name}</p> : null}
       {error ? <p className="errorText">{error}</p> : null}
 
-      {result ? (
+      {ocrResult ? (
         <div className="resultCard">
-          <p className="helper">OCR 結果: {result.ocr_text}</p>
-          <h3>候補 3 件</h3>
-          <ol className="candidateList">
-            {result.candidates.map((candidate) => (
-              <li key={candidate.name}>
-                <span>{candidate.name}</span>
-                <strong>{Math.round(candidate.score * 100)}%</strong>
-              </li>
-            ))}
-          </ol>
+          <h3>OCR 結果</h3>
+          <pre className="helper">{ocrResult.text}</pre>
         </div>
       ) : null}
     </section>
