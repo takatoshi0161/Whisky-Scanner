@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ChangeEvent, FormEvent, useState } from "react";
 
 import {
@@ -18,7 +19,7 @@ export function ScanUploader() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const normalizedText = ocrResult ? normalizeOcrText(ocrResult.text) : "";
   const distilleryCandidate = findDistilleryCandidate(normalizedText);
-  const bottleCandidate = distilleryCandidate.bottles[0] ?? { name: "Unknown" };
+  const bottleCandidate = distilleryCandidate.bottles[0];
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
@@ -91,22 +92,17 @@ export function ScanUploader() {
               <h3>{distilleryCandidate.name}</h3>
               <p className="candidateMeta">{distilleryCandidate.region}</p>
             </div>
-            <div className="bottleCandidateCard">
-              <p className="candidateLabel">ボトル候補</p>
-              <h3>{bottleCandidate.name}</h3>
-            </div>
-            <button
-              className="button"
-              onClick={() => {
-                console.log("Selected bottle candidate:", {
-                  distillery: distilleryCandidate,
-                  bottle: bottleCandidate,
-                });
-              }}
-              type="button"
-            >
-              詳細を見る
-            </button>
+            {bottleCandidate ? (
+              <>
+                <div className="bottleCandidateCard">
+                  <p className="candidateLabel">ボトル候補</p>
+                  <h3>{bottleCandidate.name}</h3>
+                </div>
+                <Link className="button buttonLink" href={`/bottles/${bottleCandidate.slug}`}>
+                  詳細を見る
+                </Link>
+              </>
+            ) : null}
           </article>
         </div>
       ) : null}

@@ -8,7 +8,7 @@ export type DistilleryCandidate = Pick<
 export const unknownDistillery: DistilleryCandidate = {
   name: "Unknown",
   region: "Unknown",
-  bottles: [{ name: "Unknown" }],
+  bottles: [],
 };
 
 export function normalizeOcrText(text: string) {

@@ -1,8 +1,12 @@
 export type Bottle = {
   name: string;
+  slug: string;
+  tasteProfile: string;
+  recommendedFor: string;
 };
 
 export type Distillery = {
+  slug: string;
   name: string;
   region: string;
   keywords: string[];
@@ -14,6 +18,8 @@ type DistillerySeed = {
   region: string;
   keywords?: string[];
   bottleName?: string;
+  tasteProfile?: string;
+  recommendedFor?: string;
 };
 
 function normalizeKeyword(value: string) {
@@ -24,17 +30,34 @@ function compactKeyword(value: string) {
   return normalizeKeyword(value).replace(/[^a-z0-9]/g, "");
 }
 
+function createSlug(value: string) {
+  return compactKeyword(value) || "unknown";
+}
+
 function createDistillery(seed: DistillerySeed): Distillery {
   const englishKeywords = [seed.name, compactKeyword(seed.name)];
   const keywords = Array.from(
     new Set([...englishKeywords, ...(seed.keywords ?? [])].map(normalizeKeyword)),
   );
+  const bottleName = seed.bottleName ?? `${seed.name} Single Malt`;
 
   return {
+    slug: createSlug(seed.name),
     name: seed.name,
     region: seed.region,
     keywords,
-    bottles: [{ name: seed.bottleName ?? `${seed.name} Single Malt` }],
+    bottles: [
+      {
+        name: bottleName,
+        slug: createSlug(bottleName),
+        tasteProfile:
+          seed.tasteProfile ??
+          "モルトの甘さ、穏やかな樽香、軽い果実感を中心にした飲みやすい味わい。",
+        recommendedFor:
+          seed.recommendedFor ??
+          "まずは蒸留所の雰囲気を知りたい人や、強いクセよりも飲みやすさを優先したい人向け。",
+      },
+    ],
   };
 }
 
@@ -44,18 +67,24 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["グレンファークラス"],
     bottleName: "Glenfarclas 12 Year Old",
+    tasteProfile: "シェリー樽由来のドライフルーツ、蜂蜜、ナッツ感があり、甘く落ち着いた余韻。",
+    recommendedFor: "食後にゆっくり甘みを楽しみたい人や、濃すぎないご褒美感を求める人向け。",
   },
   {
     name: "Glenlivet",
     region: "Speyside",
     keywords: ["the glenlivet", "ザ グレンリベット", "グレンリベット"],
     bottleName: "The Glenlivet 12 Year Old",
+    tasteProfile: "洋梨や青りんごのような軽やかな果実感と、バニラのやさしい甘さ。",
+    recommendedFor: "クセが強すぎないシングルモルトから始めたい人や、ハイボールでも飲みたい人向け。",
   },
   {
     name: "Bowmore",
     region: "Islay",
     keywords: ["ボウモア"],
     bottleName: "Bowmore 12 Year Old",
+    tasteProfile: "やわらかなスモーク、潮気、ビターなチョコレート感がほどよく重なる味わい。",
+    recommendedFor: "強烈すぎないスモーキーさを試したい人や、少し大人っぽい余韻が欲しい人向け。",
   },
   {
     name: "Highland Park",
@@ -122,6 +151,8 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Highland",
     keywords: ["タリスカー"],
     bottleName: "Talisker 10 Year Old",
+    tasteProfile: "潮気、黒胡椒のようなスパイス、焚き火を思わせるスモーク感。",
+    recommendedFor: "気分を切り替える一杯が欲しい人や、ハイボールでも個性を感じたい人向け。",
   },
   {
     name: "Glenfiddich",
@@ -162,6 +193,8 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["ラフロイグ"],
     bottleName: "Laphroaig 10 Year Old",
+    tasteProfile: "薬品香を思わせる強いピート、海藻のような潮気、しっかりした煙たさ。",
+    recommendedFor: "個性的で忘れにくい一本に挑戦したい人や、強いスモークが好きな人向け。",
   },
   { name: "Glenrothes", region: "Speyside", keywords: ["グレンロセス"] },
   { name: "Isle of Jura", region: "Highland", keywords: ["jura", "ジュラ"] },
@@ -202,12 +235,16 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["caolila", "カリラ"],
     bottleName: "Caol Ila 12 Year Old",
+    tasteProfile: "レモンのような明るさ、クリーンなピート、軽い潮気があるすっきりした味わい。",
+    recommendedFor: "煙たさは欲しいけれど重すぎる味は避けたい人や、食事にも合わせたい人向け。",
   },
   {
     name: "Aberlour",
     region: "Speyside",
     keywords: ["アベラワー"],
     bottleName: "Aberlour 12 Year Old",
+    tasteProfile: "蜂蜜、熟した果実、シェリー樽の甘みがあり、丸く満足感のある味わい。",
+    recommendedFor: "やさしい甘さから少し濃厚な方向へ進みたい人や、ご褒美の一杯を探す人向け。",
   },
   { name: "Brackla", region: "Speyside", keywords: ["royal brackla", "ロイヤルブラックラ"] },
   { name: "Coleburn", region: "Speyside" },
@@ -274,6 +311,8 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["ラガヴーリン"],
     bottleName: "Lagavulin 16 Year Old",
+    tasteProfile: "深いスモーク、ドライフルーツ、潮気、長く残る重厚な余韻。",
+    recommendedFor: "ゆっくり時間をかけて飲みたい人や、特別感のあるスモーキーな一本を選びたい人向け。",
   },
   { name: "Inchmurrin", region: "Highland", keywords: ["インチマリン"] },
   { name: "Braeval", region: "Speyside", keywords: ["braes of glenlivet", "ブレイヴァル"] },
@@ -318,6 +357,8 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Highland",
     keywords: ["グレンモーレンジィ"],
     bottleName: "Glenmorangie The Original",
+    tasteProfile: "オレンジやバニラのような香り、軽やかな甘さ、なめらかな口当たり。",
+    recommendedFor: "癒されたい夜の一本を探す人や、甘く軽い味わいを気楽に楽しみたい人向け。",
   },
   { name: "Hazelburn", region: "Campbeltown", keywords: ["ヘーゼルバーン"] },
   { name: "Port Charlotte", region: "Islay", keywords: ["ポートシャーロット"] },
@@ -365,3 +406,20 @@ const distillerySeeds: DistillerySeed[] = [
 ];
 
 export const distilleries: Distillery[] = distillerySeeds.map(createDistillery);
+
+export type BottleDetail = Bottle & {
+  distillery: string;
+  region: string;
+};
+
+export const bottles: BottleDetail[] = distilleries.flatMap((distillery) =>
+  distillery.bottles.map((bottle) => ({
+    ...bottle,
+    distillery: distillery.name,
+    region: distillery.region,
+  })),
+);
+
+export function findBottleBySlug(slug: string) {
+  return bottles.find((bottle) => bottle.slug === slug);
+}
