@@ -13,6 +13,30 @@ type OcrErrorResponse = {
 
 let visionClient: ImageAnnotatorClient | null = null;
 
+function parseCredentialsJson(credentialsJson: string) {
+  try {
+    const credentials = JSON.parse(credentialsJson) as {
+      client_email?: string;
+      private_key?: string;
+      project_id?: string;
+    };
+
+    if (!credentials.client_email || !credentials.private_key) {
+      throw new Error(
+        "GOOGLE_APPLICATION_CREDENTIALS_JSON must include client_email and private_key.",
+      );
+    }
+
+    return credentials;
+  } catch (error) {
+    throw new Error(
+      `Invalid GOOGLE_APPLICATION_CREDENTIALS_JSON: ${
+        error instanceof Error ? error.message : "unknown parse error"
+      }`,
+    );
+  }
+}
+
 function getVisionClient() {
   if (visionClient) {
     return visionClient;
@@ -22,12 +46,15 @@ function getVisionClient() {
   const clientEmail = process.env.GOOGLE_CLOUD_CLIENT_EMAIL;
   const privateKey = process.env.GOOGLE_CLOUD_PRIVATE_KEY?.replace(/\\n/g, "\n");
   const projectId = process.env.GOOGLE_CLOUD_PROJECT;
+  const isVercel = Boolean(process.env.VERCEL || process.env.VERCEL_ENV);
 
   if (credentialsJson) {
+    const credentials = parseCredentialsJson(credentialsJson);
+
     visionClient = new ImageAnnotatorClient({
-      credentials: JSON.parse(credentialsJson),
+      credentials,
       fallback: true,
-      projectId,
+      projectId: projectId ?? credentials.project_id,
     });
     return visionClient;
   }
@@ -42,6 +69,12 @@ function getVisionClient() {
       projectId,
     });
     return visionClient;
+  }
+
+  if (isVercel) {
+    throw new Error(
+      "Google Vision OCR requires GOOGLE_APPLICATION_CREDENTIALS_JSON or GOOGLE_CLOUD_CLIENT_EMAIL/GOOGLE_CLOUD_PRIVATE_KEY in Vercel.",
+    );
   }
 
   visionClient = new ImageAnnotatorClient({ fallback: true, projectId });
