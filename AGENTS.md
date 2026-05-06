@@ -136,3 +136,7 @@ When the user asks for a daily development report, use:
 - `docs/templates/daily-report.md`
 
 Fill the report based on available git history, PR history, issue references, and current conversation context.
+
+Daily development reports should be provided in the chat response unless the user explicitly asks to create or update a repository file.
+
+Do not add daily report files to the repository by default. The template is a reporting format reference, not an instruction to persist reports under `docs/` or any other directory.
