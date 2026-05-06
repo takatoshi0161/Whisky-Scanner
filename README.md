@@ -113,6 +113,7 @@ Set these Vercel Environment Variables:
   - Required for Google Vision OCR on Vercel.
   - Paste the full service account JSON as a single environment variable value.
   - The JSON must include `client_email`, `private_key`, and `project_id`.
+  - If `private_key` contains escaped `\n` sequences, the OCR API normalizes them before calling Google Vision.
 - `GOOGLE_CLOUD_PROJECT`
   - Optional when `project_id` is included in `GOOGLE_APPLICATION_CREDENTIALS_JSON`.
   - Use this to override the project id if needed.
@@ -123,6 +124,8 @@ Optional fallback variables:
 - `GOOGLE_CLOUD_PRIVATE_KEY`
 
 Do not rely on `GOOGLE_APPLICATION_CREDENTIALS` or a local `key.json` file in Vercel. The OCR API route uses `GOOGLE_APPLICATION_CREDENTIALS_JSON` first, so Google Vision authentication can run from Vercel Environment Variables only.
+
+When OCR fails on Vercel, check Function Logs for entries prefixed with `[OCR]`. The logs report the selected credential source and private key format flags without printing secret values.
 
 ## Backend Endpoints
 
