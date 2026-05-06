@@ -96,6 +96,34 @@ npm run dev
 npm run build
 ```
 
+## Vercel Deployment
+
+Deploy the Next.js frontend from the `frontend/` directory.
+
+Required Vercel project settings:
+
+- Framework Preset: Next.js
+- Root Directory: `frontend`
+- Build Command: `npm run build`
+- Install Command: `npm install`
+
+Set these Vercel Environment Variables:
+
+- `GOOGLE_APPLICATION_CREDENTIALS_JSON`
+  - Required for Google Vision OCR on Vercel.
+  - Paste the full service account JSON as a single environment variable value.
+  - The JSON must include `client_email`, `private_key`, and `project_id`.
+- `GOOGLE_CLOUD_PROJECT`
+  - Optional when `project_id` is included in `GOOGLE_APPLICATION_CREDENTIALS_JSON`.
+  - Use this to override the project id if needed.
+
+Optional fallback variables:
+
+- `GOOGLE_CLOUD_CLIENT_EMAIL`
+- `GOOGLE_CLOUD_PRIVATE_KEY`
+
+Do not rely on `GOOGLE_APPLICATION_CREDENTIALS` or a local `key.json` file in Vercel. The OCR API route uses `GOOGLE_APPLICATION_CREDENTIALS_JSON` first, so Google Vision authentication can run from Vercel Environment Variables only.
+
 ## Backend Endpoints
 
 - `GET /health`

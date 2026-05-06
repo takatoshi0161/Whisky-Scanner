@@ -67,6 +67,34 @@ Open:
 - Frontend: http://localhost:3000
 - Backend health: http://localhost:8000/health
 
+## Vercel Deployment Notes
+
+Deploy the frontend as a Vercel project with `frontend/` as the Root Directory.
+
+Vercel project settings:
+
+- Framework Preset: Next.js
+- Root Directory: `frontend`
+- Build Command: `npm run build`
+- Install Command: `npm install`
+
+Google Vision OCR authentication should use Environment Variables only in Vercel:
+
+- `GOOGLE_APPLICATION_CREDENTIALS_JSON`
+  - Required and preferred.
+  - Paste the full service account JSON value.
+  - Must include `client_email`, `private_key`, and `project_id`.
+- `GOOGLE_CLOUD_PROJECT`
+  - Optional if the JSON already includes `project_id`.
+  - Use only when overriding the Google Cloud project is necessary.
+
+Optional fallback variables:
+
+- `GOOGLE_CLOUD_CLIENT_EMAIL`
+- `GOOGLE_CLOUD_PRIVATE_KEY`
+
+Do not configure Vercel OCR with `GOOGLE_APPLICATION_CREDENTIALS` or a local `key.json` path. Vercel does not provide that local credential file, and `frontend/app/api/ocr/route.ts` now requires JSON or explicit service account fields when running in Vercel.
+
 ## Validation Checklist
 
 For documentation-only changes:
