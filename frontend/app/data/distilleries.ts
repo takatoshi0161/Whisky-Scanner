@@ -3,6 +3,7 @@ export type Bottle = {
   slug: string;
   tasteProfile: string;
   recommendedFor: string;
+  recommendationReasons: string[];
 };
 
 export type Distillery = {
@@ -20,6 +21,7 @@ type DistillerySeed = {
   bottleName?: string;
   tasteProfile?: string;
   recommendedFor?: string;
+  recommendationReasons?: string[];
 };
 
 function normalizeKeyword(value: string) {
@@ -56,6 +58,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
         recommendedFor:
           seed.recommendedFor ??
           "まずは蒸留所の雰囲気を知りたい人や、強いクセよりも飲みやすさを優先したい人向け。",
+        recommendationReasons: seed.recommendationReasons ?? [],
       },
     ],
   };
@@ -69,6 +72,7 @@ const distillerySeeds: DistillerySeed[] = [
     bottleName: "Glenfarclas 12 Year Old",
     tasteProfile: "シェリー樽由来のドライフルーツ、蜂蜜、ナッツ感があり、甘く落ち着いた余韻。",
     recommendedFor: "食後にゆっくり甘みを楽しみたい人や、濃すぎないご褒美感を求める人向け。",
+    recommendationReasons: ["シェリー樽の甘み", "食後にゆっくり飲みたい夜向け"],
   },
   {
     name: "Glenlivet",
@@ -85,6 +89,7 @@ const distillerySeeds: DistillerySeed[] = [
     bottleName: "Bowmore 12 Year Old",
     tasteProfile: "やわらかなスモーク、潮気、ビターなチョコレート感がほどよく重なる味わい。",
     recommendedFor: "強烈すぎないスモーキーさを試したい人や、少し大人っぽい余韻が欲しい人向け。",
+    recommendationReasons: ["スモーキー好きにおすすめ", "アイラ入門にも選びやすい"],
   },
   {
     name: "Highland Park",
@@ -153,6 +158,7 @@ const distillerySeeds: DistillerySeed[] = [
     bottleName: "Talisker 10 Year Old",
     tasteProfile: "潮気、黒胡椒のようなスパイス、焚き火を思わせるスモーク感。",
     recommendedFor: "気分を切り替える一杯が欲しい人や、ハイボールでも個性を感じたい人向け。",
+    recommendationReasons: ["ドライ寄りの味わい", "潮気とスパイス感がある"],
   },
   {
     name: "Glenfiddich",

@@ -596,6 +596,24 @@ button {
   line-height: 1.75;
 }
 
+.reasonList {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reasonList li {
+  padding: 10px 12px;
+  border: 1px solid rgba(213, 162, 77, 0.2);
+  border-radius: 8px;
+  color: var(--gold-soft);
+  background: rgba(213, 162, 77, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
 @media (min-width: 720px) {
   .appShell {
     margin-top: 28px;
