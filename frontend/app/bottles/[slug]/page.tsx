@@ -58,6 +58,18 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
         <p>{bottle.tasteProfile}</p>
       </section>
 
+      {bottle.recommendationReasons.length > 0 ? (
+        <section className="detailCard" aria-labelledby="reason-title">
+          <p className="sectionKicker">Reason</p>
+          <h2 id="reason-title">おすすめ理由</h2>
+          <ul className="reasonList">
+            {bottle.recommendationReasons.map((reason) => (
+              <li key={reason}>{reason}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <section className="detailCard" aria-labelledby="for-title">
         <p className="sectionKicker">For You</p>
         <h2 id="for-title">こういう人向け</h2>
