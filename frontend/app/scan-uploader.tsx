@@ -20,6 +20,12 @@ export function ScanUploader() {
   const normalizedText = ocrResult ? normalizeOcrText(ocrResult.text) : "";
   const distilleryCandidate = findDistilleryCandidate(normalizedText);
   const bottleCandidate = distilleryCandidate.bottles[0];
+  const nextBottleRecommendation =
+    bottleCandidate?.recommendationReasons[0] ??
+    "今夜の気分に合わせて試しやすい一本";
+  const nextBottleMood =
+    bottleCandidate?.recommendationReasons[1] ??
+    "静かな夜に、ゆっくり一杯を選びたい時向け";
 
   function handleFileChange(event: ChangeEvent<HTMLInputElement>) {
     const nextFile = event.target.files?.[0] ?? null;
@@ -95,8 +101,16 @@ export function ScanUploader() {
             {bottleCandidate ? (
               <>
                 <div className="bottleCandidateCard">
-                  <p className="candidateLabel">ボトル候補</p>
+                  <div className="nextBottleHeader">
+                    <p className="candidateLabel">次の一本候補</p>
+                    <span className="nextBottleMood">{nextBottleMood}</span>
+                  </div>
                   <h3>{bottleCandidate.name}</h3>
+                  <p className="nextBottleLead">{nextBottleRecommendation}</p>
+                  <div className="nextBottleFor">
+                    <span>こういう人向け</span>
+                    <p>{bottleCandidate.recommendedFor}</p>
+                  </div>
                 </div>
                 <Link className="button buttonLink" href={`/bottles/${bottleCandidate.slug}`}>
                   詳細を見る
