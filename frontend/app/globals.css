@@ -663,6 +663,52 @@ button {
   line-height: 1.45;
 }
 
+.tasteReactionCard {
+  background:
+    linear-gradient(180deg, rgba(213, 162, 77, 0.09), rgba(255, 255, 255, 0.015)),
+    rgba(25, 18, 13, 0.8);
+}
+
+.tasteReactionButtons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.tasteReactionButton {
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid rgba(241, 207, 138, 0.22);
+  border-radius: 8px;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(12, 9, 7, 0.62);
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.tasteReactionButton:active {
+  transform: translateY(1px);
+}
+
+.tasteReactionButton.isSelected {
+  border-color: rgba(241, 207, 138, 0.68);
+  color: #160d07;
+  background: linear-gradient(180deg, #f1cf8a 0%, #c88733 100%);
+  box-shadow:
+    0 10px 22px rgba(169, 96, 34, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+@media (min-width: 390px) {
+  .tasteReactionButtons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 720px) {
   .appShell {
     margin-top: 28px;
