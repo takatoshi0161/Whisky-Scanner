@@ -445,10 +445,59 @@ button {
 }
 
 .bottleCandidateCard {
+  display: grid;
+  gap: 10px;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  background: rgba(8, 6, 4, 0.34);
+  background:
+    linear-gradient(180deg, rgba(213, 162, 77, 0.11), rgba(8, 6, 4, 0.12)),
+    rgba(8, 6, 4, 0.34);
+}
+
+.nextBottleHeader {
+  display: grid;
+  gap: 7px;
+}
+
+.nextBottleMood {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgba(213, 162, 77, 0.24);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  background: rgba(213, 162, 77, 0.09);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.nextBottleLead {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.nextBottleFor {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nextBottleFor span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.nextBottleFor p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
 .candidateList {
