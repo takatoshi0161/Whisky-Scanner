@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { bottles, findBottleBySlug } from "../../data/distilleries";
+import { TasteReaction } from "./taste-reaction";
 
 type BottleDetailPageProps = {
   params: Promise<{
@@ -75,6 +76,8 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
         <h2 id="for-title">こういう人向け</h2>
         <p>{bottle.recommendedFor}</p>
       </section>
+
+      <TasteReaction bottleName={bottle.name} bottleSlug={bottle.slug} />
     </main>
   );
 }
