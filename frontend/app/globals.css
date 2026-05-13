@@ -445,10 +445,59 @@ button {
 }
 
 .bottleCandidateCard {
+  display: grid;
+  gap: 10px;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  background: rgba(8, 6, 4, 0.34);
+  background:
+    linear-gradient(180deg, rgba(213, 162, 77, 0.11), rgba(8, 6, 4, 0.12)),
+    rgba(8, 6, 4, 0.34);
+}
+
+.nextBottleHeader {
+  display: grid;
+  gap: 7px;
+}
+
+.nextBottleMood {
+  width: fit-content;
+  max-width: 100%;
+  padding: 5px 8px;
+  border: 1px solid rgba(213, 162, 77, 0.24);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  background: rgba(213, 162, 77, 0.09);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.nextBottleLead {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.55;
+}
+
+.nextBottleFor {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nextBottleFor span {
+  display: block;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.nextBottleFor p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.6;
 }
 
 .candidateList {
@@ -615,30 +664,29 @@ button {
 }
 
 .tasteReactionCard {
-  border-color: rgba(241, 207, 138, 0.16);
-}
-
-.tasteReactionLead {
-  margin-top: 10px;
+  background:
+    linear-gradient(180deg, rgba(213, 162, 77, 0.09), rgba(255, 255, 255, 0.015)),
+    rgba(25, 18, 13, 0.8);
 }
 
 .tasteReactionButtons {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
-  margin-top: 16px;
+  gap: 9px;
+  margin-top: 14px;
 }
 
 .tasteReactionButton {
-  min-height: 52px;
-  padding: 0 14px;
-  border: 1px solid rgba(213, 162, 77, 0.24);
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid rgba(241, 207, 138, 0.22);
   border-radius: 8px;
   color: var(--text);
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
-    rgba(20, 15, 11, 0.78);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    rgba(12, 9, 7, 0.62);
+  font-size: 0.9rem;
+  font-weight: 750;
   cursor: pointer;
 }
 
@@ -647,14 +695,12 @@ button {
 }
 
 .tasteReactionButton.isSelected {
-  border-color: rgba(241, 207, 138, 0.78);
-  color: #150d07;
-  background:
-    linear-gradient(180deg, #f1cf8a 0%, #c98834 100%);
+  border-color: rgba(241, 207, 138, 0.68);
+  color: #160d07;
+  background: linear-gradient(180deg, #f1cf8a 0%, #c88733 100%);
   box-shadow:
-    0 12px 28px rgba(169, 96, 34, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.36);
-  font-weight: 800;
+    0 10px 22px rgba(169, 96, 34, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
 .tasteReactionFeedback {

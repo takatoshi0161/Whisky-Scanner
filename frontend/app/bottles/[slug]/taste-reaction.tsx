@@ -2,31 +2,29 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-type TasteReactionValue = "positive" | "neutral" | "negative";
+type TasteReactionProps = {
+  bottleName: string;
+  bottleSlug: string;
+};
+
+const reactions = [
+  { label: "好き", value: "positive" },
+  { label: "そうでもない", value: "neutral" },
+  { label: "苦手", value: "negative" },
+] as const;
+
+type ReactionValue = (typeof reactions)[number]["value"];
+type Reaction = (typeof reactions)[number];
 
 type StoredTasteReaction = {
-  reaction: TasteReactionValue;
+  reaction: ReactionValue;
   bottleSlug: string;
   bottleName: string;
   updatedAt: string;
 };
 
-type TasteReactionProps = {
-  bottleSlug: string;
-  bottleName: string;
-};
-
-const reactionOptions: Array<{
-  label: string;
-  value: TasteReactionValue;
-}> = [
-  { label: "好き", value: "positive" },
-  { label: "そうでもない", value: "neutral" },
-  { label: "苦手", value: "negative" },
-];
-
-export function TasteReaction({ bottleSlug, bottleName }: TasteReactionProps) {
-  const [selectedReaction, setSelectedReaction] = useState<TasteReactionValue | null>(null);
+export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
+  const [selectedReaction, setSelectedReaction] = useState<ReactionValue | null>(null);
   const [hasSaved, setHasSaved] = useState(false);
 
   const storageKey = useMemo(
@@ -46,7 +44,7 @@ export function TasteReaction({ bottleSlug, bottleName }: TasteReactionProps) {
 
       if (
         storedReaction.bottleSlug === bottleSlug &&
-        isTasteReactionValue(storedReaction.reaction)
+        isReactionValue(storedReaction.reaction)
       ) {
         setSelectedReaction(storedReaction.reaction);
       }
@@ -58,9 +56,9 @@ export function TasteReaction({ bottleSlug, bottleName }: TasteReactionProps) {
     }
   }, [bottleSlug, storageKey]);
 
-  const handleReactionSelect = (reaction: TasteReactionValue) => {
+  function handleSelect(reaction: Reaction) {
     const storedReaction: StoredTasteReaction = {
-      reaction,
+      reaction: reaction.value,
       bottleSlug,
       bottleName,
       updatedAt: new Date().toISOString(),
@@ -68,41 +66,47 @@ export function TasteReaction({ bottleSlug, bottleName }: TasteReactionProps) {
 
     try {
       window.localStorage.setItem(storageKey, JSON.stringify(storedReaction));
-      setSelectedReaction(reaction);
+      setSelectedReaction(reaction.value);
       setHasSaved(true);
-      console.log("Taste reaction saved", storedReaction);
+      console.log("taste-reaction", {
+        bottle: {
+          name: bottleName,
+          slug: bottleSlug,
+        },
+        reaction: {
+          label: reaction.label,
+          value: reaction.value,
+        },
+      });
     } catch (error) {
       console.warn("Failed to save taste reaction", {
         bottleSlug,
-        reaction,
+        reaction: reaction.value,
         error,
       });
     }
-  };
+  }
 
   return (
     <section className="detailCard tasteReactionCard" aria-labelledby="taste-reaction-title">
-      <p className="sectionKicker">Taste Profile</p>
-      <h2 id="taste-reaction-title">この味の記憶</h2>
-      <p className="tasteReactionLead">
-        次の一本を選びやすくするために、今の好みとして軽く覚えておきます。
-      </p>
-      <div className="tasteReactionButtons" role="group" aria-label={`${bottleName}の好み`}>
-        {reactionOptions.map((option) => {
-          const isSelected = selectedReaction === option.value;
-
-          return (
-            <button
-              key={option.value}
-              type="button"
-              className={`tasteReactionButton${isSelected ? " isSelected" : ""}`}
-              aria-pressed={isSelected}
-              onClick={() => handleReactionSelect(option.value)}
-            >
-              {option.label}
-            </button>
-          );
-        })}
+      <p className="sectionKicker">Taste Learning</p>
+      <h2 id="taste-reaction-title">これは好みに近かった？</h2>
+      <div className="tasteReactionButtons" role="group" aria-label={`${bottleName} の好み確認`}>
+        {reactions.map((reaction) => (
+          <button
+            className={
+              selectedReaction === reaction.value
+                ? "tasteReactionButton isSelected"
+                : "tasteReactionButton"
+            }
+            key={reaction.value}
+            type="button"
+            aria-pressed={selectedReaction === reaction.value}
+            onClick={() => handleSelect(reaction)}
+          >
+            {reaction.label}
+          </button>
+        ))}
       </div>
       {hasSaved ? (
         <p className="tasteReactionFeedback" role="status">
@@ -113,6 +117,6 @@ export function TasteReaction({ bottleSlug, bottleName }: TasteReactionProps) {
   );
 }
 
-function isTasteReactionValue(value: unknown): value is TasteReactionValue {
-  return value === "positive" || value === "neutral" || value === "negative";
+function isReactionValue(value: unknown): value is ReactionValue {
+  return reactions.some((reaction) => reaction.value === value);
 }
