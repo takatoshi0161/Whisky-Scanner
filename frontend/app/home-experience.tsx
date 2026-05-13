@@ -14,6 +14,7 @@ type Recommendation = {
   tags: string[];
   reason: string;
   match: string;
+  nextMoment: string;
 };
 
 const moods = [
@@ -40,18 +41,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["バニラ", "柑橘", "やさしい"],
       reason: "軽やかな甘さと柑橘感で、力を抜きたい夜に寄り添いやすいから。",
       match: "91%",
+      nextMoment: "肩の力を抜きたい夜に",
     },
     {
       name: "The Balvenie DoubleWood 12",
       tags: ["蜂蜜", "樽香", "なめらか"],
       reason: "最近好きだった甘い余韻に近く、安心して戻れる味わいだから。",
       match: "89%",
+      nextMoment: "食後にゆっくり戻りたい時に",
     },
     {
       name: "Arran 10",
       tags: ["果実", "モルト", "穏やか"],
       reason: "派手すぎない果実味で、ゆっくり一杯に向いているから。",
       match: "86%",
+      nextMoment: "静かに一杯だけ飲みたい時に",
     },
   ],
   "スモーク欲しい": [
@@ -60,18 +64,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["スモーク", "潮気", "チョコ"],
       reason: "強すぎない煙と甘さがあり、スモーク入門としても選びやすいから。",
       match: "93%",
+      nextMoment: "煙たさを少し足したい夜に",
     },
     {
       name: "Talisker 10",
       tags: ["黒胡椒", "潮気", "焚き火"],
       reason: "ピリッとした余韻があり、気分を切り替えたい夜に合うから。",
       match: "88%",
+      nextMoment: "気分を切り替えたい一杯に",
     },
     {
       name: "Caol Ila 12",
       tags: ["ピート", "レモン", "クリーン"],
       reason: "煙たさはしっかりありつつ、重すぎず飲み進めやすいから。",
       match: "85%",
+      nextMoment: "軽やかなスモークを試したい時に",
     },
   ],
   "ご褒美": [
@@ -80,18 +87,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["シェリー樽", "ドライフルーツ", "なめらか"],
       reason: "好きだった蜂蜜感を残しながら、果実の厚みを少し足せるから。",
       match: "92%",
+      nextMoment: "今夜のご褒美に",
     },
     {
       name: "Aberlour 12 Double Cask",
       tags: ["濃厚", "蜂蜜", "ご褒美"],
       reason: "やさしい甘さから一歩進んで、満足感のある夜に合うから。",
       match: "88%",
+      nextMoment: "甘く濃い満足感がほしい時に",
     },
     {
       name: "Bunnahabhain 12",
       tags: ["穏やか", "ナッツ", "潮気"],
       reason: "まろやかな甘さに控えめな海のニュアンスが加わり、新しい発見があるから。",
       match: "84%",
+      nextMoment: "少しだけ新しい味に進みたい時に",
     },
   ],
   "食事と合わせたい": [
@@ -100,18 +110,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["ハニー", "軽快", "食中"],
       reason: "甘さが穏やかで、炭酸割りでも食事の邪魔をしにくいから。",
       match: "90%",
+      nextMoment: "食事を邪魔しないハイボールに",
     },
     {
       name: "Monkey Shoulder",
       tags: ["モルト", "バニラ", "万能"],
       reason: "ハイボールでもロックでも合わせやすく、料理を選びにくいから。",
       match: "87%",
+      nextMoment: "飲み方を決めずに開けたい時に",
     },
     {
       name: "Chivas Regal Mizunara 12",
       tags: ["やわらか", "樽香", "和食"],
       reason: "穏やかな樽の香りで、和食や軽めのつまみに寄せやすいから。",
       match: "84%",
+      nextMoment: "軽めのつまみと合わせたい時に",
     },
   ],
   "冒険したい": [
@@ -120,18 +133,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["スパイス", "濃厚", "新世界"],
       reason: "いつもの甘い樽感から少し離れて、香味の広がりを試せるから。",
       match: "89%",
+      nextMoment: "いつもと違う発見がほしい夜に",
     },
     {
       name: "Kavalan Concertmaster",
       tags: ["トロピカル", "ワイン樽", "華やか"],
       reason: "果実感がはっきりしていて、次の発見として分かりやすいから。",
       match: "86%",
+      nextMoment: "華やかな果実感を試したい時に",
     },
     {
       name: "Nikka From The Barrel",
       tags: ["力強い", "スパイス", "濃密"],
       reason: "アルコール感と厚みがあり、少量でも満足する冒険感があるから。",
       match: "83%",
+      nextMoment: "少量でしっかり楽しみたい時に",
     },
   ],
   "ハイボールしたい": [
@@ -140,18 +156,21 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
       tags: ["爽快", "青りんご", "ハイボール"],
       reason: "炭酸で香りが立ちやすく、軽快に今夜の一杯を始められるから。",
       match: "92%",
+      nextMoment: "最初の一杯を爽快にしたい時に",
     },
     {
       name: "The Glenlivet 12",
       tags: ["洋梨", "軽やか", "すっきり"],
       reason: "果実の甘さが炭酸で伸びて、食事前にも飲みやすいから。",
       match: "88%",
+      nextMoment: "食事前に軽く飲みたい時に",
     },
     {
       name: "Johnnie Walker Black Label",
       tags: ["スモーク", "バニラ", "定番"],
       reason: "少し煙のある余韻が残り、ハイボールでも物足りなさが出にくいから。",
       match: "85%",
+      nextMoment: "定番感と飲みごたえを両方ほしい時に",
     },
   ],
 };
@@ -230,18 +249,23 @@ export function HomeExperience({ health }: HomeExperienceProps) {
         <div className="recommendList">
           {recommendations.map((bottle, index) => (
             <article className="recommendCard" key={bottle.name}>
-              <div className="rank">{index + 1}</div>
+              <div className="recommendBottleFrame" aria-hidden="true">
+                <span className="recommendBottleCap" />
+                <span className="recommendBottleShape" />
+              </div>
               <div className="recommendBody">
                 <div className="recommendTop">
-                  <div className="tagList">
-                    {bottle.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <span className="matchScore">{bottle.match}</span>
+                  <span className="nextPickLabel">次の一本候補 {index + 1}</span>
+                  <span className="matchScore">相性 {bottle.match}</span>
                 </div>
                 <h3>{bottle.name}</h3>
+                <p className="nextMoment">{bottle.nextMoment}</p>
                 <p>{bottle.reason}</p>
+                <div className="tagList" aria-label="味の手がかり">
+                  {bottle.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}

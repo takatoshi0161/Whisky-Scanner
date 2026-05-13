@@ -9,7 +9,7 @@ type TasteReactionProps = {
 
 const reactions = [
   { label: "好き", value: "positive" },
-  { label: "そうでもない", value: "neutral" },
+  { label: "少し違う", value: "neutral" },
   { label: "苦手", value: "negative" },
 ] as const;
 
