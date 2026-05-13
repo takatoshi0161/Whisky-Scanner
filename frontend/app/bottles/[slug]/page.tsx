@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { bottles, findBottleBySlug } from "../../data/distilleries";
+import { TasteReaction } from "./taste-reaction";
 
 type BottleDetailPageProps = {
   params: Promise<{
@@ -57,6 +58,8 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
         <h2 id="taste-title">味の特徴</h2>
         <p>{bottle.tasteProfile}</p>
       </section>
+
+      <TasteReaction bottleSlug={bottle.slug} bottleName={bottle.name} />
 
       {bottle.recommendationReasons.length > 0 ? (
         <section className="detailCard" aria-labelledby="reason-title">

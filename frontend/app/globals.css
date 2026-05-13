@@ -614,6 +614,62 @@ button {
   line-height: 1.45;
 }
 
+.tasteReactionCard {
+  border-color: rgba(241, 207, 138, 0.16);
+}
+
+.tasteReactionLead {
+  margin-top: 10px;
+}
+
+.tasteReactionButtons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.tasteReactionButton {
+  min-height: 52px;
+  padding: 0 14px;
+  border: 1px solid rgba(213, 162, 77, 0.24);
+  border-radius: 8px;
+  color: var(--text);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(20, 15, 11, 0.78);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.tasteReactionButton:active {
+  transform: translateY(1px);
+}
+
+.tasteReactionButton.isSelected {
+  border-color: rgba(241, 207, 138, 0.78);
+  color: #150d07;
+  background:
+    linear-gradient(180deg, #f1cf8a 0%, #c98834 100%);
+  box-shadow:
+    0 12px 28px rgba(169, 96, 34, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+  font-weight: 800;
+}
+
+.tasteReactionFeedback {
+  margin: 12px 0 0;
+  color: var(--gold-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+@media (min-width: 390px) {
+  .tasteReactionButtons {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 720px) {
   .appShell {
     margin-top: 28px;
