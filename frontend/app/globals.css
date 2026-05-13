@@ -130,17 +130,20 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
 .todayBadge {
-  flex: 0 0 auto;
+  flex: 0 1 auto;
+  max-width: 100%;
   padding: 6px 10px;
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--gold-soft);
   background: rgba(213, 162, 77, 0.1);
   font-size: 0.78rem;
+  overflow-wrap: anywhere;
 }
 
 .moodGrid {
@@ -159,6 +162,8 @@ button {
     linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
     rgba(27, 20, 14, 0.88);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
   cursor: pointer;
 }
 
@@ -235,6 +240,7 @@ button {
   font-size: 1.04rem;
   line-height: 1.35;
   letter-spacing: 0;
+  overflow-wrap: anywhere;
 }
 
 .tasteNote {
@@ -258,39 +264,72 @@ button {
 
 .recommendCard {
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 14px;
   padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(241, 207, 138, 0.16);
   border-radius: 8px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015)),
+    linear-gradient(135deg, rgba(213, 162, 77, 0.13), rgba(255, 255, 255, 0.02) 42%),
     var(--surface);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
 }
 
-.rank {
+.recommendBottleFrame {
+  position: relative;
   display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  color: var(--gold-soft);
-  background: rgba(213, 162, 77, 0.1);
-  font-size: 0.88rem;
-  font-weight: 700;
+  place-items: end center;
+  min-height: 128px;
+  overflow: hidden;
+  border: 1px solid rgba(241, 207, 138, 0.18);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 24%, rgba(241, 207, 138, 0.3), transparent 34%),
+    linear-gradient(180deg, rgba(36, 25, 16, 0.9), rgba(10, 8, 6, 0.92));
+}
+
+.recommendBottleCap {
+  position: absolute;
+  top: 17px;
+  width: 22px;
+  height: 30px;
+  border-radius: 9px 9px 3px 3px;
+  background: linear-gradient(180deg, #f1cf8a, #70421c);
+  box-shadow: 0 0 18px rgba(241, 207, 138, 0.16);
+}
+
+.recommendBottleShape {
+  width: 42px;
+  height: 86px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 226, 162, 0.25);
+  border-radius: 18px 18px 8px 8px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.24), transparent 22%),
+    linear-gradient(180deg, rgba(213, 162, 77, 0.72), rgba(92, 48, 18, 0.9));
+  box-shadow:
+    inset 0 0 18px rgba(255, 226, 162, 0.16),
+    0 12px 24px rgba(0, 0, 0, 0.28);
 }
 
 .recommendTop {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
+}
+
+.nextPickLabel {
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
 .matchScore {
+  flex: 0 0 auto;
   color: var(--gold-soft);
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
 }
 
@@ -298,6 +337,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+  margin-top: 10px;
 }
 
 .tagList span {
@@ -315,6 +355,14 @@ button {
   color: var(--muted);
   font-size: 0.84rem;
   line-height: 1.55;
+}
+
+.recommendCard .nextMoment {
+  margin-top: 8px;
+  color: var(--gold-soft);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.45;
 }
 
 .sectionLead {
@@ -677,17 +725,36 @@ button {
 }
 
 .tasteReactionButton {
-  min-height: 48px;
-  padding: 0 12px;
-  border: 1px solid rgba(241, 207, 138, 0.22);
+  position: relative;
+  min-height: 52px;
+  padding: 0 14px 0 36px;
+  border: 1px solid rgba(241, 207, 138, 0.32);
   border-radius: 8px;
   color: var(--text);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
-    rgba(12, 9, 7, 0.62);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.018)),
+    rgba(12, 9, 7, 0.78);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.09);
   font-size: 0.9rem;
   font-weight: 750;
+  line-height: 1.25;
+  text-align: left;
   cursor: pointer;
+}
+
+.tasteReactionButton::before {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border: 1px solid rgba(241, 207, 138, 0.58);
+  border-radius: 50%;
+  background: rgba(241, 207, 138, 0.08);
+  content: "";
+  transform: translateY(-50%);
 }
 
 .tasteReactionButton:active {
@@ -701,6 +768,13 @@ button {
   box-shadow:
     0 10px 22px rgba(169, 96, 34, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.tasteReactionButton.isSelected::before {
+  border-color: rgba(22, 13, 7, 0.48);
+  background:
+    radial-gradient(circle, #160d07 0 38%, transparent 42%),
+    rgba(255, 255, 255, 0.22);
 }
 
 .tasteReactionFeedback {
