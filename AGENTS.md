@@ -95,6 +95,9 @@ Pull Requests are mandatory for all changes. Even when the user asks to
 "merge to main" or "push to main", first create a working branch and Pull
 Request, then wait for the user's confirmation before merging.
 
+Pull Requests should be opened as regular ready-for-review PRs by default.
+Do not create Draft PRs unless the user explicitly asks for a draft.
+
 Every PR description should include:
 
 ```markdown
