@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 type TasteReactionProps = {
   bottleName: string;
@@ -8,29 +8,83 @@ type TasteReactionProps = {
 };
 
 const reactions = [
-  { label: "好き", value: "like" },
+  { label: "好き", value: "positive" },
   { label: "そうでもない", value: "neutral" },
-  { label: "苦手", value: "dislike" },
+  { label: "苦手", value: "negative" },
 ] as const;
 
 type ReactionValue = (typeof reactions)[number]["value"];
 type Reaction = (typeof reactions)[number];
 
+type StoredTasteReaction = {
+  reaction: ReactionValue;
+  bottleSlug: string;
+  bottleName: string;
+  updatedAt: string;
+};
+
 export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
   const [selectedReaction, setSelectedReaction] = useState<ReactionValue | null>(null);
+  const [hasSaved, setHasSaved] = useState(false);
+
+  const storageKey = useMemo(
+    () => `whisky-scanner:taste-reaction:${bottleSlug}`,
+    [bottleSlug],
+  );
+
+  useEffect(() => {
+    try {
+      const storedValue = window.localStorage.getItem(storageKey);
+
+      if (!storedValue) {
+        return;
+      }
+
+      const storedReaction = JSON.parse(storedValue) as Partial<StoredTasteReaction>;
+
+      if (
+        storedReaction.bottleSlug === bottleSlug &&
+        isReactionValue(storedReaction.reaction)
+      ) {
+        setSelectedReaction(storedReaction.reaction);
+      }
+    } catch (error) {
+      console.warn("Failed to restore taste reaction", {
+        bottleSlug,
+        error,
+      });
+    }
+  }, [bottleSlug, storageKey]);
 
   function handleSelect(reaction: Reaction) {
-    setSelectedReaction(reaction.value);
-    console.log("taste-reaction", {
-      bottle: {
-        name: bottleName,
-        slug: bottleSlug,
-      },
-      reaction: {
-        label: reaction.label,
-        value: reaction.value,
-      },
-    });
+    const storedReaction: StoredTasteReaction = {
+      reaction: reaction.value,
+      bottleSlug,
+      bottleName,
+      updatedAt: new Date().toISOString(),
+    };
+
+    try {
+      window.localStorage.setItem(storageKey, JSON.stringify(storedReaction));
+      setSelectedReaction(reaction.value);
+      setHasSaved(true);
+      console.log("taste-reaction", {
+        bottle: {
+          name: bottleName,
+          slug: bottleSlug,
+        },
+        reaction: {
+          label: reaction.label,
+          value: reaction.value,
+        },
+      });
+    } catch (error) {
+      console.warn("Failed to save taste reaction", {
+        bottleSlug,
+        reaction: reaction.value,
+        error,
+      });
+    }
   }
 
   return (
@@ -54,6 +108,15 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
           </button>
         ))}
       </div>
+      {hasSaved ? (
+        <p className="tasteReactionFeedback" role="status">
+          好みを覚えました
+        </p>
+      ) : null}
     </section>
   );
+}
+
+function isReactionValue(value: unknown): value is ReactionValue {
+  return reactions.some((reaction) => reaction.value === value);
 }

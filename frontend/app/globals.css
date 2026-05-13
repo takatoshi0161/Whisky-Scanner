@@ -703,6 +703,13 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
+.tasteReactionFeedback {
+  margin: 12px 0 0;
+  color: var(--gold-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 @media (min-width: 390px) {
   .tasteReactionButtons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
