@@ -8,13 +8,26 @@ type TasteReactionProps = {
 };
 
 const reactions = [
-  { label: "好き", value: "positive" },
-  { label: "少し違う", value: "neutral" },
-  { label: "苦手", value: "negative" },
+  {
+    label: "また飲みたい",
+    value: "want_again",
+    feedback: "次のおすすめに覚えておきます。",
+  },
+  {
+    label: "たまになら",
+    value: "occasionally",
+    feedback: "気分に合わせて参考にします。",
+  },
+  {
+    label: "別のタイプ",
+    value: "different_type",
+    feedback: "次は別のタイプも探してみます。",
+  },
 ] as const;
 
 type ReactionValue = (typeof reactions)[number]["value"];
 type Reaction = (typeof reactions)[number];
+type LegacyReactionValue = "positive" | "neutral" | "negative";
 
 type StoredTasteReaction = {
   reaction: ReactionValue;
@@ -41,12 +54,10 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
       }
 
       const storedReaction = JSON.parse(storedValue) as Partial<StoredTasteReaction>;
+      const reactionValue = normalizeReactionValue(storedReaction.reaction);
 
-      if (
-        storedReaction.bottleSlug === bottleSlug &&
-        isReactionValue(storedReaction.reaction)
-      ) {
-        setSelectedReaction(storedReaction.reaction);
+      if (storedReaction.bottleSlug === bottleSlug && reactionValue) {
+        setSelectedReaction(reactionValue);
       }
     } catch (error) {
       console.warn("Failed to restore taste reaction", {
@@ -87,11 +98,19 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
     }
   }
 
+  const selectedFeedback = reactions.find(
+    (reaction) => reaction.value === selectedReaction,
+  )?.feedback;
+
   return (
     <section className="detailCard tasteReactionCard" aria-labelledby="taste-reaction-title">
-      <p className="sectionKicker">Taste Learning</p>
-      <h2 id="taste-reaction-title">これは好みに近かった？</h2>
-      <div className="tasteReactionButtons" role="group" aria-label={`${bottleName} の好み確認`}>
+      <p className="sectionKicker">Next Pick</p>
+      <h2 id="taste-reaction-title">この一本、次も選びたい？</h2>
+      <div
+        className="tasteReactionButtons"
+        role="group"
+        aria-label={`${bottleName} を次のおすすめに反映する方向性`}
+      >
         {reactions.map((reaction) => (
           <button
             className={
@@ -108,15 +127,38 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
           </button>
         ))}
       </div>
-      {hasSaved ? (
+      <p className="tasteReactionHelper">次のおすすめに少しずつ反映します</p>
+      {hasSaved && selectedFeedback ? (
         <p className="tasteReactionFeedback" role="status">
-          好みを覚えました
+          {selectedFeedback}
         </p>
       ) : null}
     </section>
   );
 }
 
+function normalizeReactionValue(value: unknown): ReactionValue | null {
+  if (isReactionValue(value)) {
+    return value;
+  }
+
+  const legacyValues: Record<LegacyReactionValue, ReactionValue> = {
+    positive: "want_again",
+    neutral: "occasionally",
+    negative: "different_type",
+  };
+
+  if (isLegacyReactionValue(value)) {
+    return legacyValues[value];
+  }
+
+  return null;
+}
+
 function isReactionValue(value: unknown): value is ReactionValue {
   return reactions.some((reaction) => reaction.value === value);
+}
+
+function isLegacyReactionValue(value: unknown): value is LegacyReactionValue {
+  return value === "positive" || value === "neutral" || value === "negative";
 }

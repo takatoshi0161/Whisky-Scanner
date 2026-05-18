@@ -71,13 +71,14 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
         </section>
       ) : null}
 
+      <TasteReaction bottleName={bottle.name} bottleSlug={bottle.slug} />
+
       <section className="detailCard" aria-labelledby="for-title">
         <p className="sectionKicker">For You</p>
         <h2 id="for-title">こういう人向け</h2>
         <p>{bottle.recommendedFor}</p>
       </section>
 
-      <TasteReaction bottleName={bottle.name} bottleSlug={bottle.slug} />
     </main>
   );
 }
