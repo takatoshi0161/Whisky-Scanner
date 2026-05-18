@@ -712,22 +712,32 @@ button {
 }
 
 .tasteReactionCard {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-color: rgba(241, 207, 138, 0.22);
   background:
-    linear-gradient(180deg, rgba(213, 162, 77, 0.09), rgba(255, 255, 255, 0.015)),
+    linear-gradient(180deg, rgba(213, 162, 77, 0.12), rgba(255, 255, 255, 0.018)),
     rgba(25, 18, 13, 0.8);
+}
+
+.tasteReactionCard h2 {
+  margin-top: 0;
+  max-width: 15rem;
+  font-size: 1.16rem;
+  line-height: 1.45;
 }
 
 .tasteReactionButtons {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 9px;
-  margin-top: 14px;
+  gap: 10px;
+  margin-top: 2px;
 }
 
 .tasteReactionButton {
-  position: relative;
-  min-height: 52px;
-  padding: 0 14px 0 36px;
+  min-height: 54px;
+  padding: 0 16px;
   border: 1px solid rgba(241, 207, 138, 0.32);
   border-radius: 8px;
   color: var(--text);
@@ -739,22 +749,9 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.09);
   font-size: 0.9rem;
   font-weight: 750;
-  line-height: 1.25;
-  text-align: left;
+  line-height: 1.35;
+  text-align: center;
   cursor: pointer;
-}
-
-.tasteReactionButton::before {
-  position: absolute;
-  left: 13px;
-  top: 50%;
-  width: 12px;
-  height: 12px;
-  border: 1px solid rgba(241, 207, 138, 0.58);
-  border-radius: 50%;
-  background: rgba(241, 207, 138, 0.08);
-  content: "";
-  transform: translateY(-50%);
 }
 
 .tasteReactionButton:active {
@@ -770,23 +767,29 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.34);
 }
 
-.tasteReactionButton.isSelected::before {
-  border-color: rgba(22, 13, 7, 0.48);
-  background:
-    radial-gradient(circle, #160d07 0 38%, transparent 42%),
-    rgba(255, 255, 255, 0.22);
+.tasteReactionHelper {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
 .tasteReactionFeedback {
-  margin: 12px 0 0;
+  margin: 0;
   color: var(--gold-soft);
   font-size: 0.82rem;
   font-weight: 700;
+  line-height: 1.55;
 }
 
-@media (min-width: 390px) {
+@media (min-width: 420px) {
   .tasteReactionButtons {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tasteReactionButton {
+    min-height: 58px;
+    padding: 0 10px;
   }
 }
 
