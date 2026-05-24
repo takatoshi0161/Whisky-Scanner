@@ -21,6 +21,7 @@ export function ScanUploader() {
   const distilleryCandidate = findDistilleryCandidate(normalizedText);
   const bottleCandidate = distilleryCandidate.bottles[0];
   const nextBottleRecommendation =
+    bottleCandidate?.recommendation?.cardRecommendation ??
     bottleCandidate?.recommendationReasons[0] ??
     "今夜の気分に合わせて試しやすい一本";
   const nextBottleMood =
