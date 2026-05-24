@@ -1,9 +1,15 @@
+import {
+  getBottleRecommendation,
+  type BottleRecommendation,
+} from "./bottle-recommendations";
+
 export type Bottle = {
   name: string;
   slug: string;
   tasteProfile: string;
   recommendedFor: string;
   recommendationReasons: string[];
+  recommendation?: BottleRecommendation;
 };
 
 export type Distillery = {
@@ -42,6 +48,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
     new Set([...englishKeywords, ...(seed.keywords ?? [])].map(normalizeKeyword)),
   );
   const bottleName = seed.bottleName ?? `${seed.name} Single Malt`;
+  const bottleSlug = createSlug(bottleName);
 
   return {
     slug: createSlug(seed.name),
@@ -51,7 +58,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
     bottles: [
       {
         name: bottleName,
-        slug: createSlug(bottleName),
+        slug: bottleSlug,
         tasteProfile:
           seed.tasteProfile ??
           "モルトの甘さ、穏やかな樽香、軽い果実感を中心にした飲みやすい味わい。",
@@ -59,6 +66,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
           seed.recommendedFor ??
           "まずは蒸留所の雰囲気を知りたい人や、強いクセよりも飲みやすさを優先したい人向け。",
         recommendationReasons: seed.recommendationReasons ?? [],
+        recommendation: getBottleRecommendation(bottleSlug),
       },
     ],
   };
@@ -230,7 +238,12 @@ const distillerySeeds: DistillerySeed[] = [
   { name: "Craigellachie", region: "Speyside", keywords: ["クライゲラキ"] },
   { name: "Dallas Dhu", region: "Speyside", keywords: ["dallasdhu", "ダラスデュー"] },
   { name: "Glenlossie", region: "Speyside", keywords: ["グレンロッシー"] },
-  { name: "Benromach", region: "Speyside", keywords: ["ベンロマック"] },
+  {
+    name: "Benromach",
+    region: "Speyside",
+    keywords: ["ベンロマック"],
+    bottleName: "Benromach 10 Year Old",
+  },
   { name: "Balmenach", region: "Speyside", keywords: ["バルメナック"] },
   { name: "St Magdalene", region: "Lowland", keywords: ["saint magdalene", "セントマグダレン"] },
   { name: "Bladnoch", region: "Lowland", keywords: ["ブラドノック"] },

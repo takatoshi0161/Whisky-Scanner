@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 
+import { getBottleRecommendation } from "./data/bottle-recommendations";
 import { ScanUploader } from "./scan-uploader";
 
 type HealthStatus = {
@@ -11,6 +12,7 @@ type HealthStatus = {
 
 type Recommendation = {
   name: string;
+  bottleId?: string;
   tags: string[];
   reason: string;
   match: string;
@@ -52,6 +54,7 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
     },
     {
       name: "Arran 10",
+      bottleId: "arran10yearold",
       tags: ["果実", "モルト", "穏やか"],
       reason: "派手すぎない果実味で、ゆっくり一杯に向いているから。",
       match: "86%",
@@ -61,6 +64,7 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
   "スモーク欲しい": [
     {
       name: "Bowmore 12",
+      bottleId: "bowmore12yearold",
       tags: ["スモーク", "潮気", "チョコ"],
       reason: "強すぎない煙と甘さがあり、スモーク入門としても選びやすいから。",
       match: "93%",
@@ -68,6 +72,7 @@ const recommendationsByMood: Record<Mood, Recommendation[]> = {
     },
     {
       name: "Talisker 10",
+      bottleId: "talisker10yearold",
       tags: ["黒胡椒", "潮気", "焚き火"],
       reason: "ピリッとした余韻があり、気分を切り替えたい夜に合うから。",
       match: "88%",
@@ -247,28 +252,34 @@ export function HomeExperience({ health }: HomeExperienceProps) {
         </div>
 
         <div className="recommendList">
-          {recommendations.map((bottle, index) => (
-            <article className="recommendCard" key={bottle.name}>
-              <div className="recommendBottleFrame" aria-hidden="true">
-                <span className="recommendBottleCap" />
-                <span className="recommendBottleShape" />
-              </div>
-              <div className="recommendBody">
-                <div className="recommendTop">
-                  <span className="nextPickLabel">次の一本候補 {index + 1}</span>
-                  <span className="matchScore">相性 {bottle.match}</span>
+          {recommendations.map((bottle, index) => {
+            const recommendationCopy = bottle.bottleId
+              ? getBottleRecommendation(bottle.bottleId)?.cardRecommendation
+              : undefined;
+
+            return (
+              <article className="recommendCard" key={bottle.name}>
+                <div className="recommendBottleFrame" aria-hidden="true">
+                  <span className="recommendBottleCap" />
+                  <span className="recommendBottleShape" />
                 </div>
-                <h3>{bottle.name}</h3>
-                <p className="nextMoment">{bottle.nextMoment}</p>
-                <p>{bottle.reason}</p>
-                <div className="tagList" aria-label="味の手がかり">
-                  {bottle.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
+                <div className="recommendBody">
+                  <div className="recommendTop">
+                    <span className="nextPickLabel">次の一本候補 {index + 1}</span>
+                    <span className="matchScore">相性 {bottle.match}</span>
+                  </div>
+                  <h3>{bottle.name}</h3>
+                  <p className="nextMoment">{bottle.nextMoment}</p>
+                  <p>{recommendationCopy ?? bottle.reason}</p>
+                  <div className="tagList" aria-label="味の手がかり">
+                    {bottle.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </section>
 
