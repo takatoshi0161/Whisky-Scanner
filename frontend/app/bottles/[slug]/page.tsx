@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { bottles, findBottleBySlug } from "../../data/distilleries";
+import { getRegionDescription } from "../../data/region-descriptions";
 import { TasteReaction } from "./taste-reaction";
 
 type BottleDetailPageProps = {
@@ -33,6 +34,8 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
     notFound();
   }
 
+  const regionDescription = getRegionDescription(bottle.region);
+
   return (
     <main className="appShell detailShell">
       <section className="detailHero" aria-labelledby="bottle-title">
@@ -49,6 +52,9 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
           <div>
             <dt>地域</dt>
             <dd>{bottle.region}</dd>
+            {regionDescription ? (
+              <dd className="regionHint">{regionDescription}</dd>
+            ) : null}
           </div>
         </dl>
       </section>
