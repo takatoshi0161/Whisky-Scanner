@@ -44,6 +44,27 @@ When suggesting a next bottle, prioritize:
 
 Distillery, region, age statement, and brand are useful supporting signals, but they should not dominate the recommendation experience.
 
+## Copy and Recommendation Text Rules
+
+Recommendation copy, UX wording, and user-facing product language should be treated as product design assets, not implementation filler.
+
+When the user or ChatGPT provides finalized copy for recommendations, bottle descriptions, Taste Profile labels, feedback messages, or UX microcopy:
+
+- Use the provided text as the source of truth.
+- Do not create new recommendation copy unless explicitly asked.
+- Do not rewrite, paraphrase, shorten, or expand finalized copy on your own.
+- If the provided copy seems too long, unclear, duplicated, or difficult to implement, keep it unchanged and note the concern in the Pull Request description.
+- Only make copy changes when the user explicitly asks for copywriting, wording adjustment, or fallback text creation.
+
+For implementation tasks, Codex should focus on:
+
+- Adding provided copy to data structures.
+- Wiring copy into the correct UI locations.
+- Preserving existing fallback behavior for missing copy.
+- Reporting any display, overflow, or duplication concerns without changing the copy unilaterally.
+
+This is especially important for Whisky Scanner because recommendation tone should stay aligned with the product direction: a knowledgeable friend helping the user find the next bottle, not a review database, ranking system, or generic whisky encyclopedia.
+
 ## Current Product Priority
 
 The current priority is UX validation, not OCR accuracy.
