@@ -114,8 +114,11 @@ Use the sections as follows:
 
 - `Summary`: Briefly explain the user-facing purpose of the change.
 - `What changed`: List the main files or behaviors changed.
-- `Validation`: Include commands run, local URLs checked, or reasons validation could not be completed.
-- `Screenshot`: Include a screenshot for UI changes, or write `N/A` for non-UI changes.
+- `Validation`: Include commands run, local URLs checked, route/page response checks, key text or HTML checks, or reasons validation could not be completed.
+- `Screenshot`: Screenshots are not required for every PR. Include one when it is reliable and useful, or write `N/A` for non-UI changes.
+  - When screenshot capture is unstable in the development environment, skip screenshot attachment.
+  - In that case, note in the PR that visual confirmation will be performed after Vercel deployment on a real smartphone.
+  - For UI-related changes, still validate build success and, where applicable, route/page response or key text/HTML presence.
 
 ## UI / UX Guidance
 
