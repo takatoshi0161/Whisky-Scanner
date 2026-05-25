@@ -33,7 +33,7 @@ type OcrErrorResponse = {
 
 let visionClient: ImageAnnotatorClient | null = null;
 
-const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024;
+const MAX_IMAGE_SIZE_BYTES = 4 * 1024 * 1024;
 const OCR_RETRY_MESSAGE = "読み取れませんでした";
 const OCR_RETRY_HINT =
   "ラベルが見えるように、明るさや角度を変えてもう一度撮影してください。";
@@ -156,6 +156,32 @@ function getVisionClient() {
   logOcrEnvironment("application_default_credentials", privateKey);
   visionClient = new ImageAnnotatorClient({ fallback: true, projectId });
   return visionClient;
+}
+
+function getOcrStatus() {
+  const hasCredentialsJson = Boolean(
+    process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON,
+  );
+  const hasSplitCredentials = Boolean(
+    process.env.GOOGLE_CLOUD_CLIENT_EMAIL &&
+      process.env.GOOGLE_CLOUD_PRIVATE_KEY,
+  );
+
+  return {
+    status: "available",
+    service: "ocr",
+    runtime,
+    maxImageSizeBytes: MAX_IMAGE_SIZE_BYTES,
+    vision: {
+      configured: hasCredentialsJson || hasSplitCredentials,
+      source: hasCredentialsJson
+        ? "GOOGLE_APPLICATION_CREDENTIALS_JSON"
+        : hasSplitCredentials
+          ? "GOOGLE_CLOUD_CLIENT_EMAIL/GOOGLE_CLOUD_PRIVATE_KEY"
+          : "missing",
+      hasProjectId: Boolean(process.env.GOOGLE_CLOUD_PROJECT),
+    },
+  };
 }
 
 function jsonError(
@@ -366,4 +392,8 @@ export async function POST(request: Request) {
       recoverable,
     );
   }
+}
+
+export async function GET() {
+  return NextResponse.json(getOcrStatus());
 }

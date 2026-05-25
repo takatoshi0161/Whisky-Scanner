@@ -23,11 +23,85 @@ type OcrFailureResponse = {
   recoverable?: boolean;
 };
 
+const OCR_UPLOAD_MAX_BYTES = 4 * 1024 * 1024;
+const OCR_UPLOAD_TARGET_BYTES = 3.5 * 1024 * 1024;
+const OCR_IMAGE_MAX_DIMENSION = 1600;
+
 function formatOcrFailureMessage(
   response?: Pick<OcrResponse | OcrFailureResponse, "userMessage" | "retryHint">,
 ) {
   const message = response?.userMessage ?? "読み取れませんでした";
   return response?.retryHint ? `${message}\n${response.retryHint}` : message;
+}
+
+function loadImage(file: File) {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
+    const objectUrl = URL.createObjectURL(file);
+    const image = new Image();
+
+    image.onload = () => {
+      URL.revokeObjectURL(objectUrl);
+      resolve(image);
+    };
+    image.onerror = () => {
+      URL.revokeObjectURL(objectUrl);
+      reject(new Error("Failed to load image for OCR upload."));
+    };
+    image.src = objectUrl;
+  });
+}
+
+function canvasToJpegBlob(canvas: HTMLCanvasElement, quality: number) {
+  return new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob(
+      (blob) => {
+        if (blob) {
+          resolve(blob);
+          return;
+        }
+
+        reject(new Error("Failed to compress image for OCR upload."));
+      },
+      "image/jpeg",
+      quality,
+    );
+  });
+}
+
+async function prepareImageForOcrUpload(file: File) {
+  if (file.size <= OCR_UPLOAD_TARGET_BYTES || !file.type.startsWith("image/")) {
+    return file;
+  }
+
+  const image = await loadImage(file);
+  const largestSide = Math.max(image.naturalWidth, image.naturalHeight);
+  const scale = Math.min(1, OCR_IMAGE_MAX_DIMENSION / largestSide);
+  const width = Math.max(1, Math.round(image.naturalWidth * scale));
+  const height = Math.max(1, Math.round(image.naturalHeight * scale));
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+
+  if (!context) {
+    throw new Error("Failed to prepare image canvas for OCR upload.");
+  }
+
+  canvas.width = width;
+  canvas.height = height;
+  context.drawImage(image, 0, 0, width, height);
+
+  let quality = 0.82;
+  let blob = await canvasToJpegBlob(canvas, quality);
+
+  while (blob.size > OCR_UPLOAD_TARGET_BYTES && quality > 0.58) {
+    quality -= 0.08;
+    blob = await canvasToJpegBlob(canvas, quality);
+  }
+
+  const baseName = file.name.replace(/\.[^.]+$/, "");
+  return new File([blob], `${baseName || "ocr-upload"}.jpg`, {
+    type: "image/jpeg",
+    lastModified: Date.now(),
+  });
 }
 
 export function ScanUploader() {
@@ -61,14 +135,32 @@ export function ScanUploader() {
       return;
     }
 
-    const formData = new FormData();
-    formData.append("image", file);
-
     setIsSubmitting(true);
     setOcrResult(null);
     setError("");
 
     try {
+      let uploadImage: File;
+
+      try {
+        uploadImage = await prepareImageForOcrUpload(file);
+      } catch {
+        setError(
+          "画像を送信用に調整できませんでした\n別の画像を選ぶか、少し小さめに撮影して再度お試しください。",
+        );
+        return;
+      }
+
+      if (uploadImage.size > OCR_UPLOAD_MAX_BYTES) {
+        setError(
+          "画像が大きすぎるため読み取れませんでした\n少し小さめに撮影するか、画像サイズを下げて再度お試しください。",
+        );
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("image", uploadImage, uploadImage.name);
+
       const response = await fetch("/api/ocr", {
         method: "POST",
         body: formData,
