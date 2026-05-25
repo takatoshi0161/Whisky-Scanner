@@ -10,7 +10,25 @@ import {
 
 type OcrResponse = {
   text: string;
+  status?: "ok" | "no_text";
+  userMessage?: string;
+  retryHint?: string;
 };
+
+type OcrFailureResponse = {
+  error?: string;
+  code?: string;
+  userMessage?: string;
+  retryHint?: string;
+  recoverable?: boolean;
+};
+
+function formatOcrFailureMessage(
+  response?: Pick<OcrResponse | OcrFailureResponse, "userMessage" | "retryHint">,
+) {
+  const message = response?.userMessage ?? "読み取れませんでした";
+  return response?.retryHint ? `${message}\n${response.retryHint}` : message;
+}
 
 export function ScanUploader() {
   const [file, setFile] = useState<File | null>(null);
@@ -59,13 +77,22 @@ export function ScanUploader() {
       console.log("OCR response:", data);
 
       if (!response.ok) {
-        setError(data.error ?? "OCR に失敗しました。");
+        setError(formatOcrFailureMessage(data as OcrFailureResponse));
         return;
       }
 
-      setOcrResult(data as OcrResponse);
+      const ocrData = data as OcrResponse;
+
+      if (ocrData.status === "no_text" || !ocrData.text?.trim()) {
+        setError(formatOcrFailureMessage(ocrData));
+        return;
+      }
+
+      setOcrResult(ocrData);
     } catch {
-      setError("API に接続できませんでした。");
+      setError(
+        "読み取り処理に接続できませんでした。時間をおいて再度お試しください。",
+      );
     } finally {
       setIsSubmitting(false);
     }
