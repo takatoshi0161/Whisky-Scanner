@@ -6,10 +6,16 @@ export const maxDuration = 30;
 
 type OcrSuccessResponse = {
   text: string;
+  status: "ok" | "no_text";
+  userMessage?: string;
+  retryHint?: string;
 };
 
 type OcrErrorCode =
   | "invalid_request"
+  | "image_empty"
+  | "image_too_large"
+  | "image_read_failed"
   | "vision_auth_failed"
   | "vision_config_missing"
   | "vision_config_invalid"
@@ -20,9 +26,19 @@ type OcrErrorResponse = {
   error: string;
   code?: OcrErrorCode;
   details?: string;
+  userMessage: string;
+  retryHint?: string;
+  recoverable: boolean;
 };
 
 let visionClient: ImageAnnotatorClient | null = null;
+
+const MAX_IMAGE_SIZE_BYTES = 20 * 1024 * 1024;
+const OCR_RETRY_MESSAGE = "読み取れませんでした";
+const OCR_RETRY_HINT =
+  "ラベルが見えるように、明るさや角度を変えてもう一度撮影してください。";
+const OCR_SERVICE_MESSAGE =
+  "読み取り処理が一時的にうまくいきませんでした。時間をおいて再度お試しください。";
 
 class OcrConfigError extends Error {
   constructor(
@@ -147,25 +163,69 @@ function jsonError(
   status: number,
   code?: OcrErrorCode,
   details?: string,
+  userMessage = OCR_RETRY_MESSAGE,
+  retryHint?: string,
+  recoverable = true,
 ) {
-  const safeMessage = details ? `${message} ${details}` : message;
-
   return NextResponse.json<OcrErrorResponse>(
-    { error: safeMessage, code, details },
+    { error: message, code, details, userMessage, retryHint, recoverable },
     { status },
   );
 }
 
 function classifyOcrError(error: unknown): {
   code: OcrErrorCode;
+  status: number;
   details: string;
+  userMessage: string;
+  retryHint?: string;
+  recoverable: boolean;
 } {
   if (error instanceof OcrConfigError) {
-    return { code: error.code, details: error.message };
+    return {
+      code: error.code,
+      status: 500,
+      details: error.message,
+      userMessage: OCR_SERVICE_MESSAGE,
+      recoverable: false,
+    };
   }
 
   const message = error instanceof Error ? error.message : String(error);
   const lowerMessage = message.toLowerCase();
+
+  if (
+    lowerMessage.includes("invalid image") ||
+    lowerMessage.includes("bad image") ||
+    lowerMessage.includes("unsupported image") ||
+    lowerMessage.includes("image decode") ||
+    lowerMessage.includes("invalid_argument")
+  ) {
+    return {
+      code: "image_read_failed",
+      status: 422,
+      details:
+        "Google Vision could not read the uploaded image payload as an OCR target.",
+      userMessage: OCR_RETRY_MESSAGE,
+      retryHint: OCR_RETRY_HINT,
+      recoverable: true,
+    };
+  }
+
+  if (
+    lowerMessage.includes("payload") ||
+    lowerMessage.includes("too large") ||
+    lowerMessage.includes("request entity")
+  ) {
+    return {
+      code: "image_too_large",
+      status: 413,
+      details: "The uploaded image was too large for OCR processing.",
+      userMessage: "画像が大きすぎるため読み取れませんでした",
+      retryHint: "少し小さめに撮影するか、画像サイズを下げて再度お試しください。",
+      recoverable: true,
+    };
+  }
 
   if (
     lowerMessage.includes("private key") ||
@@ -176,8 +236,11 @@ function classifyOcrError(error: unknown): {
   ) {
     return {
       code: "vision_auth_failed",
+      status: 500,
       details:
         "Google Vision authentication failed. Check the Vercel service account JSON and private_key newline formatting.",
+      userMessage: OCR_SERVICE_MESSAGE,
+      recoverable: false,
     };
   }
 
@@ -187,15 +250,22 @@ function classifyOcrError(error: unknown): {
   ) {
     return {
       code: "vision_permission_denied",
+      status: 500,
       details:
         "Google Vision rejected the request. Check that the Vision API is enabled and the service account has access.",
+      userMessage: OCR_SERVICE_MESSAGE,
+      recoverable: false,
     };
   }
 
   return {
     code: "vision_request_failed",
+    status: 502,
     details:
       "Google Vision request failed. Check Vercel Function Logs for the safe OCR diagnostic entry.",
+    userMessage: OCR_RETRY_MESSAGE,
+    retryHint: OCR_RETRY_HINT,
+    recoverable: true,
   };
 }
 
@@ -209,11 +279,47 @@ export async function POST(request: Request) {
         "Send an image file in the image field.",
         400,
         "invalid_request",
+        undefined,
+        "画像ファイルを選択してください",
+        undefined,
+        true,
       );
     }
 
     if (!image.type.startsWith("image/")) {
-      return jsonError("Only image files are supported.", 400, "invalid_request");
+      return jsonError(
+        "Only image files are supported.",
+        400,
+        "invalid_request",
+        undefined,
+        "画像ファイルを選択してください",
+        "JPEG、PNG、HEICなどの画像を選んでください。",
+        true,
+      );
+    }
+
+    if (image.size <= 0) {
+      return jsonError(
+        "The uploaded image file was empty.",
+        400,
+        "image_empty",
+        undefined,
+        "画像を読み取れませんでした",
+        "別の画像を選んで再度お試しください。",
+        true,
+      );
+    }
+
+    if (image.size > MAX_IMAGE_SIZE_BYTES) {
+      return jsonError(
+        "The uploaded image file was too large.",
+        413,
+        "image_too_large",
+        `${image.size} bytes`,
+        "画像が大きすぎるため読み取れませんでした",
+        "少し小さめに撮影するか、画像サイズを下げて再度お試しください。",
+        true,
+      );
     }
 
     console.info("[OCR] textDetection request:", {
@@ -231,15 +337,33 @@ export async function POST(request: Request) {
     const text = result.textAnnotations?.[0]?.description?.trim() ?? "";
     console.log("[OCR] textDetection result:", text);
 
-    return NextResponse.json<OcrSuccessResponse>({ text });
+    if (!text) {
+      return NextResponse.json<OcrSuccessResponse>({
+        text: "",
+        status: "no_text",
+        userMessage: OCR_RETRY_MESSAGE,
+        retryHint: OCR_RETRY_HINT,
+      });
+    }
+
+    return NextResponse.json<OcrSuccessResponse>({ text, status: "ok" });
   } catch (error) {
-    const { code, details } = classifyOcrError(error);
+    const { code, status, details, userMessage, retryHint, recoverable } =
+      classifyOcrError(error);
     console.error("[OCR] textDetection failed:", {
       code,
       details,
       message: error instanceof Error ? error.message : String(error),
       stack: error instanceof Error ? error.stack : undefined,
     });
-    return jsonError("OCR processing failed.", 500, code, details);
+    return jsonError(
+      "OCR processing failed.",
+      status,
+      code,
+      details,
+      userMessage,
+      retryHint,
+      recoverable,
+    );
   }
 }
