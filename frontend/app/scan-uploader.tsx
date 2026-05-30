@@ -6,11 +6,13 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import {
   findDistilleryCandidate,
   normalizeOcrText,
+  type OcrTextAnnotation,
 } from "./lib/ocr-distillery";
 
 type OcrResponse = {
   text: string;
   status?: "ok" | "no_text";
+  annotations?: OcrTextAnnotation[];
   userMessage?: string;
   retryHint?: string;
 };
@@ -110,7 +112,10 @@ export function ScanUploader() {
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const normalizedText = ocrResult ? normalizeOcrText(ocrResult.text) : "";
-  const distilleryCandidate = findDistilleryCandidate(normalizedText);
+  const distilleryCandidate = findDistilleryCandidate(
+    normalizedText,
+    ocrResult?.annotations,
+  );
   const bottleCandidate = distilleryCandidate.bottles[0];
   const nextBottleRecommendation =
     bottleCandidate?.recommendation?.cardRecommendation ??

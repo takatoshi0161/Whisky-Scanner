@@ -7,8 +7,17 @@ export const maxDuration = 30;
 type OcrSuccessResponse = {
   text: string;
   status: "ok" | "no_text";
+  annotations?: OcrTextAnnotation[];
   userMessage?: string;
   retryHint?: string;
+};
+
+type OcrTextAnnotation = {
+  description: string;
+  vertices?: {
+    x: number;
+    y: number;
+  }[];
 };
 
 type OcrErrorCode =
@@ -199,6 +208,25 @@ function jsonError(
   );
 }
 
+function getOcrTextAnnotations(
+  textAnnotations: NonNullable<
+    Awaited<ReturnType<ImageAnnotatorClient["textDetection"]>>[0]["textAnnotations"]
+  >,
+) {
+  return textAnnotations
+    .slice(1)
+    .map((annotation) => ({
+      description: annotation.description?.trim() ?? "",
+      vertices: annotation.boundingPoly?.vertices
+        ?.map((vertex) => ({
+          x: Number(vertex.x ?? 0),
+          y: Number(vertex.y ?? 0),
+        }))
+        .filter((vertex) => Number.isFinite(vertex.x) && Number.isFinite(vertex.y)),
+    }))
+    .filter((annotation) => annotation.description);
+}
+
 function classifyOcrError(error: unknown): {
   code: OcrErrorCode;
   status: number;
@@ -360,19 +388,26 @@ export async function POST(request: Request) {
       image: { content: imageBuffer.toString("base64") },
     });
 
-    const text = result.textAnnotations?.[0]?.description?.trim() ?? "";
+    const textAnnotations = result.textAnnotations ?? [];
+    const text = textAnnotations[0]?.description?.trim() ?? "";
+    const annotations = getOcrTextAnnotations(textAnnotations);
     console.log("[OCR] textDetection result:", text);
 
     if (!text) {
       return NextResponse.json<OcrSuccessResponse>({
         text: "",
         status: "no_text",
+        annotations,
         userMessage: OCR_RETRY_MESSAGE,
         retryHint: OCR_RETRY_HINT,
       });
     }
 
-    return NextResponse.json<OcrSuccessResponse>({ text, status: "ok" });
+    return NextResponse.json<OcrSuccessResponse>({
+      text,
+      status: "ok",
+      annotations,
+    });
   } catch (error) {
     const { code, status, details, userMessage, retryHint, recoverable } =
       classifyOcrError(error);
