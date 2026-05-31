@@ -793,6 +793,37 @@ button {
   line-height: 1.55;
 }
 
+.preferenceTags {
+  display: grid;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.preferenceTags p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.preferenceTags div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.preferenceTags span {
+  padding: 5px 8px;
+  border: 1px solid rgba(213, 162, 77, 0.24);
+  border-radius: 999px;
+  color: var(--gold-soft);
+  background: rgba(213, 162, 77, 0.09);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 @media (min-width: 420px) {
   .tasteReactionButtons {
     grid-template-columns: repeat(3, minmax(0, 1fr));

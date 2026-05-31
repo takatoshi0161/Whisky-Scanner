@@ -7,6 +7,7 @@ export type Bottle = {
   name: string;
   slug: string;
   tasteProfile: string;
+  preferenceTags: string[];
   recommendedFor: string;
   recommendationReasons: string[];
   recommendation?: BottleRecommendation;
@@ -26,6 +27,7 @@ type DistillerySeed = {
   keywords?: string[];
   bottleName?: string;
   tasteProfile?: string;
+  preferenceTags?: string[];
   recommendedFor?: string;
   recommendationReasons?: string[];
 };
@@ -49,6 +51,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
   );
   const bottleName = seed.bottleName ?? `${seed.name} Single Malt`;
   const bottleSlug = createSlug(bottleName);
+  const recommendation = getBottleRecommendation(bottleSlug);
 
   return {
     slug: createSlug(seed.name),
@@ -62,11 +65,12 @@ function createDistillery(seed: DistillerySeed): Distillery {
         tasteProfile:
           seed.tasteProfile ??
           "モルトの甘さ、穏やかな樽香、軽い果実感を中心にした飲みやすい味わい。",
+        preferenceTags: seed.preferenceTags ?? recommendation?.directionTags ?? [],
         recommendedFor:
           seed.recommendedFor ??
           "まずは蒸留所の雰囲気を知りたい人や、強いクセよりも飲みやすさを優先したい人向け。",
         recommendationReasons: seed.recommendationReasons ?? [],
-        recommendation: getBottleRecommendation(bottleSlug),
+        recommendation,
       },
     ],
   };
@@ -78,6 +82,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["グレンファークラス"],
     bottleName: "Glenfarclas 12 Year Old",
+    preferenceTags: ["シェリー樽", "ドライフルーツ", "蜂蜜", "ナッツ"],
     tasteProfile: "シェリー樽由来のドライフルーツ、蜂蜜、ナッツ感があり、甘く落ち着いた余韻。",
     recommendedFor: "食後にゆっくり甘みを楽しみたい人や、濃すぎないご褒美感を求める人向け。",
     recommendationReasons: ["シェリー樽の甘み", "食後にゆっくり飲みたい夜向け"],
@@ -87,6 +92,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["the glenlivet", "ザ グレンリベット", "グレンリベット"],
     bottleName: "The Glenlivet 12 Year Old",
+    preferenceTags: ["果実感", "青りんご", "バニラ", "軽やか"],
     tasteProfile: "洋梨や青りんごのような軽やかな果実感と、バニラのやさしい甘さ。",
     recommendedFor: "クセが強すぎないシングルモルトから始めたい人や、ハイボールでも飲みたい人向け。",
   },
@@ -95,6 +101,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["ボウモア"],
     bottleName: "Bowmore 12 Year Old",
+    preferenceTags: ["スモーク", "潮気", "ビターチョコ", "やわらかい甘み"],
     tasteProfile: "やわらかなスモーク、潮気、ビターなチョコレート感がほどよく重なる味わい。",
     recommendedFor: "強烈すぎないスモーキーさを試したい人や、少し大人っぽい余韻が欲しい人向け。",
     recommendationReasons: ["スモーキー好きにおすすめ", "アイラ入門にも選びやすい"],
@@ -164,6 +171,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islands",
     keywords: ["タリスカー"],
     bottleName: "Talisker 10 Year Old",
+    preferenceTags: ["潮気", "黒胡椒", "スモーク", "スパイス"],
     tasteProfile: "潮気、黒胡椒のようなスパイス、焚き火を思わせるスモーク感。",
     recommendedFor: "気分を切り替える一杯が欲しい人や、ハイボールでも個性を感じたい人向け。",
     recommendationReasons: ["ドライ寄りの味わい", "潮気とスパイス感がある"],
@@ -173,6 +181,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["グレンフィディック"],
     bottleName: "Glenfiddich 12 Year Old",
+    preferenceTags: ["果実感", "洋梨", "青りんご", "軽やか"],
   },
   {
     name: "Glenturret",
@@ -192,6 +201,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["the macallan", "マッカラン"],
     bottleName: "The Macallan 12 Year Old",
+    preferenceTags: ["シェリー樽", "ドライフルーツ", "樽の甘み", "なめらか"],
   },
   { name: "Rosebank", region: "Lowland", keywords: ["ローズバンク"] },
   { name: "Clynelish", region: "Highland", keywords: ["クライヌリッシュ"] },
@@ -200,6 +210,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Campbeltown",
     keywords: ["スプリングバンク"],
     bottleName: "Springbank 10 Year Old",
+    preferenceTags: ["潮気", "麦の厚み", "オイリー", "スモーク"],
   },
   { name: "Tullibardine", region: "Highland", keywords: ["タリバーディン"] },
   {
@@ -218,6 +229,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["アードベッグ"],
     bottleName: "Ardbeg 10 Year Old",
+    preferenceTags: ["強いスモーク", "ピート", "ドライ", "潮気"],
   },
   { name: "Tamnavulin", region: "Speyside", keywords: ["タムナヴーリン"] },
   { name: "Glen Moray", region: "Speyside", keywords: ["glenmoray", "グレンマレイ"] },
@@ -243,6 +255,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["ベンロマック"],
     bottleName: "Benromach 10 Year Old",
+    preferenceTags: ["シェリー樽", "やわらかいスモーク", "麦の甘み", "クラシック"],
   },
   { name: "Balmenach", region: "Speyside", keywords: ["バルメナック"] },
   { name: "St Magdalene", region: "Lowland", keywords: ["saint magdalene", "セントマグダレン"] },
@@ -330,6 +343,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["ラガヴーリン"],
     bottleName: "Lagavulin 16 Year Old",
+    preferenceTags: ["深いスモーク", "ドライフルーツ", "潮気", "重厚な余韻"],
     tasteProfile: "深いスモーク、ドライフルーツ、潮気、長く残る重厚な余韻。",
     recommendedFor: "ゆっくり時間をかけて飲みたい人や、特別感のあるスモーキーな一本を選びたい人向け。",
   },
@@ -362,6 +376,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islands",
     keywords: ["arran", "アラン"],
     bottleName: "Arran 10 Year Old",
+    preferenceTags: ["果実感", "麦の甘み", "軽やか", "樽の甘み"],
   },
   { name: "Croftengea", region: "Highland", keywords: ["croftengea"] },
   { name: "Glengoyne", region: "Highland", keywords: ["グレンゴイン"] },

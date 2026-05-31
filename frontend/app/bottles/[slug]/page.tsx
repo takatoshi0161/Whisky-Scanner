@@ -87,7 +87,11 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
         </section>
       ) : null}
 
-      <TasteReaction bottleName={bottle.name} bottleSlug={bottle.slug} />
+      <TasteReaction
+        bottleName={bottle.name}
+        bottleSlug={bottle.slug}
+        preferenceTags={bottle.preferenceTags}
+      />
 
       <section className="detailCard" aria-labelledby="for-title">
         <p className="sectionKicker">For You</p>
