@@ -2,9 +2,16 @@
 
 import { useEffect, useMemo, useState } from "react";
 
+import {
+  restoreTastePreferenceTags,
+  saveTastePreferenceInput,
+  type TastePreferenceTagSummary,
+} from "../../lib/taste-preferences";
+
 type TasteReactionProps = {
   bottleName: string;
   bottleSlug: string;
+  preferenceTags: string[];
 };
 
 const reactions = [
@@ -36,9 +43,16 @@ type StoredTasteReaction = {
   updatedAt: string;
 };
 
-export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
+export function TasteReaction({
+  bottleName,
+  bottleSlug,
+  preferenceTags,
+}: TasteReactionProps) {
   const [selectedReaction, setSelectedReaction] = useState<ReactionValue | null>(null);
   const [hasSaved, setHasSaved] = useState(false);
+  const [preferenceTagSummaries, setPreferenceTagSummaries] = useState<
+    TastePreferenceTagSummary[]
+  >([]);
 
   const storageKey = useMemo(
     () => `whisky-scanner:taste-reaction:${bottleSlug}`,
@@ -47,6 +61,7 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
 
   useEffect(() => {
     try {
+      setPreferenceTagSummaries(restoreTastePreferenceTags());
       const storedValue = window.localStorage.getItem(storageKey);
 
       if (!storedValue) {
@@ -77,6 +92,13 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
 
     try {
       window.localStorage.setItem(storageKey, JSON.stringify(storedReaction));
+      setPreferenceTagSummaries(
+        saveTastePreferenceInput({
+          reaction: reaction.value,
+          bottleSlug,
+          preferenceTags,
+        }),
+      );
       setSelectedReaction(reaction.value);
       setHasSaved(true);
       console.log("taste-reaction", {
@@ -132,6 +154,16 @@ export function TasteReaction({ bottleName, bottleSlug }: TasteReactionProps) {
         <p className="tasteReactionFeedback" role="status">
           {selectedFeedback}
         </p>
+      ) : null}
+      {preferenceTagSummaries.length > 0 ? (
+        <div className="preferenceTags" aria-label="あなたが好きそうな香味">
+          <p>あなたが好きそうな香味</p>
+          <div>
+            {preferenceTagSummaries.map((preferenceTag) => (
+              <span key={preferenceTag.tag}>{preferenceTag.tag}</span>
+            ))}
+          </div>
+        </div>
       ) : null}
     </section>
   );

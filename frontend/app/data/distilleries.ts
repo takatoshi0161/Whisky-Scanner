@@ -7,6 +7,7 @@ export type Bottle = {
   name: string;
   slug: string;
   tasteProfile: string;
+  preferenceTags: string[];
   recommendedFor: string;
   recommendationReasons: string[];
   recommendation?: BottleRecommendation;
@@ -26,6 +27,7 @@ type DistillerySeed = {
   keywords?: string[];
   bottleName?: string;
   tasteProfile?: string;
+  preferenceTags?: string[];
   recommendedFor?: string;
   recommendationReasons?: string[];
 };
@@ -49,6 +51,7 @@ function createDistillery(seed: DistillerySeed): Distillery {
   );
   const bottleName = seed.bottleName ?? `${seed.name} Single Malt`;
   const bottleSlug = createSlug(bottleName);
+  const recommendation = getBottleRecommendation(bottleSlug);
 
   return {
     slug: createSlug(seed.name),
@@ -62,11 +65,12 @@ function createDistillery(seed: DistillerySeed): Distillery {
         tasteProfile:
           seed.tasteProfile ??
           "モルトの甘さ、穏やかな樽香、軽い果実感を中心にした飲みやすい味わい。",
+        preferenceTags: seed.preferenceTags ?? recommendation?.directionTags ?? [],
         recommendedFor:
           seed.recommendedFor ??
           "まずは蒸留所の雰囲気を知りたい人や、強いクセよりも飲みやすさを優先したい人向け。",
         recommendationReasons: seed.recommendationReasons ?? [],
-        recommendation: getBottleRecommendation(bottleSlug),
+        recommendation,
       },
     ],
   };
