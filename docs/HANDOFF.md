@@ -266,6 +266,37 @@ For OCR failures on Vercel, inspect Function Logs for `[OCR]` entries. They incl
 - Preserve the existing `ScanUploader` flow unless the task explicitly asks to replace it.
 - Prefer readable implementation and realistic local data over premature backend/API work.
 
+## Branch Creation
+
+Before starting any work:
+
+1. Update the local repository from the latest `main`.
+2. Create the working branch from the latest `main`.
+3. Do not create feature branches from another feature branch unless explicitly requested.
+
+Example:
+
+```bash
+git checkout main
+git pull origin main
+git checkout -b feature/your-task
+```
+
+Reason:
+
+Creating branches from stale feature branches can accidentally include unrelated changes in Pull Requests.
+
+Typical examples:
+
+- `docs/HANDOFF.md` changes appearing in an unrelated feature PR
+- Previous issue work being mixed into a new PR
+- Unexpected files appearing in the diff
+
+For Whisky-Scanner:
+
+- Always create new work branches from the latest `main`
+- Never branch from an existing feature branch unless explicitly instructed
+
 ## Screenshot Policy
 
 Screenshots are useful but not mandatory for every PR.
