@@ -56,7 +56,7 @@ export function saveTastePreferenceInput({
     };
 
     if (!currentTag.bottleSlugs.includes(bottleSlug)) {
-      currentTag.count += 1;
+      currentTag.count += getReactionWeight(reaction);
       currentTag.bottleSlugs = [...currentTag.bottleSlugs, bottleSlug];
     }
 
@@ -74,6 +74,18 @@ export function saveTastePreferenceInput({
 
 function shouldAccumulatePreferenceTags(reaction: TastePreferenceReaction) {
   return reaction === "want_again" || reaction === "occasionally";
+}
+
+function getReactionWeight(reaction: TastePreferenceReaction) {
+  if (reaction === "want_again") {
+    return 2;
+  }
+
+  if (reaction === "occasionally") {
+    return 1;
+  }
+
+  return 0;
 }
 
 function readTastePreferences(storage: Storage): StoredTastePreferences {
