@@ -17,6 +17,13 @@ This is not a general distillery directory. Include bottles because they are use
 
 Initial coverage is intentionally broad. It is easier to remove lower-priority candidates later than to miss likely MVP candidates early. Prefer official bottlings, core range bottles, and major ongoing products. Bottlers, single-cask releases, event-only bottles, region-only bottles, and very short-term limited releases are generally out of scope. If the classification is unclear, keep the bottle as `Planned` until product review.
 
+## Coverage Summary
+
+- Supported Bottles: 168
+- Registered Bottles: 21
+- Recommendation Implemented: 10
+- Reviewed: 7
+
 ## Status Definitions
 
 | Status | Meaning |
@@ -46,7 +53,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Bowmore | 18 | Planned |
 | Caol Ila | 12 | Registered |
 | Caol Ila | Moch | Planned |
-| Bunnahabhain | 12 | Planned |
+| Bunnahabhain | 12 | Registered |
 | Bunnahabhain | Stiuireadair | Planned |
 | Bunnahabhain | Toiteach A Dha | Planned |
 | Bunnahabhain | 18 | Planned |
@@ -91,7 +98,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Arran | Quarter Cask | Planned |
 | Arran | Sherry Cask | Planned |
 | Arran | 18 | Planned |
-| Highland Park | 12 | Planned |
+| Highland Park | 12 | Registered |
 | Highland Park | 15 | Planned |
 | Highland Park | 18 | Planned |
 | Highland Park | Cask Strength | Planned |
@@ -131,7 +138,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Aberlour | 12 | Registered |
 | Aberlour | 16 | Planned |
 | Aberlour | A'bunadh | Planned |
-| Balvenie | DoubleWood 12 | Planned |
+| Balvenie | DoubleWood 12 | Registered |
 | Balvenie | Caribbean Cask 14 | Planned |
 | Balvenie | Single Barrel 15 | Planned |
 | Balvenie | PortWood 21 | Planned |
@@ -178,7 +185,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Distillery | Bottle | Status |
 | --- | --- | --- |
 | Auchentoshan | American Oak | Planned |
-| Auchentoshan | 12 | Planned |
+| Auchentoshan | 12 | Registered |
 | Auchentoshan | Three Wood | Planned |
 | Glenkinchie | 12 | Planned |
 | Glenkinchie | Distillers Edition | Planned |
@@ -206,8 +213,8 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | 山崎 | 12 | Planned |
 | 白州 | Distiller's Reserve | Planned |
 | 白州 | 12 | Planned |
-| 余市 | Single Malt | Planned |
-| 宮城峡 | Single Malt | Planned |
+| 余市 | Single Malt | Registered |
+| 宮城峡 | Single Malt | Registered |
 | 知多 | Single Grain | Planned |
 | 響 | Japanese Harmony | Planned |
 
