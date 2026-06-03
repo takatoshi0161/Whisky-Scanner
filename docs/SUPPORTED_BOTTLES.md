@@ -211,6 +211,39 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | 知多 | Single Grain | Planned |
 | 響 | Japanese Harmony | Planned |
 
+## Blended Scotch
+
+| Brand | Bottle | Status |
+| --- | --- | --- |
+| Johnnie Walker | Red Label | Planned |
+| Johnnie Walker | Black Label 12 | Planned |
+| Johnnie Walker | Double Black | Planned |
+| Johnnie Walker | Green Label 15 | Planned |
+| Johnnie Walker | Gold Label Reserve | Planned |
+| Johnnie Walker | Blue Label | Planned |
+| Chivas Regal | 12 | Planned |
+| Chivas Regal | Extra 13 | Planned |
+| Chivas Regal | Mizunara | Planned |
+| Chivas Regal | 18 | Planned |
+| Dewar's | White Label | Planned |
+| Dewar's | 12 | Planned |
+| Dewar's | 15 | Planned |
+| Dewar's | 18 | Planned |
+| Ballantine's | Finest | Planned |
+| Ballantine's | 12 | Planned |
+| Ballantine's | 17 | Planned |
+| Ballantine's | 21 | Planned |
+| The Famous Grouse | The Famous Grouse | Planned |
+
+## Blended Malt
+
+| Brand | Bottle | Status |
+| --- | --- | --- |
+| Monkey Shoulder | Monkey Shoulder | Planned |
+| Naked Malt | Naked Malt | Planned |
+| Compass Box | Orchard House | Planned |
+| Compass Box | Peat Monster | Planned |
+
 ## Future Candidates
 
 These are likely next additions after MVP scope review:
