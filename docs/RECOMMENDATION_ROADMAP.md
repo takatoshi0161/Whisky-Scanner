@@ -17,11 +17,11 @@ Use this document to:
 
 ## Current Coverage
 
-As of PR #70:
+After Laphroaig 10 recommendation wiring:
 
 - Supported Bottles: 168
 - Registered Bottles: 21
-- Recommendation Implemented: 10
+- Recommendation Implemented: 11
 - Reviewed: 7
 
 ## Prioritization Criteria
@@ -46,7 +46,7 @@ Highest-priority candidates for establishing Whisky-Scanner's recommendation cha
 | --- | --- | --- |
 | Ardbeg 10 | ピート・スモーク導線の基本。既に実装済みの場合は Recommendation 扱い。 | Recommendation |
 | Lagavulin 16 | 重厚なピートとシェリー寄り導線。既に実装済みの場合は Recommendation 扱い。 | Recommendation |
-| Laphroaig 10 | アイラ・強いピートの入口。 | Registered |
+| Laphroaig 10 | アイラ・強いピートの入口。 | Recommendation |
 | Springbank 10 | 潮気・麦の厚み・複雑さの導線。既に実装済みの場合は Recommendation 扱い。 | Recommendation |
 | Longrow Peated | Springbankからピート方向へ広げる候補。 | Planned |
 

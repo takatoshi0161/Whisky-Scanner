@@ -28,6 +28,16 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["adventurous", "quiet-night", "slow-drink"],
     sceneTags: ["bold-smoke", "solo-drink", "after-dinner"],
   },
+  laphroaig10yearold: {
+    bottleId: "laphroaig10yearold",
+    cardRecommendation:
+      "力強いスモークや潮気が印象的な一本。\n\nピートをもっと楽しみたいならArdbeg 10、\n海沿いらしい個性を少し違う形で味わうならTalisker 10もおすすめです。",
+    detailRecommendation:
+      "Laphroaig 10の魅力は、強いピートだけでなく、\n潮気や薬品感まで含めた独特の個性にあります。\n\nこの方向が好きなら、\nより力強いスモークを感じられるArdbeg 10や、\n潮気を活かしたTalisker 10へ進んでみるのも面白い選択です。\n\n逆にピートは好きだけれど少し甘さも欲しいなら、\nLagavulin 16のような重厚なタイプも候補になります。",
+    directionTags: ["peat-forward", "coastal", "medicinal", "smoky"],
+    moodTags: ["じっくり", "個性的", "夜更け"],
+    sceneTags: ["一人飲み", "バータイム", "ゆっくり飲みたい夜"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:

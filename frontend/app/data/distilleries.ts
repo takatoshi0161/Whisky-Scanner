@@ -218,6 +218,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islay",
     keywords: ["ラフロイグ"],
     bottleName: "Laphroaig 10 Year Old",
+    preferenceTags: ["ピート", "スモーク", "潮気", "薬品感", "アイラ"],
     tasteProfile: "薬品香を思わせる強いピート、海藻のような潮気、しっかりした煙たさ。",
     recommendedFor: "個性的で忘れにくい一本に挑戦したい人や、強いスモークが好きな人向け。",
   },
