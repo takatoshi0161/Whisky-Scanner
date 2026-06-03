@@ -21,7 +21,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 
 - Supported Bottles: 168
 - Registered Bottles: 21
-- Recommendation Implemented: 10
+- Recommendation Implemented: 11
 - Reviewed: 7
 
 ## Status Definitions
@@ -44,7 +44,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Ardbeg | Corryvreckan | Planned |
 | Lagavulin | 8 | Planned |
 | Lagavulin | 16 | Recommendation |
-| Laphroaig | 10 | Registered |
+| Laphroaig | 10 | Recommendation |
 | Laphroaig | Select | Planned |
 | Laphroaig | Quarter Cask | Planned |
 | Laphroaig | Lore | Planned |
