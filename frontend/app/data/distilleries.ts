@@ -350,7 +350,17 @@ const distillerySeeds: DistillerySeed[] = [
   },
   { name: "Inchmurrin", region: "Highland", keywords: ["インチマリン"] },
   { name: "Braeval", region: "Speyside", keywords: ["braes of glenlivet", "ブレイヴァル"] },
-  { name: "Longrow", region: "Campbeltown", keywords: ["ロングロウ"] },
+  {
+    name: "Longrow",
+    region: "Campbeltown",
+    keywords: ["ロングロウ"],
+    bottleName: "Longrow Peated",
+    preferenceTags: ["ピート", "スモーク", "潮気", "麦感", "キャンベルタウン"],
+    tasteProfile:
+      "力強いピートスモークに、潮気、麦の厚み、少しオイリーな質感が重なるキャンベルタウンらしい味わい。",
+    recommendedFor:
+      "アイラとは少し違うスモークや、麦感と潮気のある個性的な一本を試したい人向け。",
+  },
   { name: "Knockdhu", region: "Highland", keywords: ["an cnoc", "ノックドゥ"] },
   {
     name: "Yoichi",

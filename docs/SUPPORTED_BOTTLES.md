@@ -20,7 +20,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 ## Coverage Summary
 
 - Supported Bottles: 168
-- Registered Bottles: 21
+- Registered Bottles: 22
 - Recommendation Implemented: 11
 - Reviewed: 7
 
@@ -74,7 +74,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Springbank | 10 | Recommendation |
 | Springbank | 15 | Planned |
 | Springbank | 18 | Planned |
-| Longrow | Peated | Planned |
+| Longrow | Peated | Registered |
 | Longrow | Red | Planned |
 | Hazelburn | 10 | Planned |
 | Kilkerran | 12 | Planned |
