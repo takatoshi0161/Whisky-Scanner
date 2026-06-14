@@ -51,9 +51,9 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
   highlandpark12yearold: {
     bottleId: "highlandpark12yearold",
     cardRecommendation:
-      "蜂蜜のような甘みと穏やかなスモークが重なる一本。\n\nシェリー系の甘さが好きならThe Macallan 12へ、\n\nもう少し潮気やピートを感じたいならTalisker 10へ進んでみるのもおすすめです。",
+      "蜂蜜のような甘みと穏やかなスモークが重なる一本。\n\nシェリー系の甘さが好きならThe Macallan 12へ、\nもう少し潮気やピートを感じたいならTalisker 10へ進んでみるのもおすすめです。",
     detailRecommendation:
-      "Highland Park 12 の魅力は、\n\n蜂蜜のような甘みやシェリー樽のニュアンスに、\n\n控えめなスモークが重なるバランスにあります。\n\nこの方向が好きなら、\n\nよりシェリーの甘みを楽しめるThe Macallan 12や、\n\n潮気とピートを少し強めに感じられるTalisker 10へ進んでみるのも面白い選択です。\n\nピートに苦手意識がある人でも、\n\n甘みとのバランスで楽しみやすい一本です。",
+      "Highland Park 12 の魅力は、\n蜂蜜のような甘みやシェリー樽のニュアンスに、\n控えめなスモークが重なるバランスにあります。\n\nこの方向が好きなら、\nよりシェリーの甘みを楽しめるThe Macallan 12や、\n潮気とピートを少し強めに感じられるTalisker 10へ進んでみるのも面白い選択です。\n\nピートに苦手意識がある人でも、\n甘みとのバランスで楽しみやすい一本です。",
     directionTags: ["balanced-peat", "sherry", "honeyed", "island"],
     moodTags: ["落ち着いた夜", "穏やか", "少し広げたい"],
     sceneTags: ["食後", "ゆっくり飲みたい夜", "バータイム"],
@@ -61,9 +61,9 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
   oban14yearold: {
     bottleId: "oban14yearold",
     cardRecommendation:
-      "海沿いらしい潮気と、やわらかな果実感のバランスが心地よい一本。\n\nTalisker 10の潮気が好きなら少し穏やかな方向として、\n\nArran 10が好きなら海沿いのニュアンスを足す一本としておすすめです。",
+      "海沿いらしい潮気と、やわらかな果実感のバランスが心地よい一本。\n\nTalisker 10の潮気が好きなら少し穏やかな方向として、\nArran 10が好きなら海沿いのニュアンスを足す一本としておすすめです。",
     detailRecommendation:
-      "Oban 14 の魅力は、\n\n強く主張しすぎない潮気と、\n\n果実感や麦のやわらかさがきれいにまとまっているところにあります。\n\nTalisker 10の海沿いらしさが好きだけれど、\n\nもう少し穏やかに楽しみたいならOban 14は良い候補です。\n\nArran 10のような飲みやすさが好きな人にも、\n\n少し潮気のある方向へ広げる一本として試しやすいと思います。",
+      "Oban 14 の魅力は、\n強く主張しすぎない潮気と、\n果実感や麦のやわらかさがきれいにまとまっているところにあります。\n\nTalisker 10の海沿いらしさが好きだけれど、\nもう少し穏やかに楽しみたいならOban 14は良い候補です。\n\nArran 10のような飲みやすさが好きな人にも、\n少し潮気のある方向へ広げる一本として試しやすいと思います。",
     directionTags: ["coastal", "balanced", "fruit-forward", "highland"],
     moodTags: ["穏やか", "落ち着いた夜", "自然体"],
     sceneTags: ["食後", "ゆっくり飲みたい夜", "初めてのバー"],
