@@ -111,6 +111,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Islands",
     keywords: ["ハイランドパーク"],
     bottleName: "Highland Park 12 Year Old",
+    preferenceTags: ["穏やかなピート", "シェリー", "蜂蜜", "バランス", "島もの"],
   },
   {
     name: "Auchentoshan",
@@ -338,7 +339,17 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["allt a bhainne", "allt-a-bhainne", "アルタベーン"],
   },
   { name: "Mosstowie", region: "Speyside", keywords: ["mosstowie"] },
-  { name: "Oban", region: "Highland", keywords: ["オーバン"] },
+  {
+    name: "Oban",
+    region: "Highland",
+    keywords: ["オーバン"],
+    bottleName: "Oban 14 Year Old",
+    preferenceTags: ["潮気", "果実感", "麦感", "バランス", "ハイランド"],
+    tasteProfile:
+      "穏やかな潮気に、オレンジや洋梨を思わせる果実感、麦のやわらかな甘みが重なるバランスのよい味わい。",
+    recommendedFor:
+      "強すぎない潮気や果実感を楽しみながら、海沿いらしい個性を穏やかに味わいたい人向け。",
+  },
   {
     name: "Lagavulin",
     region: "Islay",
