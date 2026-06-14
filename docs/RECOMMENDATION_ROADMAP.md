@@ -17,11 +17,11 @@ Use this document to:
 
 ## Current Coverage
 
-After Longrow Peated registration:
+After Longrow Peated recommendation wiring:
 
 - Supported Bottles: 168
 - Registered Bottles: 22
-- Recommendation Implemented: 11
+- Recommendation Implemented: 12
 - Reviewed: 7
 
 ## Prioritization Criteria
@@ -48,7 +48,7 @@ Highest-priority candidates for establishing Whisky-Scanner's recommendation cha
 | Lagavulin 16 | 重厚なピートとシェリー寄り導線。既に実装済みの場合は Recommendation 扱い。 | Recommendation |
 | Laphroaig 10 | アイラ・強いピートの入口。 | Recommendation |
 | Springbank 10 | 潮気・麦の厚み・複雑さの導線。既に実装済みの場合は Recommendation 扱い。 | Recommendation |
-| Longrow Peated | Springbankからピート方向へ広げる候補。 | Registered |
+| Longrow Peated | Springbankからピート方向へ広げる候補。 | Recommendation |
 
 ### Wave 2: Bridge Bottles
 
