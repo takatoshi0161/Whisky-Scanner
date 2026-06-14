@@ -38,6 +38,16 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["じっくり", "個性的", "夜更け"],
     sceneTags: ["一人飲み", "バータイム", "ゆっくり飲みたい夜"],
   },
+  longrowpeated: {
+    bottleId: "longrowpeated",
+    cardRecommendation:
+      "潮気や麦の厚みに、心地よいスモークが重なる一本。\nこの方向が好きならSpringbank 10で麦の個性を楽しんだり、\nArdbeg 10でさらに力強いピートへ進んでみるのもおすすめです。",
+    detailRecommendation:
+      "Longrow Peated の魅力は、\nキャンベルタウンらしい麦の厚みや潮気を残しながら、\nしっかりとスモークを感じられるところにあります。\nこの方向が好きなら、\nSpringbank 10でより複雑なバランスを楽しんだり、\nArdbeg 10でピートをさらに前面に感じるスタイルへ進むのも面白い選択です。\nまた、潮気や力強さを別の形で味わいたいなら、\nTalisker 10も候補になります。",
+    directionTags: ["peated", "coastal", "malt-forward", "campbeltown"],
+    moodTags: ["じっくり", "落ち着いた夜", "探求したい"],
+    sceneTags: ["一人飲み", "バータイム", "ゆっくり飲みたい夜"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:
