@@ -68,6 +68,26 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["穏やか", "落ち着いた夜", "自然体"],
     sceneTags: ["食後", "ゆっくり飲みたい夜", "初めてのバー"],
   },
+  balveniedoublewood12yearold: {
+    bottleId: "balveniedoublewood12yearold",
+    cardRecommendation:
+      "蜂蜜のような甘みと、樽由来のやわらかな香ばしさが楽しめる一本。\n\nGlenfiddich 12が好きなら少し樽感を足す方向で、\nThe Macallan 12が好きならより親しみやすい甘さとしておすすめです。",
+    detailRecommendation:
+      "Balvenie DoubleWood 12 の魅力は、\n蜂蜜のような甘みやバニラ感に、\n樽由来の香ばしさがやわらかく重なるところにあります。\n\nGlenfiddich 12の飲みやすさが好きなら、\n少し樽感や厚みを足す一本として楽しみやすいと思います。\n\nThe Macallan 12のような甘みが好きだけれど、\nもう少し肩の力を抜いて飲みたいときにも候補になります。",
+    directionTags: ["honeyed", "oak", "speyside", "smooth"],
+    moodTags: ["穏やか", "リラックス", "親しみやすい"],
+    sceneTags: ["家飲み", "食後", "ゆっくり飲みたい夜"],
+  },
+  glenallachie15yearold: {
+    bottleId: "glenallachie15yearold",
+    cardRecommendation:
+      "濃厚なシェリー感と、ドライフルーツのような甘みが印象的な一本。\n\nGlenfarclas 12が好きなら、より厚みのあるシェリー方向へ。\nThe Macallan 12が好きなら、甘みをさらに深く楽しむ一本としておすすめです。",
+    detailRecommendation:
+      "GlenAllachie 15 の魅力は、\nしっかりしたシェリー樽の甘みと、\nドライフルーツやチョコレートを思わせる濃厚さにあります。\n\nGlenfarclas 12のシェリー感が好きなら、\nより厚みと甘みを増した方向として楽しみやすい一本です。\n\nThe Macallan 12の上品な甘みが好きな人にも、\nもう少し濃く、深いシェリー系へ広げる候補になります。",
+    directionTags: ["sherry-rich", "dried-fruit", "full-bodied", "speyside"],
+    moodTags: ["じっくり", "濃厚", "夜更け"],
+    sceneTags: ["食後", "バータイム", "ゆっくり飲みたい夜"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:

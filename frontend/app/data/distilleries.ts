@@ -244,6 +244,7 @@ const distillerySeeds: DistillerySeed[] = [
     region: "Speyside",
     keywords: ["バルヴェニー"],
     bottleName: "Balvenie DoubleWood 12 Year Old",
+    preferenceTags: ["蜂蜜", "バニラ", "樽感", "甘み", "スペイサイド"],
   },
   { name: "Dailuaine", region: "Speyside", keywords: ["ダルユーイン"] },
   { name: "Ledaig", region: "Islands", keywords: ["レダイグ"] },
@@ -332,7 +333,17 @@ const distillerySeeds: DistillerySeed[] = [
   { name: "Glencraig", region: "Speyside", keywords: ["glencraig"] },
   { name: "Tormore", region: "Speyside", keywords: ["トーモア"] },
   { name: "Cardhu", region: "Speyside", keywords: ["カードゥ"] },
-  { name: "Glenallachie", region: "Speyside", keywords: ["glen allachie", "グレンアラヒー"] },
+  {
+    name: "Glenallachie",
+    region: "Speyside",
+    keywords: ["glen allachie", "グレンアラヒー"],
+    bottleName: "GlenAllachie 15 Year Old",
+    preferenceTags: ["シェリー", "ドライフルーツ", "チョコレート", "濃厚", "スペイサイド"],
+    tasteProfile:
+      "シェリー樽由来の濃厚な甘みに、レーズンのようなドライフルーツ感とチョコレートを思わせる深みが重なる味わい。",
+    recommendedFor:
+      "シェリー樽の甘みをしっかり楽しみたい人や、濃厚で厚みのある一本を食後にゆっくり味わいたい人向け。",
+  },
   {
     name: "Allt-a'Bhainne",
     region: "Speyside",

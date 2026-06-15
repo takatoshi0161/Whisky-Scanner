@@ -17,11 +17,11 @@ Use this document to:
 
 ## Current Coverage
 
-After Highland Park 12 and Oban 14 recommendation wiring:
+After Wave 2 recommendation wiring:
 
 - Supported Bottles: 168
-- Registered Bottles: 23
-- Recommendation Implemented: 14
+- Registered Bottles: 24
+- Recommendation Implemented: 16
 - Reviewed: 7
 
 ## Prioritization Criteria
@@ -57,8 +57,8 @@ Candidates that connect peat, sherry, fruit, region cues, and drinking styles.
 | Bottle | Reason | Status |
 | --- | --- | --- |
 | Highland Park 12 | ピートとシェリーの橋渡し。 | Recommendation |
-| GlenAllachie 15 | シェリー樽・濃厚甘みの導線。 | Planned |
-| Balvenie DoubleWood 12 | Speysideの甘みと樽感の入口。 | Registered |
+| GlenAllachie 15 | シェリー樽・濃厚甘みの導線。 | Recommendation |
+| Balvenie DoubleWood 12 | Speysideの甘みと樽感の入口。 | Recommendation |
 | Oban 14 | Highland / Coastal感の入口。 | Recommendation |
 
 ### Wave 3: Japan Entry Points
