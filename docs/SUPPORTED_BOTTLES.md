@@ -20,8 +20,8 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 ## Coverage Summary
 
 - Supported Bottles: 168
-- Registered Bottles: 23
-- Recommendation Implemented: 14
+- Registered Bottles: 24
+- Recommendation Implemented: 16
 - Reviewed: 7
 
 ## Status Definitions
@@ -129,7 +129,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Glenfarclas | 21 | Planned |
 | Glenfarclas | 105 | Planned |
 | GlenAllachie | 12 | Planned |
-| GlenAllachie | 15 | Planned |
+| GlenAllachie | 15 | Recommendation |
 | GlenAllachie | 10 Cask Strength | Planned |
 | The Glenlivet | 12 | Registered |
 | The Glenlivet | Founder's Reserve | Planned |
@@ -138,7 +138,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Aberlour | 12 | Registered |
 | Aberlour | 16 | Planned |
 | Aberlour | A'bunadh | Planned |
-| Balvenie | DoubleWood 12 | Registered |
+| Balvenie | DoubleWood 12 | Recommendation |
 | Balvenie | Caribbean Cask 14 | Planned |
 | Balvenie | Single Barrel 15 | Planned |
 | Balvenie | PortWood 21 | Planned |
