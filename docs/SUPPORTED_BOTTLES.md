@@ -20,8 +20,8 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 ## Coverage Summary
 
 - Supported Bottles: 168
-- Registered Bottles: 22
-- Recommendation Implemented: 12
+- Registered Bottles: 23
+- Recommendation Implemented: 14
 - Reviewed: 7
 
 ## Status Definitions
@@ -98,7 +98,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Arran | Quarter Cask | Planned |
 | Arran | Sherry Cask | Planned |
 | Arran | 18 | Planned |
-| Highland Park | 12 | Registered |
+| Highland Park | 12 | Recommendation |
 | Highland Park | 15 | Planned |
 | Highland Park | 18 | Planned |
 | Highland Park | Cask Strength | Planned |
@@ -160,7 +160,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Glenmorangie | Quinta Ruban | Planned |
 | Glenmorangie | Nectar d'Or | Planned |
 | Glenmorangie | 18 | Planned |
-| Oban | 14 | Planned |
+| Oban | 14 | Recommendation |
 | Oban | Little Bay | Planned |
 | Clynelish | 14 | Planned |
 | Deanston | 12 | Planned |
