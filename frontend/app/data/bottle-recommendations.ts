@@ -108,6 +108,26 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["refreshing", "calm", "outdoors"],
     sceneTags: ["early-evening", "summer-night", "quiet-drink"],
   },
+  yoichisinglemalt: {
+    bottleId: "yoichisinglemalt",
+    cardRecommendation:
+      "余市の力強さや穏やかなスモーキーさが印象に残ったなら、TaliskerやBenromachも面白い選択肢です。似ている部分と違う部分を比べると、自分の好みが見えてきます。",
+    detailRecommendation:
+      "余市を飲んで心地よかったなら、少しだけ海沿いやスモーキーな方向へ広げてみるのがおすすめです。\n\nTaliskerは潮風を感じるような個性を、Benromachは穏やかなスモーキーさと厚みを楽しめます。どちらも余市とは違う魅力がありますが、自然につながる部分があります。\n\n力強さなのか、香ばしさなのか、それとも海沿いのニュアンスなのか。自分が惹かれる要素を探してみると、次の一本選びがさらに楽しくなります。",
+    directionTags: ["coastal", "smoky", "japanese", "exploration"],
+    moodTags: ["reflective", "calm", "adventurous"],
+    sceneTags: ["after-dinner", "quiet-evening", "bar-time"],
+  },
+  miyagikyosinglemalt: {
+    bottleId: "miyagikyosinglemalt",
+    cardRecommendation:
+      "宮城峡のやわらかな果実感が心地よかったなら、ArranやGlenfiddichも面白い選択肢です。飲み比べることで、自分の好きな果実感の方向が見えてきます。",
+    detailRecommendation:
+      "宮城峡を飲んで印象に残ったのが果実感ややわらかな飲み口なら、その方向をもう少し広げてみるのがおすすめです。\n\nArranは明るく華やかな果実感を、Glenfiddichは親しみやすく軽やかな果実感を楽しめます。同じフルーティなタイプでも印象は少しずつ異なります。\n\nゆっくり飲みながら、自分が惹かれるのが華やかさなのか、やさしい甘さなのかを探してみると、次の一本選びのヒントになります。",
+    directionTags: ["fruity", "elegant", "japanese", "exploration"],
+    moodTags: ["relaxed", "calm", "reflective"],
+    sceneTags: ["quiet-evening", "after-dinner", "first-whisky-journey"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:

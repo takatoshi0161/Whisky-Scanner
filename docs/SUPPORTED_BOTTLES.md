@@ -21,7 +21,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 
 - Supported Bottles: 168
 - Registered Bottles: 26
-- Recommendation Implemented: 18
+- Recommendation Implemented: 20
 - Reviewed: 7
 
 ## Status Definitions
@@ -213,8 +213,8 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | 山崎 | 12 | Planned |
 | 白州 | Single Malt | Recommendation |
 | 白州 | 12 | Planned |
-| 余市 | Single Malt | Registered |
-| 宮城峡 | Single Malt | Registered |
+| 余市 | Single Malt | Recommendation |
+| 宮城峡 | Single Malt | Recommendation |
 | 知多 | Single Grain | Planned |
 | 響 | Japanese Harmony | Planned |
 
