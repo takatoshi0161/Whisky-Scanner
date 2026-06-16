@@ -20,8 +20,8 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 ## Coverage Summary
 
 - Supported Bottles: 168
-- Registered Bottles: 24
-- Recommendation Implemented: 16
+- Registered Bottles: 26
+- Recommendation Implemented: 18
 - Reviewed: 7
 
 ## Status Definitions
@@ -209,9 +209,9 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 
 | Distillery | Bottle | Status |
 | --- | --- | --- |
-| 山崎 | Distiller's Reserve | Planned |
+| 山崎 | Single Malt | Recommendation |
 | 山崎 | 12 | Planned |
-| 白州 | Distiller's Reserve | Planned |
+| 白州 | Single Malt | Recommendation |
 | 白州 | 12 | Planned |
 | 余市 | Single Malt | Registered |
 | 宮城峡 | Single Malt | Registered |

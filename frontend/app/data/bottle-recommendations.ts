@@ -88,6 +88,26 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["じっくり", "濃厚", "夜更け"],
     sceneTags: ["食後", "バータイム", "ゆっくり飲みたい夜"],
   },
+  yamazakisinglemalt: {
+    bottleId: "yamazakisinglemalt",
+    cardRecommendation:
+      "華やかさや飲みやすさが印象に残ったなら、次は宮城峡や白州も面白い選択肢です。果実感や樽の表情の違いを比べると、自分の好みが少し見えてきます。",
+    detailRecommendation:
+      "山崎を飲んで心地よかったなら、まずは日本のシングルモルトを横に広げてみるのがおすすめです。\n\n白州なら軽やかで爽やかな方向へ、宮城峡ならやわらかな果実感の方向へ進めます。同じ飲みやすさの中でも印象は少しずつ違います。\n\nゆっくり飲みながら、自分が惹かれるのが果実感なのか、樽由来の甘さなのかを探してみると、次の一本選びが楽しくなります。",
+    directionTags: ["fruity", "elegant", "japanese", "exploration"],
+    moodTags: ["relaxed", "calm", "reflective"],
+    sceneTags: ["quiet-evening", "first-japanese-whisky", "after-dinner"],
+  },
+  hakushusinglemalt: {
+    bottleId: "hakushusinglemalt",
+    cardRecommendation:
+      "白州の爽やかさが心地よかったなら、Taliskerや余市のような少し個性のある方向も試してみたくなるかもしれません。",
+    detailRecommendation:
+      "白州を飲んで印象に残ったのが爽やかさや軽やかさなら、その感覚を起点に少しずつ世界を広げてみるのがおすすめです。\n\nTaliskerは潮風のニュアンスを、余市は穏やかなスモーキーさを感じられます。どちらも白州とは違う個性がありますが、自然につながる部分があります。\n\n静かな時間に一杯飲みながら、自分が求めているのが爽快感なのか、ほのかなスモーキーさなのかを探してみてください。",
+    directionTags: ["fresh", "coastal", "lightly-smoky", "japanese"],
+    moodTags: ["refreshing", "calm", "outdoors"],
+    sceneTags: ["early-evening", "summer-night", "quiet-drink"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:
