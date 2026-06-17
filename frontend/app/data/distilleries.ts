@@ -437,7 +437,7 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["johnnie walker", "johnny walker", "ジョニーウォーカー"],
     bottleName: "Johnnie Walker Black Label",
     preferenceTags: ["飲みやすい", "ほんのりスモーキー", "バランス型", "親しみやすい"],
-    tasteProfile: "また飲みたい",
+    tasteProfile: "飲みやすい・ほんのりスモーキー・バランス型",
     recommendedFor: "飲みやすさの中に少しスモーキーさを感じたい人",
   },
   {
@@ -446,7 +446,7 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["chivas regal", "chivas", "シーバスリーガル"],
     bottleName: "Chivas Regal 12",
     preferenceTags: ["なめらか", "やさしい甘み", "フルーティ", "飲みやすい"],
-    tasteProfile: "また飲みたい",
+    tasteProfile: "なめらか・やさしい甘み・フルーティ",
     recommendedFor: "なめらかな甘みや親しみやすい味わいが好きな人",
   },
   {
@@ -455,7 +455,7 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["dewars", "dewar's", "デュワーズ"],
     bottleName: "Dewar's 12",
     preferenceTags: ["軽やか", "バランス型", "飲みやすい", "すっきり"],
-    tasteProfile: "また飲みたい",
+    tasteProfile: "軽やか・バランス型・すっきり",
     recommendedFor: "軽やかでバランスの良い味わいから広げたい人",
   },
   {
