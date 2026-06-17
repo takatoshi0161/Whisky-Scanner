@@ -17,11 +17,11 @@ Use this document to:
 
 ## Current Coverage
 
-After Wave 3 Japanese PR 1:
+After Wave 3 Japanese PR 2:
 
 - Supported Bottles: 168
 - Registered Bottles: 26
-- Recommendation Implemented: 18
+- Recommendation Implemented: 20
 - Reviewed: 7
 
 ## Prioritization Criteria
@@ -69,8 +69,8 @@ Entry points for Japanese users and Japan-market familiarity.
 | --- | --- | --- |
 | 山崎 Single Malt | 日本市場での認知度が高い入口。 | Recommendation |
 | 白州 Single Malt | 軽やかさ・ハーブ・森感の入口。 | Recommendation |
-| 余市 Single Malt | 日本のピート・厚みの入口。 | Registered |
-| 宮城峡 Single Malt | 果実感・やわらかさの入口。 | Registered |
+| 余市 Single Malt | 日本のピート・厚みの入口。 | Recommendation |
+| 宮城峡 Single Malt | 果実感・やわらかさの入口。 | Recommendation |
 
 ### Wave 4: Blended / Blended Malt Entry Points
 
