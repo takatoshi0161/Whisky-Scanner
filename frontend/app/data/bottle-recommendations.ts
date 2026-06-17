@@ -128,6 +128,36 @@ const bottleRecommendations: Record<string, BottleRecommendation> = {
     moodTags: ["relaxed", "calm", "reflective"],
     sceneTags: ["quiet-evening", "after-dinner", "first-whisky-journey"],
   },
+  johnniewalkerblacklabel: {
+    bottleId: "johnniewalkerblacklabel",
+    cardRecommendation:
+      "Johnnie Walker Black Label のスモーキーさや飲みやすさが印象に残ったなら、次は Talisker 10 や Highland Park 12 も面白い選択肢です。ブレンデッドの親しみやすさから、少し個性のあるシングルモルトへ進めます。",
+    detailRecommendation:
+      "Johnnie Walker Black Label を飲んで心地よかったなら、次はその中にあるスモーキーさや厚みを少し広げてみるのがおすすめです。\n\nTalisker 10 は潮風を感じるような力強さへ、Highland Park 12 は甘みと穏やかなスモーキーさのバランスへ進めます。どちらも急に難しくなりすぎず、ブレンデッドから自然に一歩先へ進める一本です。\n\n飲みやすさの中で、自分が惹かれたのがスモーキーさなのか、甘みとのバランスなのかを探してみると、次の一本が選びやすくなります。",
+    directionTags: ["smoky", "balanced", "bridge", "entry-point"],
+    moodTags: ["relaxed", "casual", "curious"],
+    sceneTags: ["bar-time", "casual-drink", "first-step"],
+  },
+  chivasregal12: {
+    bottleId: "chivasregal12",
+    cardRecommendation:
+      "Chivas Regal 12 のなめらかさや甘みが心地よかったなら、Glenfiddich 12 や Balvenie DoubleWood 12 も試しやすい候補です。やさしい甘さから、シングルモルトの果実感や樽感へ自然に広げられます。",
+    detailRecommendation:
+      "Chivas Regal 12 を飲んで印象に残ったのが、なめらかさややさしい甘みなら、その方向をシングルモルトで少し広げてみるのがおすすめです。\n\nGlenfiddich 12 は軽やかな果実感へ、Balvenie DoubleWood 12 はより丸みのある甘さと樽のニュアンスへ進めます。どちらも親しみやすく、ブレンデッドから次の一本を探すときに選びやすい候補です。\n\n自分が好きなのが軽やかなフルーティさなのか、少し厚みのある甘さなのかを比べると、好みの輪郭が見えてきます。",
+    directionTags: ["fruity", "sweet", "smooth", "entry-point"],
+    moodTags: ["relaxed", "calm", "easygoing"],
+    sceneTags: ["casual-drink", "after-dinner", "first-single-malt"],
+  },
+  dewars12: {
+    bottleId: "dewars12",
+    cardRecommendation:
+      "Dewar's 12 の軽やかさやバランスの良さが印象に残ったなら、Arran 10 や Oban 14 も面白い選択肢です。飲みやすさを保ちながら、果実感や海沿いのニュアンスへ少し広げられます。",
+    detailRecommendation:
+      "Dewar's 12 を飲んで心地よかったなら、次はその軽やかさやバランスの良さを起点に、少しだけ個性を足してみるのがおすすめです。\n\nArran 10 は明るい果実感へ、Oban 14 は穏やかな海沿いのニュアンスへ進めます。どちらも飲みにくさは少なく、ブレンデッドからシングルモルトへ進むときの自然な候補になります。\n\nすっきりした飲みやすさが好きなのか、そこに果実感や潮っぽさが加わると楽しいのかを試してみると、次の一本選びがしやすくなります。",
+    directionTags: ["balanced", "fruity", "light", "entry-point"],
+    moodTags: ["relaxed", "refreshing", "casual"],
+    sceneTags: ["casual-drink", "early-evening", "first-single-malt"],
+  },
   bowmore12yearold: {
     bottleId: "bowmore12yearold",
     cardRecommendation:

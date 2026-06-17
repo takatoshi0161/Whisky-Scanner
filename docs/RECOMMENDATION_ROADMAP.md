@@ -17,11 +17,11 @@ Use this document to:
 
 ## Current Coverage
 
-After Wave 3 Japanese PR 2:
+After Wave 4 Blended Scotch entry points:
 
 - Supported Bottles: 168
-- Registered Bottles: 26
-- Recommendation Implemented: 20
+- Registered Bottles: 29
+- Recommendation Implemented: 23
 - Reviewed: 7
 
 ## Prioritization Criteria
@@ -78,9 +78,9 @@ Important candidates for users whose whisky memory starts from widely available 
 
 | Bottle | Reason | Status |
 | --- | --- | --- |
-| Johnnie Walker Black Label 12 | 多く飲まれるブレンデッド。スモーク導線の入口。 | Planned |
-| Chivas Regal 12 | 甘み・飲みやすさ・Speyside導線の入口。 | Planned |
-| Dewar's 12 | ハイボールや食中酒導線の入口。 | Planned |
+| Johnnie Walker Black Label | 多く飲まれるブレンデッド。スモーク導線の入口。 | Recommendation |
+| Chivas Regal 12 | 甘み・飲みやすさ・Speyside導線の入口。 | Recommendation |
+| Dewar's 12 | ハイボールや食中酒導線の入口。 | Recommendation |
 | Monkey Shoulder | ブレンデッドモルトからSpeyside系へつなぐ入口。 | Planned |
 
 ## Operational Rules
