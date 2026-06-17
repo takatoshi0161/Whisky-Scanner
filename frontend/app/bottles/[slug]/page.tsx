@@ -36,6 +36,9 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
 
   const regionDescription = getRegionDescription(bottle.region);
   const detailRecommendation = bottle.recommendation?.detailRecommendation;
+  const detailRecommendationParagraphs = detailRecommendation
+    ? splitRecommendationParagraphs(detailRecommendation)
+    : [];
   const fallbackRecommendationReasons = detailRecommendation
     ? []
     : bottle.recommendationReasons;
@@ -76,7 +79,9 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
           <p className="sectionKicker">Reason</p>
           <h2 id="reason-title">おすすめ理由</h2>
           {detailRecommendation ? (
-            <p>{detailRecommendation}</p>
+            detailRecommendationParagraphs.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))
           ) : (
             <ul className="reasonList">
               {fallbackRecommendationReasons.map((reason) => (
@@ -101,4 +106,11 @@ export default async function BottleDetailPage({ params }: BottleDetailPageProps
 
     </main>
   );
+}
+
+function splitRecommendationParagraphs(recommendation: string) {
+  return recommendation
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter(Boolean);
 }
