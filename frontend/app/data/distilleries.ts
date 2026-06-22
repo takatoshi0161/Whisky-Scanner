@@ -390,7 +390,8 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["余市"],
     bottleName: "Yoichi Single Malt",
     preferenceTags: ["力強い", "香ばしい", "穏やかなスモーキーさ", "厚みがある"],
-    tasteProfile: "また飲みたい",
+    tasteProfile:
+      "力強い麦の厚みに、香ばしさと穏やかなスモーキーさが重なる、飲みごたえのある味わい。",
     recommendedFor: "力強さと穏やかなスモーキーさを楽しみたい人",
   },
   { name: "Cooley", region: "Ireland", keywords: ["クーリー"] },
@@ -401,7 +402,8 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["山崎"],
     bottleName: "Yamazaki Single Malt",
     preferenceTags: ["華やか", "果実感", "バランス型", "飲みやすい"],
-    tasteProfile: "また飲みたい",
+    tasteProfile:
+      "華やかな果実感とやわらかな甘みが重なり、樽由来の奥行きも感じられるバランスのよい味わい。",
     recommendedFor: "果実感やバランスの良さを楽しみたい人",
   },
   {
@@ -410,7 +412,8 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["白州"],
     bottleName: "Hakushu Single Malt",
     preferenceTags: ["爽やか", "軽やか", "森林感", "穏やかなスモーキーさ"],
-    tasteProfile: "また飲みたい",
+    tasteProfile:
+      "爽やかな香りと軽やかな飲み口に、森林を思わせる清涼感と穏やかなスモーキーさが重なる味わい。",
     recommendedFor: "爽やかな香りと軽やかな飲み口が好きな人",
   },
   {
@@ -428,7 +431,8 @@ const distillerySeeds: DistillerySeed[] = [
     keywords: ["宮城峡"],
     bottleName: "Miyagikyo Single Malt",
     preferenceTags: ["果実感", "やわらかい", "華やか", "飲みやすい"],
-    tasteProfile: "また飲みたい",
+    tasteProfile:
+      "やわらかな果実感と華やかな香りに、なめらかな甘みが広がる飲みやすい味わい。",
     recommendedFor: "やわらかな果実感と飲みやすさを楽しみたい人",
   },
   {
