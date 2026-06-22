@@ -22,7 +22,7 @@ After Wave 4 Blended Scotch entry points:
 - Supported Bottles: 168
 - Registered Bottles: 29
 - Recommendation Implemented: 23
-- Reviewed: 7
+- Reviewed: 14
 
 ## Prioritization Criteria
 
@@ -67,10 +67,10 @@ Entry points for Japanese users and Japan-market familiarity.
 
 | Bottle | Reason | Status |
 | --- | --- | --- |
-| 山崎 Single Malt | 日本市場での認知度が高い入口。 | Recommendation |
-| 白州 Single Malt | 軽やかさ・ハーブ・森感の入口。 | Recommendation |
-| 余市 Single Malt | 日本のピート・厚みの入口。 | Recommendation |
-| 宮城峡 Single Malt | 果実感・やわらかさの入口。 | Recommendation |
+| 山崎 Single Malt | 日本市場での認知度が高い入口。 | Reviewed |
+| 白州 Single Malt | 軽やかさ・ハーブ・森感の入口。 | Reviewed |
+| 余市 Single Malt | 日本のピート・厚みの入口。 | Reviewed |
+| 宮城峡 Single Malt | 果実感・やわらかさの入口。 | Reviewed |
 
 ### Wave 4: Blended / Blended Malt Entry Points
 
@@ -78,9 +78,9 @@ Important candidates for users whose whisky memory starts from widely available 
 
 | Bottle | Reason | Status |
 | --- | --- | --- |
-| Johnnie Walker Black Label | 多く飲まれるブレンデッド。スモーク導線の入口。 | Recommendation |
-| Chivas Regal 12 | 甘み・飲みやすさ・Speyside導線の入口。 | Recommendation |
-| Dewar's 12 | ハイボールや食中酒導線の入口。 | Recommendation |
+| Johnnie Walker Black Label | 多く飲まれるブレンデッド。スモーク導線の入口。 | Reviewed |
+| Chivas Regal 12 | 甘み・飲みやすさ・Speyside導線の入口。 | Reviewed |
+| Dewar's 12 | ハイボールや食中酒導線の入口。 | Reviewed |
 | Monkey Shoulder | ブレンデッドモルトからSpeyside系へつなぐ入口。 | Planned |
 
 ## Operational Rules
