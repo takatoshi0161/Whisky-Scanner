@@ -22,7 +22,7 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 - Supported Bottles: 168
 - Registered Bottles: 29
 - Recommendation Implemented: 23
-- Reviewed: 7
+- Reviewed: 14
 
 ## Status Definitions
 
@@ -209,12 +209,12 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 
 | Distillery | Bottle | Status |
 | --- | --- | --- |
-| 山崎 | Single Malt | Recommendation |
+| 山崎 | Single Malt | Reviewed |
 | 山崎 | 12 | Planned |
-| 白州 | Single Malt | Recommendation |
+| 白州 | Single Malt | Reviewed |
 | 白州 | 12 | Planned |
-| 余市 | Single Malt | Recommendation |
-| 宮城峡 | Single Malt | Recommendation |
+| 余市 | Single Malt | Reviewed |
+| 宮城峡 | Single Malt | Reviewed |
 | 知多 | Single Grain | Planned |
 | 響 | Japanese Harmony | Planned |
 
@@ -223,17 +223,17 @@ Initial coverage is intentionally broad. It is easier to remove lower-priority c
 | Brand | Bottle | Status |
 | --- | --- | --- |
 | Johnnie Walker | Red Label | Planned |
-| Johnnie Walker | Black Label | Recommendation |
+| Johnnie Walker | Black Label | Reviewed |
 | Johnnie Walker | Double Black | Planned |
 | Johnnie Walker | Green Label 15 | Planned |
 | Johnnie Walker | Gold Label Reserve | Planned |
 | Johnnie Walker | Blue Label | Planned |
-| Chivas Regal | 12 | Recommendation |
+| Chivas Regal | 12 | Reviewed |
 | Chivas Regal | Extra 13 | Planned |
 | Chivas Regal | Mizunara | Planned |
 | Chivas Regal | 18 | Planned |
 | Dewar's | White Label | Planned |
-| Dewar's | 12 | Recommendation |
+| Dewar's | 12 | Reviewed |
 | Dewar's | 15 | Planned |
 | Dewar's | 18 | Planned |
 | Ballantine's | Finest | Planned |
