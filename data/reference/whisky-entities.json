@@ -1,0 +1,1700 @@
+{
+  "schema_version": 1,
+  "reference_id": "whisky-scanner-entities-v1",
+  "entries": [
+    {
+      "canonical_name": "Glenfarclas",
+      "aliases": [
+        "グレンファークラス"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenlivet",
+      "aliases": [
+        "the glenlivet",
+        "ザ グレンリベット",
+        "グレンリベット"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Bowmore",
+      "aliases": [
+        "ボウモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Highland Park",
+      "aliases": [
+        "ハイランドパーク"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Auchentoshan",
+      "aliases": [
+        "オーヘントッシャン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Macduff",
+      "aliases": [
+        "glen deveron",
+        "マクダフ",
+        "グレンデヴェロン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Longmorn",
+      "aliases": [
+        "ロングモーン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tamdhu",
+      "aliases": [
+        "タムデュー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Grant",
+      "aliases": [
+        "glengrant",
+        "グレングラント"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Bunnahabhain",
+      "aliases": [
+        "ブナハーブン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tomatin",
+      "aliases": [
+        "トマーティン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Benriach",
+      "aliases": [
+        "ben riach",
+        "ベンリアック"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Speyside",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Dalmore",
+      "aliases": [
+        "ダルモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Talisker",
+      "aliases": [
+        "タリスカー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenfiddich",
+      "aliases": [
+        "グレンフィディック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenturret",
+      "aliases": [
+        "グレンタレット"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Scapa",
+      "aliases": [
+        "スキャパ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Inchgower",
+      "aliases": [
+        "インチガワー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Garioch",
+      "aliases": [
+        "glengarioch",
+        "グレンギリー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Inverleven",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenglassaugh",
+      "aliases": [
+        "グレングラッサ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenkinchie",
+      "aliases": [
+        "グレンキンチー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Bruichladdich",
+      "aliases": [
+        "ブルックラディ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Macallan",
+      "aliases": [
+        "the macallan",
+        "マッカラン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Rosebank",
+      "aliases": [
+        "ローズバンク"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Clynelish",
+      "aliases": [
+        "クライヌリッシュ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Springbank",
+      "aliases": [
+        "スプリングバンク"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Campbeltown",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tullibardine",
+      "aliases": [
+        "タリバーディン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Laphroaig",
+      "aliases": [
+        "ラフロイグ"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Islay",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Glenrothes",
+      "aliases": [
+        "グレンロセス"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Isle of Jura",
+      "aliases": [
+        "jura",
+        "ジュラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Edradour",
+      "aliases": [
+        "エドラダワー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Ardbeg",
+      "aliases": [
+        "アードベッグ"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Islay",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Tamnavulin",
+      "aliases": [
+        "タムナヴーリン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Moray",
+      "aliases": [
+        "glenmoray",
+        "グレンマレイ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Benrinnes",
+      "aliases": [
+        "ベンリネス"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Cragganmore",
+      "aliases": [
+        "クラガンモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Caperdonich",
+      "aliases": [
+        "キャパドニック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Linkwood",
+      "aliases": [
+        "リンクウッド"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Balvenie",
+      "aliases": [
+        "バルヴェニー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Dailuaine",
+      "aliases": [
+        "ダルユーイン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Ledaig",
+      "aliases": [
+        "レダイグ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tobermory",
+      "aliases": [
+        "トバモリー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Port Ellen",
+      "aliases": [
+        "ポートエレン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Craigellachie",
+      "aliases": [
+        "クライゲラキ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Dallas Dhu",
+      "aliases": [
+        "dallasdhu",
+        "ダラスデュー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenlossie",
+      "aliases": [
+        "グレンロッシー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Benromach",
+      "aliases": [
+        "ベンロマック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Balmenach",
+      "aliases": [
+        "バルメナック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "St Magdalene",
+      "aliases": [
+        "saint magdalene",
+        "セントマグダレン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Bladnoch",
+      "aliases": [
+        "ブラドノック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Bushmills",
+      "aliases": [
+        "ブッシュミルズ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Northern Ireland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Old Pulteney",
+      "aliases": [
+        "oldpulteney",
+        "オールドプルトニー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Caol Ila",
+      "aliases": [
+        "caolila",
+        "カリラ"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Islay",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Aberlour",
+      "aliases": [
+        "アベラワー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Brackla",
+      "aliases": [
+        "royal brackla",
+        "ロイヤルブラックラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Coleburn",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Mhor",
+      "aliases": [
+        "glenmhor"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Strathisla",
+      "aliases": [
+        "ストラスアイラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Teaninich",
+      "aliases": [
+        "ティーニニック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Aberfeldy",
+      "aliases": [
+        "アバフェルディ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Brora",
+      "aliases": [
+        "ブローラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenlochy",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glentauchers",
+      "aliases": [
+        "グレントファース"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Mannochmore",
+      "aliases": [
+        "マノックモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Imperial",
+      "aliases": [
+        "インペリアル"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Ardmore",
+      "aliases": [
+        "アードモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Banff",
+      "aliases": [
+        "バンフ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Blair Athol",
+      "aliases": [
+        "blairathol",
+        "ブレアソール"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Albyn",
+      "aliases": [
+        "glenalbyn"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Balblair",
+      "aliases": [
+        "バルブレア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenburgie",
+      "aliases": [
+        "グレンバーギー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Miltonduff",
+      "aliases": [
+        "ミルトンダフ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Aultmore",
+      "aliases": [
+        "オルトモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "North Port",
+      "aliases": [
+        "northport"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenury Royal",
+      "aliases": [
+        "glenuryroyal"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Mortlach",
+      "aliases": [
+        "モートラック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Ord",
+      "aliases": [
+        "glenord",
+        "グレンオード"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Ben Nevis",
+      "aliases": [
+        "bennevis",
+        "ベンネヴィス"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Deanston",
+      "aliases": [
+        "ディーンストン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Spey",
+      "aliases": [
+        "glenspey"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Keith",
+      "aliases": [
+        "glenkeith",
+        "グレンキース"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glencadam",
+      "aliases": [
+        "グレンカダム"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Convalmore",
+      "aliases": [
+        "コンバルモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glendullan",
+      "aliases": [
+        "グレンダラン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Elgin",
+      "aliases": [
+        "glenelgin",
+        "グレンエルギン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenesk",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Millburn",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Speyburn",
+      "aliases": [
+        "スペイバーン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tomintoul",
+      "aliases": [
+        "トミントール"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Pittyvaich",
+      "aliases": [
+        "ピティヴェアック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Dufftown",
+      "aliases": [
+        "ダフタウン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Lochside",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glen Scotia",
+      "aliases": [
+        "glenscotia",
+        "グレンスコシア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Campbeltown",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Fettercairn",
+      "aliases": [
+        "フェッターケアン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Auchroisk",
+      "aliases": [
+        "オスロスク"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glendronach",
+      "aliases": [
+        "glen dronach",
+        "グレンドロナック"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Littlemill",
+      "aliases": [
+        "リトルミル"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Lomond (Inverleven)",
+      "aliases": [
+        "lomond"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenugie",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Strathmill",
+      "aliases": [
+        "ストラスミル"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Knockando",
+      "aliases": [
+        "ノッカンドゥ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Dalwhinnie",
+      "aliases": [
+        "ダルウィニー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Royal Lochnagar",
+      "aliases": [
+        "royallochnagar",
+        "ロイヤルロッホナガー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glencraig",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tormore",
+      "aliases": [
+        "トーモア"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Cardhu",
+      "aliases": [
+        "カードゥ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "GlenAllachie",
+      "aliases": [
+        "glen allachie",
+        "グレンアラヒー"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Speyside",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Allt-a'Bhainne",
+      "aliases": [
+        "allt a bhainne",
+        "allt-a-bhainne",
+        "アルタベーン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Mosstowie",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Oban",
+      "aliases": [
+        "オーバン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Lagavulin",
+      "aliases": [
+        "ラガヴーリン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Inchmurrin",
+      "aliases": [
+        "インチマリン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Braeval",
+      "aliases": [
+        "braes of glenlivet",
+        "ブレイヴァル"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Longrow",
+      "aliases": [
+        "ロングロウ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Campbeltown",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Knockdhu",
+      "aliases": [
+        "an cnoc",
+        "ノックドゥ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Yoichi",
+      "aliases": [
+        "余市"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Cooley",
+      "aliases": [
+        "クーリー"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Ireland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Connemara",
+      "aliases": [
+        "カネマラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Ireland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Yamazaki",
+      "aliases": [
+        "山崎"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Hakushu",
+      "aliases": [
+        "白州"
+      ],
+      "kind": "distillery",
+      "country": "Japan",
+      "region": "Japan",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Isle of Arran",
+      "aliases": [
+        "arran",
+        "アラン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islands",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Croftengea",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glengoyne",
+      "aliases": [
+        "グレンゴイン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Miyagikyo",
+      "aliases": [
+        "宮城峡"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Johnnie Walker",
+      "aliases": [
+        "johnny walker",
+        "ジョニーウォーカー"
+      ],
+      "kind": "brand",
+      "country": null,
+      "region": "Blended Scotch",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Chivas Regal",
+      "aliases": [
+        "chivas",
+        "シーバスリーガル"
+      ],
+      "kind": "brand",
+      "country": null,
+      "region": "Blended Scotch",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Dewar's",
+      "aliases": [
+        "dewars",
+        "デュワーズ"
+      ],
+      "kind": "brand",
+      "country": null,
+      "region": "Blended Scotch",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glenmorangie",
+      "aliases": [
+        "グレンモーレンジィ"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Highland",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Hazelburn",
+      "aliases": [
+        "ヘーゼルバーン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Campbeltown",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Port Charlotte",
+      "aliases": [
+        "ポートシャーロット"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Islay",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Penderyn",
+      "aliases": [
+        "ペンダーリン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Wales",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Kilchoman",
+      "aliases": [
+        "キルホーマン"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Islay",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Chichibu",
+      "aliases": [
+        "秩父",
+        "イチローズモルト"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Hanyu",
+      "aliases": [
+        "羽生"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Karuizawa",
+      "aliases": [
+        "軽井沢"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Westland",
+      "aliases": [
+        "ウェストランド"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Washington",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Paul John",
+      "aliases": [
+        "pauljohn",
+        "ポールジョン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "India",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Loch Lomond",
+      "aliases": [
+        "lochlomond",
+        "ロッホローモンド"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Eden Mill",
+      "aliases": [
+        "edenmill"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Lowland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "St George's",
+      "aliases": [
+        "st georges",
+        "st george",
+        "セントジョージ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "England",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Nantou",
+      "aliases": [
+        "ナントウ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Taiwan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Kavalan",
+      "aliases": [
+        "カバラン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Taiwan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Balcones",
+      "aliases": [
+        "バルコンズ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Texas",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Fary Lochan",
+      "aliases": [
+        "farylochan"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Denmark",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Breuckelen",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "New York",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Copperworks Alba",
+      "aliases": [
+        "copperworks",
+        "alba"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Washington",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "High Coast",
+      "aliases": [
+        "highcoast",
+        "ハイコースト"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Sweden",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Smogen",
+      "aliases": [
+        "smögen",
+        "スモーゲン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Sweden",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Cotswolds",
+      "aliases": [
+        "コッツウォルズ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "England",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Archie Rose",
+      "aliases": [
+        "archierose",
+        "アーチーローズ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Australia",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Starward",
+      "aliases": [
+        "スターワード"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Australia",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Ardnamurchan",
+      "aliases": [
+        "アードナムルッカン"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Highland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "West Cork",
+      "aliases": [
+        "westcork",
+        "ウエストコーク"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Ireland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Mackmyra",
+      "aliases": [
+        "マックミラ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Sweden",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Shelter Point",
+      "aliases": [
+        "shelterpoint"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Canada",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Thy",
+      "aliases": [
+        "thy whisky"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Denmark",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Mosgaard",
+      "aliases": [],
+      "kind": "distillery",
+      "country": null,
+      "region": "Denmark",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Milk & Honey",
+      "aliases": [
+        "milk and honey",
+        "m&h",
+        "m h"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Israel",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Glasgow Distillery",
+      "aliases": [
+        "glasgow"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Scotland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Warenghem (Armorik)",
+      "aliases": [
+        "warenghem",
+        "armorik"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "France",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Yuza",
+      "aliases": [
+        "遊佐"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Shinshu",
+      "aliases": [
+        "信州",
+        "駒ヶ岳"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Tsunuki",
+      "aliases": [
+        "津貫"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Japan",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Nc'Nean",
+      "aliases": [
+        "ncnean",
+        "nc nean"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Scotland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Raasay",
+      "aliases": [
+        "ラッセイ"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Scotland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Isle of Harris",
+      "aliases": [
+        "harris",
+        "ハリス"
+      ],
+      "kind": "distillery",
+      "country": null,
+      "region": "Scotland",
+      "distillery_type": "unknown"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/takatoshi0161/Whisky-Scanner/schemas/whisky-entities.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reference_id", "entries"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "reference_id": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["canonical_name", "aliases", "kind", "country", "region", "distillery_type"],
+        "properties": {
+          "canonical_name": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" },
+          "aliases": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" }
+          },
+          "kind": { "enum": ["distillery", "brand", "unknown"] },
+          "country": {
+            "oneOf": [
+              { "type": "null" },
+              { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" }
+            ]
+          },
+          "region": {
+            "oneOf": [
+              { "type": "null" },
+              { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" }
+            ]
+          },
+          "distillery_type": { "enum": ["malt", "grain", "mixed", "unknown"] }
+        },
+        "allOf": [
+          {
+            "if": { "properties": { "kind": { "not": { "const": "distillery" } } } },
+            "then": { "properties": { "distillery_type": { "const": "unknown" } } }
+          }
+        ]
+      }
+    }
+  }
+}

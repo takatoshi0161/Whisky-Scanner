@@ -1,5 +1,15 @@
 # Whisky Scanner
 
+## Machine-readable whisky entity reference
+
+The authoritative cross-project entity reference is
+`data/reference/whisky-entities.json`. It is validated with
+`cd frontend; npm run validate:reference` and may be consumed only as a
+validated, commit-pinned snapshot. See
+`docs/WHISKY_ENTITY_REFERENCE.md` for ownership, unknown-value, and internal
+reuse rules. Other repositories must not parse
+`frontend/app/data/distilleries.ts` as an integration interface.
+
 Whisky Scanner is a personal MVP for helping home whisky drinkers find their next bottle from something they already liked.
 
 The product direction is:

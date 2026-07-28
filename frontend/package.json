@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
-    "start": "next start -p 3000"
+    "start": "next start -p 3000",
+    "validate:reference": "node scripts/validate-whisky-entities.mjs",
+    "test": "npm run validate:reference && node --test scripts/validate-whisky-entities.test.mjs"
   },
   "dependencies": {
     "@google-cloud/vision": "^5.3.6",
