@@ -14,9 +14,9 @@ function clone() {
   return structuredClone(reference);
 }
 
-test("the migrated reference is valid and retains 167 entities", () => {
+test("the migrated reference is valid and retains 169 entities", () => {
   const value = validateWhiskyEntities(clone());
-  assert.equal(value.entries.length, 167);
+  assert.equal(value.entries.length, 169);
 });
 
 test("priority distilleries have confirmed metadata", () => {
@@ -44,6 +44,28 @@ test("priority distilleries have confirmed metadata", () => {
     assert.equal(byName.get(name)?.kind, "brand", name);
     assert.equal(byName.get(name)?.distillery_type, "unknown", name);
   }
+});
+
+test("audited Collection distilleries retain exact managed identities", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  const expected = {
+    Linkwood: ["Scotland", "Speyside", "unknown"],
+    Springbank: ["Scotland", "Campbeltown", "unknown"],
+    Bruichladdich: ["Scotland", "Islay", "unknown"],
+    "Lindores Abbey Distillery": ["Scotland", "Lowland", "malt"],
+    "Saburomaru Distillery": ["Japan", "Toyama", "unknown"],
+  };
+  for (const [name, [country, region, type]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+    assert.equal(entry.distillery_type, type, name);
+  }
+  assert.deepEqual(byName.get("Lindores Abbey Distillery")?.aliases, []);
+  assert.deepEqual(byName.get("Saburomaru Distillery")?.aliases, ["三郎丸蒸留所"]);
+  assert.equal(byName.has("Adelphi Distillery Ltd."), false);
 });
 
 test("canonical, alias, and kind/type collisions are rejected", () => {

@@ -233,7 +233,7 @@
         "ブルックラディ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islay",
       "distillery_type": "unknown"
     },
@@ -274,7 +274,7 @@
         "スプリングバンク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Campbeltown",
       "distillery_type": "unknown"
     },
@@ -396,8 +396,26 @@
         "リンクウッド"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Lindores Abbey Distillery",
+      "aliases": [],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Lowland",
+      "distillery_type": "malt"
+    },
+    {
+      "canonical_name": "Saburomaru Distillery",
+      "aliases": [
+        "三郎丸蒸留所"
+      ],
+      "kind": "distillery",
+      "country": "Japan",
+      "region": "Toyama",
       "distillery_type": "unknown"
     },
     {
