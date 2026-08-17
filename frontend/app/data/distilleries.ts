@@ -508,7 +508,7 @@ const distillerySeeds: DistillerySeed[] = [
   { name: "Thy", region: "Denmark", keywords: ["thy whisky"] },
   { name: "Mosgaard", region: "Denmark", keywords: ["mosgaard"] },
   { name: "Milk & Honey", region: "Israel", keywords: ["milk and honey", "m&h", "m h"] },
-  { name: "Glasgow Distillery", region: "Scotland", keywords: ["glasgow"] },
+  { name: "Glasgow", region: "Scotland", keywords: ["glasgow"] },
   { name: "Warenghem (Armorik)", region: "France", keywords: ["warenghem", "armorik"] },
   { name: "Yuza", region: "Japan", keywords: ["遊佐"] },
   { name: "Shinshu", region: "Japan", keywords: ["信州", "駒ヶ岳"] },

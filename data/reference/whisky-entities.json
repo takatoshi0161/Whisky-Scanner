@@ -401,17 +401,20 @@
       "distillery_type": "unknown"
     },
     {
-      "canonical_name": "Lindores Abbey Distillery",
-      "aliases": [],
+      "canonical_name": "Lindores Abbey",
+      "aliases": [
+        "Lindores Abbey Distillery"
+      ],
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "malt"
     },
     {
-      "canonical_name": "Saburomaru Distillery",
+      "canonical_name": "Saburomaru",
       "aliases": [
-        "三郎丸蒸留所"
+        "三郎丸蒸留所",
+        "Saburomaru Distillery"
       ],
       "kind": "distillery",
       "country": "Japan",
@@ -1631,9 +1634,9 @@
       "distillery_type": "unknown"
     },
     {
-      "canonical_name": "Glasgow Distillery",
+      "canonical_name": "Glasgow",
       "aliases": [
-        "glasgow"
+        "Glasgow Distillery"
       ],
       "kind": "distillery",
       "country": null,
