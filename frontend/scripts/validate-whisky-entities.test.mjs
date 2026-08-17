@@ -52,8 +52,9 @@ test("audited Collection distilleries retain exact managed identities", () => {
     Linkwood: ["Scotland", "Speyside", "unknown"],
     Springbank: ["Scotland", "Campbeltown", "unknown"],
     Bruichladdich: ["Scotland", "Islay", "unknown"],
-    "Lindores Abbey Distillery": ["Scotland", "Lowland", "malt"],
-    "Saburomaru Distillery": ["Japan", "Toyama", "unknown"],
+    "Lindores Abbey": ["Scotland", "Lowland", "malt"],
+    Saburomaru: ["Japan", "Toyama", "unknown"],
+    Glasgow: [null, "Scotland", "unknown"],
   };
   for (const [name, [country, region, type]] of Object.entries(expected)) {
     const entry = byName.get(name);
@@ -63,8 +64,9 @@ test("audited Collection distilleries retain exact managed identities", () => {
     assert.equal(entry.region, region, name);
     assert.equal(entry.distillery_type, type, name);
   }
-  assert.deepEqual(byName.get("Lindores Abbey Distillery")?.aliases, []);
-  assert.deepEqual(byName.get("Saburomaru Distillery")?.aliases, ["三郎丸蒸留所"]);
+  assert.deepEqual(byName.get("Lindores Abbey")?.aliases, ["Lindores Abbey Distillery"]);
+  assert.deepEqual(byName.get("Saburomaru")?.aliases, ["三郎丸蒸留所", "Saburomaru Distillery"]);
+  assert.deepEqual(byName.get("Glasgow")?.aliases, ["Glasgow Distillery"]);
   assert.equal(byName.has("Adelphi Distillery Ltd."), false);
 });
 
