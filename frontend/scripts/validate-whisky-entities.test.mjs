@@ -46,6 +46,18 @@ test("priority distilleries have confirmed metadata", () => {
   }
 });
 
+test("B15 country values are evidence-backed and Port Charlotte stays unresolved", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  for (const name of ["Bowmore", "Lagavulin", "Port Ellen"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Islay", name);
+  }
+  assert.equal(byName.get("Port Charlotte")?.country, null);
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
