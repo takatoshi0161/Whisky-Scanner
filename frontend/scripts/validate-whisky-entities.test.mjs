@@ -50,6 +50,7 @@ test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
     Linkwood: ["Scotland", "Speyside", "unknown"],
+    Bunnahabhain: ["Scotland", "Islay", "unknown"],
     Springbank: ["Scotland", "Campbeltown", "unknown"],
     Bruichladdich: ["Scotland", "Islay", "unknown"],
     "Lindores Abbey": ["Scotland", "Lowland", "malt"],
