@@ -30,7 +30,7 @@
         "ボウモア"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islay",
       "distillery_type": "unknown"
     },
@@ -467,7 +467,7 @@
         "ポートエレン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islay",
       "distillery_type": "unknown"
     },
@@ -1147,7 +1147,7 @@
         "ラガヴーリン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islay",
       "distillery_type": "unknown"
     },
