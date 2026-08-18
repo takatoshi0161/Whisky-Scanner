@@ -162,6 +162,14 @@ test("B23 remains unresolved when direct country evidence is insufficient", () =
   }
 });
 
+test("B30 direct-source country value is confirmed", () => {
+  const entry = new Map(reference.entries.map((value) => [value.canonical_name, value])).get("Penderyn");
+  assert.ok(entry);
+  assert.equal(entry.kind, "distillery");
+  assert.equal(entry.country, "Wales");
+  assert.equal(entry.region, "Wales");
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {
