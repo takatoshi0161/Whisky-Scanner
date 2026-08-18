@@ -82,7 +82,7 @@
         "タムデュー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -620,7 +620,7 @@
         "ストラスアイラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -919,7 +919,7 @@
         "スペイバーン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -929,7 +929,7 @@
         "トミントール"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -1086,7 +1086,7 @@
         "トーモア"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
