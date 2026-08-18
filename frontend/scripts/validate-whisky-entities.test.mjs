@@ -176,6 +176,18 @@ test("B26 direct-source country values are confirmed and insufficient evidence s
   }
 });
 
+test("B27 direct-source country value is confirmed and unresolved entries stay null", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const highCoast = byName.get("High Coast");
+  assert.ok(highCoast);
+  assert.equal(highCoast.kind, "distillery");
+  assert.equal(highCoast.country, "Sweden");
+  assert.equal(highCoast.region, "Sweden");
+  for (const name of ["Mackmyra", "Smogen"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {
