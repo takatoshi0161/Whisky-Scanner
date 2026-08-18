@@ -118,6 +118,14 @@ test("B19 exact-source country value is confirmed", () => {
   assert.equal(entry.region, "New York");
 });
 
+test("B20 exact-source country value is confirmed", () => {
+  const entry = new Map(reference.entries.map((value) => [value.canonical_name, value])).get("Bushmills");
+  assert.ok(entry);
+  assert.equal(entry.kind, "distillery");
+  assert.equal(entry.country, "Northern Ireland");
+  assert.equal(entry.region, "Northern Ireland");
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
