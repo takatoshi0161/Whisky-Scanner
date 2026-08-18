@@ -188,6 +188,17 @@ test("B27 direct-source country value is confirmed and unresolved entries stay n
   }
 });
 
+test("B28 direct-source country values are confirmed", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  for (const name of ["Kavalan", "Nantou"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Taiwan", name);
+    assert.equal(entry.region, "Taiwan", name);
+  }
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {
