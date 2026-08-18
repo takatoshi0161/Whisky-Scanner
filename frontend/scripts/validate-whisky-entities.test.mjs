@@ -58,6 +58,14 @@ test("B15 country values are evidence-backed and Port Charlotte stays unresolved
   assert.equal(byName.get("Port Charlotte")?.country, null);
 });
 
+test("B16 country value is evidence-backed", () => {
+  const entry = new Map(reference.entries.map((value) => [value.canonical_name, value])).get("Milk & Honey");
+  assert.ok(entry);
+  assert.equal(entry.kind, "distillery");
+  assert.equal(entry.country, "Israel");
+  assert.equal(entry.region, "Israel");
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
