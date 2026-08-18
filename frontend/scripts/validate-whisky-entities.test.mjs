@@ -173,6 +173,20 @@ test("B21 exact-source country values are confirmed", () => {
   }
 });
 
+test("B24 direct-source country values are confirmed and insufficient evidence stays unresolved", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  for (const name of ["Glen Grant", "Glenfarclas", "Glenfiddich", "Glenlivet"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Speyside", name);
+  }
+  for (const name of ["Glen Keith", "Glen Moray", "Glen Spey", "Glenburgie", "Glencraig", "Glendullan"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {

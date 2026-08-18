@@ -8,7 +8,7 @@
         "グレンファークラス"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -20,7 +20,7 @@
         "グレンリベット"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -93,7 +93,7 @@
         "グレングラント"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -154,7 +154,7 @@
         "グレンフィディック"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
