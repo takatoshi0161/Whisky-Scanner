@@ -518,7 +518,7 @@
         "バルメナック"
       ],
       "kind": "distillery",
-      "country": "Scotland",
+      "country": null,
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -769,7 +769,7 @@
         "オルトモア"
       ],
       "kind": "distillery",
-      "country": "Scotland",
+      "country": null,
       "region": "Speyside",
       "distillery_type": "unknown"
     },
