@@ -66,7 +66,7 @@ test("B16 country value is evidence-backed", () => {
   assert.equal(entry.region, "Israel");
 });
 
-test("B17 country values are evidence-backed", () => {
+test("B17 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   for (const name of [
     "Chichibu",
@@ -77,6 +77,17 @@ test("B17 country values are evidence-backed", () => {
     "Yoichi",
     "Yuza",
   ]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Japan", name);
+    assert.equal(entry.region, "Japan", name);
+  }
+});
+
+test("B17 user-approved managed country values are recorded separately", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  for (const name of ["Karuizawa", "Shinshu"]) {
     const entry = byName.get(name);
     assert.ok(entry, name);
     assert.equal(entry.kind, "distillery", name);
