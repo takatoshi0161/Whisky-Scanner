@@ -1392,7 +1392,7 @@
         "軽井沢"
       ],
       "kind": "distillery",
-      "country": "Japan",
+      "country": null,
       "region": "Japan",
       "distillery_type": "unknown"
     },
@@ -1671,7 +1671,7 @@
         "駒ヶ岳"
       ],
       "kind": "distillery",
-      "country": "Japan",
+      "country": null,
       "region": "Japan",
       "distillery_type": "unknown"
     },

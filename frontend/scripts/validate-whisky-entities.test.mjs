@@ -71,9 +71,7 @@ test("B17 country values are evidence-backed", () => {
   for (const name of [
     "Chichibu",
     "Hanyu",
-    "Karuizawa",
     "Miyagikyo",
-    "Shinshu",
     "Tsunuki",
     "Yamazaki",
     "Yoichi",
