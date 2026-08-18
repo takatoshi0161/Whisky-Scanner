@@ -1639,7 +1639,7 @@
         "Glasgow Distillery"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Scotland",
       "distillery_type": "unknown"
     },
@@ -1692,7 +1692,7 @@
         "nc nean"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Scotland",
       "distillery_type": "unknown"
     },
@@ -1702,7 +1702,7 @@
         "ラッセイ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Scotland",
       "distillery_type": "unknown"
     },
@@ -1713,7 +1713,7 @@
         "ハリス"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Scotland",
       "distillery_type": "unknown"
     }
