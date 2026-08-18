@@ -66,6 +66,27 @@ test("B16 country value is evidence-backed", () => {
   assert.equal(entry.region, "Israel");
 });
 
+test("B17 country values are evidence-backed", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  for (const name of [
+    "Chichibu",
+    "Hanyu",
+    "Karuizawa",
+    "Miyagikyo",
+    "Shinshu",
+    "Tsunuki",
+    "Yamazaki",
+    "Yoichi",
+    "Yuza",
+  ]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Japan", name);
+    assert.equal(entry.region, "Japan", name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
