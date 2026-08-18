@@ -96,6 +96,20 @@ test("B17 user-approved managed country values are recorded separately", () => {
   }
 });
 
+test("B18 exact-source country values are confirmed and unresolved entries stay null", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  for (const name of ["Auchentoshan", "Bladnoch", "Eden Mill", "Glenkinchie", "Littlemill", "Rosebank"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Lowland", name);
+  }
+  for (const name of ["Inverleven", "Lomond (Inverleven)", "St Magdalene"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
