@@ -207,6 +207,14 @@ test("B30 direct-source country value is confirmed", () => {
   assert.equal(entry.region, "Wales");
 });
 
+test("B29 user-approved managed country value is recorded separately", () => {
+  const entry = new Map(reference.entries.map((value) => [value.canonical_name, value])).get("Balcones");
+  assert.ok(entry);
+  assert.equal(entry.kind, "distillery");
+  assert.equal(entry.country, "United States");
+  assert.equal(entry.region, "Texas");
+});
+
 test("B31 distinguishes direct-source and user-approved Washington country values", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
 
