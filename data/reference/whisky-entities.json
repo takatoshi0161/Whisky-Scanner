@@ -376,7 +376,7 @@
         "クラガンモア"
       ],
       "kind": "distillery",
-      "country": "Scotland",
+      "country": null,
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -488,7 +488,7 @@
         "ダラスデュー"
       ],
       "kind": "distillery",
-      "country": "Scotland",
+      "country": null,
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -949,7 +949,7 @@
         "ダフタウン"
       ],
       "kind": "distillery",
-      "country": "Scotland",
+      "country": null,
       "region": "Speyside",
       "distillery_type": "unknown"
     },

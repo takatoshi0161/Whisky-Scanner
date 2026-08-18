@@ -126,17 +126,25 @@ test("B20 exact-source country value is confirmed", () => {
   assert.equal(entry.region, "Northern Ireland");
 });
 
-test("B23 direct-source country values are confirmed and insufficient evidence stays unresolved", () => {
+test("B23 remains unresolved when direct country evidence is insufficient", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
-  for (const name of ["Cragganmore", "Dallas Dhu", "Dufftown"]) {
+  for (const name of [
+    "Caperdonich",
+    "Cardhu",
+    "Coleburn",
+    "Convalmore",
+    "Cragganmore",
+    "Craigellachie",
+    "Dailuaine",
+    "Dallas Dhu",
+    "Dufftown",
+    "Glen Elgin",
+  ]) {
     const entry = byName.get(name);
     assert.ok(entry, name);
     assert.equal(entry.kind, "distillery", name);
-    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.country, null, name);
     assert.equal(entry.region, "Speyside", name);
-  }
-  for (const name of ["Caperdonich", "Cardhu", "Coleburn", "Convalmore", "Craigellachie", "Dailuaine", "Glen Elgin"]) {
-    assert.equal(byName.get(name)?.country, null, name);
   }
 });
 
