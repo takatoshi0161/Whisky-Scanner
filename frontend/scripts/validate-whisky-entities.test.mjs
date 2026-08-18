@@ -207,6 +207,22 @@ test("B30 direct-source country value is confirmed", () => {
   assert.equal(entry.region, "Wales");
 });
 
+test("B31 distinguishes direct-source and user-approved Washington country values", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+
+  const westland = byName.get("Westland");
+  assert.ok(westland);
+  assert.equal(westland.kind, "distillery");
+  assert.equal(westland.country, "United States");
+  assert.equal(westland.region, "Washington");
+
+  const copperworksAlba = byName.get("Copperworks Alba");
+  assert.ok(copperworksAlba);
+  assert.equal(copperworksAlba.kind, "distillery");
+  assert.equal(copperworksAlba.country, "United States");
+  assert.equal(copperworksAlba.region, "Washington");
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {

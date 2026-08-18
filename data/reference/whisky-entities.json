@@ -1402,7 +1402,7 @@
         "ウェストランド"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "United States",
       "region": "Washington",
       "distillery_type": "unknown"
     },
@@ -1505,7 +1505,7 @@
         "alba"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "United States",
       "region": "Washington",
       "distillery_type": "unknown"
     },
