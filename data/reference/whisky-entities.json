@@ -508,7 +508,7 @@
         "ベンロマック"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
@@ -581,7 +581,7 @@
         "アベラワー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Speyside",
       "distillery_type": "unknown"
     },
