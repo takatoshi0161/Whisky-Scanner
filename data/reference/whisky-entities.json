@@ -50,7 +50,7 @@
         "オーヘントッシャン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
@@ -223,7 +223,7 @@
         "グレンキンチー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
@@ -254,7 +254,7 @@
         "ローズバンク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
@@ -539,7 +539,7 @@
         "ブラドノック"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
@@ -1009,7 +1009,7 @@
         "リトルミル"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
@@ -1434,7 +1434,7 @@
         "edenmill"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Lowland",
       "distillery_type": "unknown"
     },
