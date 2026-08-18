@@ -162,6 +162,20 @@ test("B23 remains unresolved when direct country evidence is insufficient", () =
   }
 });
 
+test("B26 direct-source country values are confirmed and insufficient evidence stays unresolved", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  for (const name of ["Speyburn", "Strathisla", "Tamdhu", "Tomintoul", "Tormore"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Speyside", name);
+  }
+  for (const name of ["Mortlach", "Mosstowie", "Pittyvaich", "Strathmill", "Tamnavulin"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("B27 direct-source country value is confirmed and unresolved entries stay null", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   const highCoast = byName.get("High Coast");
@@ -182,6 +196,20 @@ test("B21 exact-source country values are confirmed", () => {
     assert.equal(entry.kind, "distillery", name);
     assert.equal(entry.country, "Scotland", name);
     assert.equal(entry.region, "Scotland", name);
+  }
+});
+
+test("B24 direct-source country values are confirmed and insufficient evidence stays unresolved", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  for (const name of ["Glen Grant", "Glenfarclas", "Glenfiddich", "Glenlivet"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Speyside", name);
+  }
+  for (const name of ["Glen Keith", "Glen Moray", "Glen Spey", "Glenburgie", "Glencraig", "Glendullan"]) {
+    assert.equal(byName.get(name)?.country, null, name);
   }
 });
 
