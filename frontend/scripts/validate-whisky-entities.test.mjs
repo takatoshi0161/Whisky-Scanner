@@ -118,6 +118,17 @@ test("B19 exact-source country value is confirmed", () => {
   assert.equal(entry.region, "New York");
 });
 
+test("B21 exact-source country values are confirmed", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Scotland", name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
@@ -127,7 +138,7 @@ test("audited Collection distilleries retain exact managed identities", () => {
     Bruichladdich: ["Scotland", "Islay", "unknown"],
     "Lindores Abbey": ["Scotland", "Lowland", "malt"],
     Saburomaru: ["Japan", "Toyama", "unknown"],
-    Glasgow: [null, "Scotland", "unknown"],
+    Glasgow: ["Scotland", "Scotland", "unknown"],
   };
   for (const [name, [country, region, type]] of Object.entries(expected)) {
     const entry = byName.get(name);
