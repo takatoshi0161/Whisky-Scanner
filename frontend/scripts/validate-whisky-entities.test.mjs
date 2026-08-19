@@ -231,6 +231,30 @@ test("B31 distinguishes direct-source and user-approved Washington country value
   assert.equal(copperworksAlba.region, "Washington");
 });
 
+test("B12-B14 direct-source country values are confirmed and Ledaig stays unresolved", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = {
+    "Paul John": ["India", "India"],
+    Connemara: ["Ireland", "Ireland"],
+    Cooley: ["Ireland", "Ireland"],
+    "West Cork": ["Ireland", "Ireland"],
+    "Highland Park": ["Scotland", "Islands"],
+    "Isle of Arran": ["Scotland", "Islands"],
+    "Isle of Jura": ["Scotland", "Islands"],
+    Scapa: ["Scotland", "Islands"],
+    Talisker: ["Scotland", "Islands"],
+    Tobermory: ["Scotland", "Islands"],
+  };
+  for (const [name, [country, region]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+  }
+  assert.equal(byName.get("Ledaig")?.country, null);
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {

@@ -40,7 +40,7 @@
         "ハイランドパーク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -144,7 +144,7 @@
         "タリスカー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -174,7 +174,7 @@
         "スキャパ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -315,7 +315,7 @@
         "ジュラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -457,7 +457,7 @@
         "トバモリー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -1209,7 +1209,7 @@
         "クーリー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
@@ -1219,7 +1219,7 @@
         "カネマラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
@@ -1250,7 +1250,7 @@
         "アラン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -1413,7 +1413,7 @@
         "ポールジョン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "India",
       "region": "India",
       "distillery_type": "unknown"
     },
@@ -1579,7 +1579,7 @@
         "ウエストコーク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
