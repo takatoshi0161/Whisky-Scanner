@@ -270,6 +270,36 @@ test("B25 direct-source country values are confirmed and insufficient evidence s
   }
 });
 
+test("B05-B08 official country values are confirmed and unresolved entries stay null", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = {
+    Cotswolds: ["England", "England"],
+    "Warenghem (Armorik)": ["France", "France"],
+    Aberfeldy: ["Scotland", "Highland"],
+    Ardnamurchan: ["Scotland", "Highland"],
+    "Ben Nevis": ["Scotland", "Highland"],
+    "Blair Athol": ["Scotland", "Highland"],
+    Brora: ["Scotland", "Highland"],
+    Clynelish: ["Scotland", "Highland"],
+    Dalwhinnie: ["Scotland", "Highland"],
+    Edradour: ["Scotland", "Highland"],
+    Fettercairn: ["Scotland", "Highland"],
+    "Glen Garioch": ["Scotland", "Highland"],
+    "Glen Ord": ["Scotland", "Highland"],
+    Glencadam: ["Scotland", "Highland"],
+  };
+  for (const [name, [country, region]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+  }
+  for (const name of ["St George's", "Ardmore", "Balblair", "Brackla", "Croftengea", "Dalmore", "Deanston", "Glen Albyn", "Glen Mhor"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
