@@ -40,7 +40,7 @@
         "ハイランドパーク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -144,7 +144,7 @@
         "タリスカー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -174,7 +174,7 @@
         "スキャパ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -195,7 +195,7 @@
         "グレンギリー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -264,7 +264,7 @@
         "クライヌリッシュ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -315,7 +315,7 @@
         "ジュラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -325,7 +325,7 @@
         "エドラダワー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -457,7 +457,7 @@
         "トバモリー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -640,7 +640,7 @@
         "アバフェルディ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -650,7 +650,7 @@
         "ブローラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -719,7 +719,7 @@
         "ブレアソール"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -810,7 +810,7 @@
         "グレンオード"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -821,7 +821,7 @@
         "ベンネヴィス"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -862,7 +862,7 @@
         "グレンカダム"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -978,7 +978,7 @@
         "フェッターケアン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -1057,7 +1057,7 @@
         "ダルウィニー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -1209,7 +1209,7 @@
         "クーリー"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
@@ -1219,7 +1219,7 @@
         "カネマラ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
@@ -1250,7 +1250,7 @@
         "アラン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Islands",
       "distillery_type": "unknown"
     },
@@ -1413,7 +1413,7 @@
         "ポールジョン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "India",
       "region": "India",
       "distillery_type": "unknown"
     },
@@ -1537,7 +1537,7 @@
         "コッツウォルズ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "England",
       "region": "England",
       "distillery_type": "unknown"
     },
@@ -1568,7 +1568,7 @@
         "アードナムルッカン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -1579,7 +1579,7 @@
         "ウエストコーク"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Ireland",
       "region": "Ireland",
       "distillery_type": "unknown"
     },
@@ -1650,7 +1650,7 @@
         "armorik"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "France",
       "region": "France",
       "distillery_type": "unknown"
     },

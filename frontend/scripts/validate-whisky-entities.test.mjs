@@ -254,6 +254,30 @@ test("B31 distinguishes direct-source and user-approved Washington country value
   assert.equal(copperworksAlba.region, "Washington");
 });
 
+test("B12-B14 direct-source country values are confirmed and Ledaig stays unresolved", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = {
+    "Paul John": ["India", "India"],
+    Connemara: ["Ireland", "Ireland"],
+    Cooley: ["Ireland", "Ireland"],
+    "West Cork": ["Ireland", "Ireland"],
+    "Highland Park": ["Scotland", "Islands"],
+    "Isle of Arran": ["Scotland", "Islands"],
+    "Isle of Jura": ["Scotland", "Islands"],
+    Scapa: ["Scotland", "Islands"],
+    Talisker: ["Scotland", "Islands"],
+    Tobermory: ["Scotland", "Islands"],
+  };
+  for (const [name, [country, region]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+  }
+  assert.equal(byName.get("Ledaig")?.country, null);
+});
+
 test("B21 exact-source country values are confirmed", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   for (const name of ["Glasgow", "Isle of Harris", "Nc'Nean", "Raasay"]) {
@@ -289,6 +313,36 @@ test("B25 direct-source country values are confirmed and insufficient evidence s
     assert.equal(entry.region, "Speyside", name);
   }
   for (const name of ["Glenlossie", "Glentauchers", "Imperial", "Inchgower", "Knockando", "Mannochmore", "Miltonduff"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
+test("B05-B08 official country values are confirmed and unresolved entries stay null", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = {
+    Cotswolds: ["England", "England"],
+    "Warenghem (Armorik)": ["France", "France"],
+    Aberfeldy: ["Scotland", "Highland"],
+    Ardnamurchan: ["Scotland", "Highland"],
+    "Ben Nevis": ["Scotland", "Highland"],
+    "Blair Athol": ["Scotland", "Highland"],
+    Brora: ["Scotland", "Highland"],
+    Clynelish: ["Scotland", "Highland"],
+    Dalwhinnie: ["Scotland", "Highland"],
+    Edradour: ["Scotland", "Highland"],
+    Fettercairn: ["Scotland", "Highland"],
+    "Glen Garioch": ["Scotland", "Highland"],
+    "Glen Ord": ["Scotland", "Highland"],
+    Glencadam: ["Scotland", "Highland"],
+  };
+  for (const [name, [country, region]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+  }
+  for (const name of ["St George's", "Ardmore", "Balblair", "Brackla", "Croftengea", "Dalmore", "Deanston", "Glen Albyn", "Glen Mhor"]) {
     assert.equal(byName.get(name)?.country, null, name);
   }
 });
