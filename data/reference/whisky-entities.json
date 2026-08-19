@@ -968,7 +968,7 @@
         "グレンスコシア"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Campbeltown",
       "distillery_type": "unknown"
     },
@@ -1178,7 +1178,7 @@
         "ロングロウ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Campbeltown",
       "distillery_type": "unknown"
     },
@@ -1331,7 +1331,7 @@
         "ヘーゼルバーン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Campbeltown",
       "distillery_type": "unknown"
     },
@@ -1548,7 +1548,7 @@
         "アーチーローズ"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Australia",
       "region": "Australia",
       "distillery_type": "unknown"
     },
@@ -1558,7 +1558,7 @@
         "スターワード"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Australia",
       "region": "Australia",
       "distillery_type": "unknown"
     },
@@ -1599,7 +1599,7 @@
         "shelterpoint"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Canada",
       "region": "Canada",
       "distillery_type": "unknown"
     },
@@ -1609,7 +1609,7 @@
         "thy whisky"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Denmark",
       "region": "Denmark",
       "distillery_type": "unknown"
     },
