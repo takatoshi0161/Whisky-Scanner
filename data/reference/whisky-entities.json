@@ -1486,7 +1486,7 @@
         "farylochan"
       ],
       "kind": "distillery",
-      "country": "Denmark",
+      "country": null,
       "region": "Denmark",
       "distillery_type": "unknown"
     },
@@ -1617,7 +1617,7 @@
       "canonical_name": "Mosgaard",
       "aliases": [],
       "kind": "distillery",
-      "country": "Denmark",
+      "country": null,
       "region": "Denmark",
       "distillery_type": "unknown"
     },
