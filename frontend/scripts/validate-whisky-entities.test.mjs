@@ -215,6 +215,29 @@ test("B29 user-approved managed country value is recorded separately", () => {
   assert.equal(entry.region, "Texas");
 });
 
+test("B01-B04 official country values are confirmed", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = {
+    "Archie Rose": ["Australia", "Australia"],
+    Starward: ["Australia", "Australia"],
+    "Glen Scotia": ["Scotland", "Campbeltown"],
+    Hazelburn: ["Scotland", "Campbeltown"],
+    Longrow: ["Scotland", "Campbeltown"],
+    "Shelter Point": ["Canada", "Canada"],
+    "Fary Lochan": ["Denmark", "Denmark"],
+    Mosgaard: ["Denmark", "Denmark"],
+    Thy: ["Denmark", "Denmark"],
+  };
+
+  for (const [name, [country, region]] of Object.entries(expected)) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, country, name);
+    assert.equal(entry.region, region, name);
+  }
+});
+
 test("B31 distinguishes direct-source and user-approved Washington country values", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
 
