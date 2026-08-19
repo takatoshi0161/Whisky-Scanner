@@ -270,6 +270,31 @@ test("B25 direct-source country values are confirmed and insufficient evidence s
   }
 });
 
+test("B09-B11 official country values are confirmed and unresolved entries stay null", () => {
+  const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
+  const expected = [
+    "Glendronach",
+    "Glenglassaugh",
+    "Glengoyne",
+    "Glenturret",
+    "Loch Lomond",
+    "Oban",
+    "Old Pulteney",
+    "Tomatin",
+    "Tullibardine",
+  ];
+  for (const name of expected) {
+    const entry = byName.get(name);
+    assert.ok(entry, name);
+    assert.equal(entry.kind, "distillery", name);
+    assert.equal(entry.country, "Scotland", name);
+    assert.equal(entry.region, "Highland", name);
+  }
+  for (const name of ["Glenesk", "Glenlochy", "Glenugie", "Glenury Royal", "Inchmurrin", "Knockdhu", "Lochside", "Macduff", "Millburn", "North Port", "Royal Lochnagar", "Teaninich"]) {
+    assert.equal(byName.get(name)?.country, null, name);
+  }
+});
+
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
