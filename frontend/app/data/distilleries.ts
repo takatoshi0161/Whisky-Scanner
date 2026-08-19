@@ -495,7 +495,11 @@ const distillerySeeds: DistillerySeed[] = [
   { name: "Balcones", region: "Texas", keywords: ["バルコンズ"] },
   { name: "Fary Lochan", region: "Denmark", keywords: ["farylochan"] },
   { name: "Breuckelen", region: "New York", keywords: ["breuckelen"] },
-  { name: "Copperworks Alba", region: "Washington", keywords: ["copperworks", "alba"] },
+  {
+    name: "Copperworks",
+    region: "Washington",
+    keywords: ["copper works distilling co.", "copper works"],
+  },
   { name: "High Coast", region: "Sweden", keywords: ["highcoast", "ハイコースト"] },
   { name: "Smogen", region: "Sweden", keywords: ["smögen", "スモーゲン"] },
   { name: "Cotswolds", region: "England", keywords: ["コッツウォルズ"] },
