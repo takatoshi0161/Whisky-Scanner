@@ -515,7 +515,7 @@ const distillerySeeds: DistillerySeed[] = [
   { name: "Glasgow", region: "Scotland", keywords: ["glasgow"] },
   { name: "Warenghem (Armorik)", region: "France", keywords: ["warenghem", "armorik"] },
   { name: "Yuza", region: "Japan", keywords: ["遊佐"] },
-  { name: "Shinshu", region: "Japan", keywords: ["信州", "駒ヶ岳"] },
+  { name: "Komagatake", region: "Japan", keywords: ["駒ヶ岳"] },
   { name: "Tsunuki", region: "Japan", keywords: ["津貫"] },
   { name: "Nc'Nean", region: "Scotland", keywords: ["ncnean", "nc nean"] },
   { name: "Raasay", region: "Scotland", keywords: ["raasay", "ラッセイ"] },

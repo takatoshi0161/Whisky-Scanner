@@ -87,13 +87,53 @@ test("B17 exact-source country values are confirmed", () => {
 
 test("B17 user-approved managed country values are recorded separately", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
-  for (const name of ["Karuizawa", "Shinshu"]) {
+  for (const name of ["Karuizawa", "Komagatake"]) {
     const entry = byName.get(name);
     assert.ok(entry, name);
     assert.equal(entry.kind, "distillery", name);
     assert.equal(entry.country, "Japan", name);
     assert.equal(entry.region, "Japan", name);
   }
+});
+
+test("Komagatake owns only the approved current exact labels", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  const komagatake = byName.get("Komagatake");
+  assert.ok(komagatake);
+  assert.deepEqual(komagatake.aliases, ["MARS KOMAGATAKE DISTILLERY", "駒ヶ岳"]);
+  assert.equal(komagatake.country, "Japan");
+  assert.equal(byName.has("Shinshu"), false);
+  assert.equal(
+    reference.entries.some(
+      (entry) => entry.aliases.includes("Shinshu") || entry.aliases.includes("信州"),
+    ),
+    false,
+  );
+  assert.equal(
+    reference.entries.filter(
+      (entry) =>
+        entry.canonical_name === "MARS KOMAGATAKE DISTILLERY" ||
+        entry.aliases.includes("MARS KOMAGATAKE DISTILLERY"),
+    ).length,
+    1,
+  );
+  assert.equal(
+    reference.entries.some(
+      (entry) =>
+        entry.canonical_name === "Komagatake Distillery" ||
+        entry.aliases.includes("Komagatake Distillery"),
+    ),
+    false,
+  );
+
+  const collision = clone();
+  collision.entries
+    .find((entry) => entry.canonical_name === "Karuizawa")
+    .aliases.push("MARS KOMAGATAKE DISTILLERY");
+  assert.throws(
+    () => validateWhiskyEntities(collision),
+    /global alias collision/,
+  );
 });
 
 test("B18 exact-source country values are confirmed and unresolved entries stay null", () => {
