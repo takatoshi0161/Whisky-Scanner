@@ -253,7 +253,28 @@ test("B31 distinguishes direct-source and user-approved Washington country value
   assert.equal(copperworks.kind, "distillery");
   assert.equal(copperworks.country, "United States");
   assert.equal(copperworks.region, "Washington");
-  assert.deepEqual(copperworks.aliases, ["Copper Works Distilling Co.", "Copper Works"]);
+  assert.deepEqual(copperworks.aliases, [
+    "Copperworks Distilling Co.",
+    "Copper Works Distilling Co.",
+    "Copper Works",
+  ]);
+  assert.equal(
+    reference.entries.filter(
+      (entry) =>
+        entry.canonical_name === "Copperworks Distilling Co." ||
+        entry.aliases.includes("Copperworks Distilling Co."),
+    ).length,
+    1,
+  );
+  assert.equal(
+    reference.entries.some(
+      (entry) =>
+        entry.canonical_name === "Copperworks Distilling Company" ||
+        entry.aliases.includes("Copperworks Distilling Company") ||
+        entry.aliases.includes("Copperworks Distilling Co"),
+    ),
+    false,
+  );
   assert.equal(byName.has("Copperworks Alba"), false);
   assert.equal(
     reference.entries.some((entry) => entry.canonical_name === "Alba" || entry.aliases.includes("Alba")),
