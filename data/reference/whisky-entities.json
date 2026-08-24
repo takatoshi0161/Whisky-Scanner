@@ -1142,6 +1142,16 @@
       "distillery_type": "unknown"
     },
     {
+      "canonical_name": "Lagg",
+      "aliases": [
+        "Lagg Distillery"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Islands",
+      "distillery_type": "malt"
+    },
+    {
       "canonical_name": "Lagavulin",
       "aliases": [
         "ラガヴーリン"
