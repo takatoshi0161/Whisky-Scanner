@@ -14,9 +14,39 @@ function clone() {
   return structuredClone(reference);
 }
 
-test("the migrated reference is valid and retains 169 entities", () => {
+test("the migrated reference is valid and retains 170 entities", () => {
   const value = validateWhiskyEntities(clone());
-  assert.equal(value.entries.length, 169);
+  assert.equal(value.entries.length, 170);
+});
+
+test("Lagg has one explicit managed identity backed by its official location", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  const lagg = byName.get("Lagg");
+  assert.ok(lagg);
+  assert.deepEqual(lagg.aliases, ["Lagg Distillery"]);
+  assert.equal(lagg.kind, "distillery");
+  assert.equal(lagg.country, "Scotland");
+  assert.equal(lagg.region, "Islands");
+  assert.equal(lagg.distillery_type, "malt");
+
+  assert.equal(
+    reference.entries.filter(
+      (entry) =>
+        entry.canonical_name.normalize("NFKC").toLocaleLowerCase("en-US") === "lagg" ||
+        entry.aliases.some(
+          (alias) => alias.normalize("NFKC").toLocaleLowerCase("en-US") === "lagg distillery",
+        ),
+    ).length,
+    1,
+  );
+  assert.equal(
+    reference.entries.some((entry) => entry.aliases.includes("LAGG")),
+    false,
+  );
+
+  const collision = clone();
+  collision.entries.find((entry) => entry.canonical_name === "Lagavulin").aliases.push("Lagg Distillery");
+  assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
 });
 
 test("priority distilleries have confirmed metadata", () => {
