@@ -136,6 +136,39 @@ test("Komagatake owns only the approved current exact labels", () => {
   );
 });
 
+test("Tsunuki owns only the approved exact distillery label", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  const tsunuki = byName.get("Tsunuki");
+  assert.ok(tsunuki);
+  assert.deepEqual(tsunuki.aliases, ["MARS TSUNUKI DISTILLERY", "津貫"]);
+  assert.equal(tsunuki.country, "Japan");
+  assert.equal(
+    reference.entries.filter(
+      (entry) =>
+        entry.canonical_name === "MARS TSUNUKI DISTILLERY" ||
+        entry.aliases.includes("MARS TSUNUKI DISTILLERY"),
+    ).length,
+    1,
+  );
+  assert.equal(
+    reference.entries.some(
+      (entry) =>
+        entry.canonical_name === "Tsunuki Distillery" ||
+        entry.aliases.includes("Tsunuki Distillery"),
+    ),
+    false,
+  );
+
+  const collision = clone();
+  collision.entries
+    .find((entry) => entry.canonical_name === "Karuizawa")
+    .aliases.push("MARS TSUNUKI DISTILLERY");
+  assert.throws(
+    () => validateWhiskyEntities(collision),
+    /global alias collision/,
+  );
+});
+
 test("B18 exact-source country values are confirmed and unresolved entries stay null", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   for (const name of ["Auchentoshan", "Bladnoch", "Eden Mill", "Glenkinchie", "Littlemill", "Rosebank"]) {
