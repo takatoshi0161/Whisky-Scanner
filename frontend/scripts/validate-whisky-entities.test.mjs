@@ -14,9 +14,9 @@ function clone() {
   return structuredClone(reference);
 }
 
-test("the migrated reference is valid and retains 170 entities", () => {
+test("the migrated reference is valid and retains 171 entities", () => {
   const value = validateWhiskyEntities(clone());
-  assert.equal(value.entries.length, 170);
+  assert.equal(value.entries.length, 171);
 });
 
 test("Lagg has one explicit managed identity backed by its official location", () => {
@@ -468,9 +468,35 @@ test("B09-B11 official country values are confirmed and unresolved entries stay 
     assert.equal(entry.country, "Scotland", name);
     assert.equal(entry.region, "Highland", name);
   }
-  for (const name of ["Glenesk", "Glenlochy", "Glenugie", "Glenury Royal", "Inchmurrin", "Knockdhu", "Lochside", "Macduff", "Millburn", "North Port", "Royal Lochnagar", "Teaninich"]) {
+  for (const name of ["Glenesk", "Glenlochy", "Glenugie", "Glenury Royal", "Inchmurrin", "Knockdhu", "Lochside", "Macduff", "Millburn", "North Port", "Royal Lochnagar"]) {
     assert.equal(byName.get(name)?.country, null, name);
   }
+});
+
+test("Teaninich and Annandale Distillery have exact managed Scotland identities", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+
+  const teaninich = byName.get("Teaninich");
+  assert.ok(teaninich);
+  assert.deepEqual(teaninich.aliases, ["ティーニニック"]);
+  assert.equal(teaninich.kind, "distillery");
+  assert.equal(teaninich.country, "Scotland");
+  assert.equal(teaninich.region, "Highland");
+
+  const annandale = byName.get("Annandale Distillery");
+  assert.ok(annandale);
+  assert.deepEqual(annandale.aliases, []);
+  assert.equal(annandale.kind, "distillery");
+  assert.equal(annandale.country, "Scotland");
+  assert.equal(annandale.region, "Lowland");
+  assert.equal(
+    reference.entries.some((entry) => entry.canonical_name === "Annandale" || entry.aliases.includes("Annandale")),
+    false,
+  );
+
+  const collision = clone();
+  collision.entries.find((entry) => entry.canonical_name === "Teaninich").aliases.push("Annandale Distillery");
+  assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
 });
 
 test("B05-B08 official country values are confirmed and unresolved entries stay null", () => {

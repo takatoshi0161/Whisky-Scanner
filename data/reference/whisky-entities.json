@@ -630,7 +630,7 @@
         "ティーニニック"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "unknown"
     },
@@ -1727,6 +1727,14 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Scotland",
+      "distillery_type": "unknown"
+    },
+    {
+      "canonical_name": "Annandale Distillery",
+      "aliases": [],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Lowland",
       "distillery_type": "unknown"
     }
   ]
