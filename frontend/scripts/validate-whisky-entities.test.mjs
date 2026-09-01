@@ -496,6 +496,13 @@ test("Teaninich and Annandale have exact managed Scotland identities", () => {
   assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
 });
 
+test("Annandale preserves the canonical naming policy without runtime suffix normalization", () => {
+  const annandale = reference.entries.find((entry) => entry.canonical_name === "Annandale");
+  assert.ok(annandale);
+  assert.deepEqual(annandale.aliases, ["Annandale Distillery"]);
+  assert.equal(reference.entries.some((entry) => entry.canonical_name === "Annandale Distillery"), false);
+});
+
 test("B05-B08 official country values are confirmed and unresolved entries stay null", () => {
   const byName = new Map(reference.entries.map((value) => [value.canonical_name, value]));
   const expected = {
