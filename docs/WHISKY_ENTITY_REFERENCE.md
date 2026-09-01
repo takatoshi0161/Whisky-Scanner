@@ -27,3 +27,15 @@ npm run build
 Updates are made through a feature branch and pull request. The validation
 command rejects unsupported schemas, duplicate canonical names, alias
 collisions, whitespace errors, and invalid kind/type combinations.
+
+## Distillery canonical naming
+
+For a newly added or explicitly corrected managed distillery canonical name,
+do not include a terminal `Distillery` unless an explicit review decision says
+otherwise. This is a reference-data naming convention only: it does not
+authorize a bulk rename of existing entries or any runtime suffix removal.
+
+An official or historical observed label that includes `Distillery` may be
+retained as an explicit, collision-free exact alias of the chosen canonical
+name. Aliases remain complete labels; partial matching, fuzzy matching, and
+automatic suffix stripping are not permitted.
