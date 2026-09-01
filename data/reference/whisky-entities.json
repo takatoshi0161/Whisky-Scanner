@@ -1730,8 +1730,10 @@
       "distillery_type": "unknown"
     },
     {
-      "canonical_name": "Annandale Distillery",
-      "aliases": [],
+      "canonical_name": "Annandale",
+      "aliases": [
+        "Annandale Distillery"
+      ],
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",

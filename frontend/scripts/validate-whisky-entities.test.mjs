@@ -473,7 +473,7 @@ test("B09-B11 official country values are confirmed and unresolved entries stay 
   }
 });
 
-test("Teaninich and Annandale Distillery have exact managed Scotland identities", () => {
+test("Teaninich and Annandale have exact managed Scotland identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
 
   const teaninich = byName.get("Teaninich");
@@ -483,16 +483,13 @@ test("Teaninich and Annandale Distillery have exact managed Scotland identities"
   assert.equal(teaninich.country, "Scotland");
   assert.equal(teaninich.region, "Highland");
 
-  const annandale = byName.get("Annandale Distillery");
+  const annandale = byName.get("Annandale");
   assert.ok(annandale);
-  assert.deepEqual(annandale.aliases, []);
+  assert.deepEqual(annandale.aliases, ["Annandale Distillery"]);
   assert.equal(annandale.kind, "distillery");
   assert.equal(annandale.country, "Scotland");
   assert.equal(annandale.region, "Lowland");
-  assert.equal(
-    reference.entries.some((entry) => entry.canonical_name === "Annandale" || entry.aliases.includes("Annandale")),
-    false,
-  );
+  assert.equal(reference.entries.some((entry) => entry.canonical_name === "Annandale Distillery"), false);
 
   const collision = clone();
   collision.entries.find((entry) => entry.canonical_name === "Teaninich").aliases.push("Annandale Distillery");
