@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "reference_id": "whisky-scanner-entities-v1",
+  "schema_version": 2,
+  "reference_id": "whisky-scanner-entities-v2",
   "entries": [
     {
       "canonical_name": "Glenfarclas",
@@ -10,7 +10,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenlivet",
@@ -22,7 +23,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Bowmore",
@@ -32,7 +34,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Highland Park",
@@ -42,7 +45,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Auchentoshan",
@@ -52,7 +56,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Macduff",
@@ -64,7 +69,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Longmorn",
@@ -74,7 +80,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tamdhu",
@@ -84,7 +91,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Grant",
@@ -95,7 +103,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Bunnahabhain",
@@ -105,7 +114,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tomatin",
@@ -115,7 +125,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Benriach",
@@ -126,7 +137,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Dalmore",
@@ -136,7 +148,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Talisker",
@@ -146,7 +159,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenfiddich",
@@ -156,7 +170,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenturret",
@@ -166,7 +181,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Scapa",
@@ -176,7 +192,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Inchgower",
@@ -186,7 +203,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Garioch",
@@ -197,7 +215,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Inverleven",
@@ -205,7 +224,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenglassaugh",
@@ -215,7 +235,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenkinchie",
@@ -225,7 +246,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Bruichladdich",
@@ -235,7 +257,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Macallan",
@@ -246,7 +269,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Rosebank",
@@ -256,7 +280,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Clynelish",
@@ -266,7 +291,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Springbank",
@@ -276,7 +302,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Campbeltown",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tullibardine",
@@ -286,7 +313,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Laphroaig",
@@ -296,7 +324,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Glenrothes",
@@ -306,7 +335,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Isle of Jura",
@@ -317,7 +347,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Edradour",
@@ -327,7 +358,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Ardbeg",
@@ -337,7 +369,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Tamnavulin",
@@ -347,7 +380,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Moray",
@@ -358,7 +392,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Benrinnes",
@@ -368,7 +403,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Cragganmore",
@@ -378,7 +414,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Caperdonich",
@@ -388,7 +425,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Linkwood",
@@ -398,7 +436,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Lindores Abbey",
@@ -408,7 +447,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Saburomaru",
@@ -419,7 +459,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Toyama",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Balvenie",
@@ -429,7 +470,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Dailuaine",
@@ -439,7 +481,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Ledaig",
@@ -449,7 +492,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tobermory",
@@ -459,7 +503,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Port Ellen",
@@ -469,7 +514,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Craigellachie",
@@ -479,7 +525,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Dallas Dhu",
@@ -490,7 +537,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenlossie",
@@ -500,7 +548,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Benromach",
@@ -510,7 +559,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Balmenach",
@@ -520,7 +570,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "St Magdalene",
@@ -531,7 +582,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Bladnoch",
@@ -541,7 +593,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Bushmills",
@@ -551,7 +604,8 @@
       "kind": "distillery",
       "country": "Northern Ireland",
       "region": "Northern Ireland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Old Pulteney",
@@ -562,7 +616,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Caol Ila",
@@ -573,7 +628,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Aberlour",
@@ -583,7 +639,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Brackla",
@@ -594,7 +651,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Coleburn",
@@ -602,7 +660,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Mhor",
@@ -612,7 +671,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Strathisla",
@@ -622,7 +682,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Teaninich",
@@ -632,7 +693,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Aberfeldy",
@@ -642,7 +704,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Brora",
@@ -652,7 +715,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenlochy",
@@ -660,7 +724,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glentauchers",
@@ -670,7 +735,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Mannochmore",
@@ -680,7 +746,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Imperial",
@@ -690,7 +757,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Ardmore",
@@ -700,7 +768,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Banff",
@@ -710,7 +779,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Blair Athol",
@@ -721,7 +791,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Albyn",
@@ -731,7 +802,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Balblair",
@@ -741,7 +813,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenburgie",
@@ -751,7 +824,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Miltonduff",
@@ -761,7 +835,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Aultmore",
@@ -771,7 +846,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "North Port",
@@ -781,7 +857,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenury Royal",
@@ -791,7 +868,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Mortlach",
@@ -801,7 +879,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Ord",
@@ -812,7 +891,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Ben Nevis",
@@ -823,7 +903,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Deanston",
@@ -833,7 +914,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Spey",
@@ -843,7 +925,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Keith",
@@ -854,7 +937,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glencadam",
@@ -864,7 +948,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Convalmore",
@@ -874,7 +959,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glendullan",
@@ -884,7 +970,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Elgin",
@@ -895,7 +982,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenesk",
@@ -903,7 +991,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Millburn",
@@ -911,7 +1000,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Speyburn",
@@ -921,7 +1011,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tomintoul",
@@ -931,7 +1022,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Pittyvaich",
@@ -941,7 +1033,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Dufftown",
@@ -951,7 +1044,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Lochside",
@@ -959,7 +1053,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glen Scotia",
@@ -970,7 +1065,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Campbeltown",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Fettercairn",
@@ -980,7 +1076,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Auchroisk",
@@ -990,7 +1087,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glendronach",
@@ -1001,7 +1099,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Littlemill",
@@ -1011,7 +1110,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Lomond (Inverleven)",
@@ -1021,7 +1121,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glenugie",
@@ -1029,7 +1130,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Strathmill",
@@ -1039,7 +1141,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Knockando",
@@ -1049,7 +1152,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Dalwhinnie",
@@ -1059,7 +1163,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Royal Lochnagar",
@@ -1070,7 +1175,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glencraig",
@@ -1078,7 +1184,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tormore",
@@ -1088,7 +1195,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Cardhu",
@@ -1098,7 +1206,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "GlenAllachie",
@@ -1109,7 +1218,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Speyside",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Allt-a'Bhainne",
@@ -1121,7 +1231,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Mosstowie",
@@ -1129,7 +1240,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Oban",
@@ -1139,7 +1251,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Lagg",
@@ -1149,7 +1262,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Lagavulin",
@@ -1159,7 +1273,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Inchmurrin",
@@ -1169,7 +1284,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Braeval",
@@ -1180,7 +1296,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Speyside",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Longrow",
@@ -1190,7 +1307,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Campbeltown",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Knockdhu",
@@ -1201,7 +1319,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Yoichi",
@@ -1211,7 +1330,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Cooley",
@@ -1221,7 +1341,8 @@
       "kind": "distillery",
       "country": "Ireland",
       "region": "Ireland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Connemara",
@@ -1231,7 +1352,8 @@
       "kind": "distillery",
       "country": "Ireland",
       "region": "Ireland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Yamazaki",
@@ -1241,7 +1363,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Hakushu",
@@ -1251,7 +1374,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Isle of Arran",
@@ -1262,7 +1386,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islands",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Croftengea",
@@ -1270,7 +1395,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glengoyne",
@@ -1280,7 +1406,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Miyagikyo",
@@ -1290,7 +1417,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Johnnie Walker",
@@ -1301,7 +1429,8 @@
       "kind": "brand",
       "country": null,
       "region": "Blended Scotch",
-      "distillery_type": "unknown"
+      "distillery_type": null,
+      "distillery_type_basis": null
     },
     {
       "canonical_name": "Chivas Regal",
@@ -1312,7 +1441,8 @@
       "kind": "brand",
       "country": null,
       "region": "Blended Scotch",
-      "distillery_type": "unknown"
+      "distillery_type": null,
+      "distillery_type_basis": null
     },
     {
       "canonical_name": "Dewar's",
@@ -1323,7 +1453,8 @@
       "kind": "brand",
       "country": null,
       "region": "Blended Scotch",
-      "distillery_type": "unknown"
+      "distillery_type": null,
+      "distillery_type_basis": null
     },
     {
       "canonical_name": "Glenmorangie",
@@ -1333,7 +1464,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Hazelburn",
@@ -1343,7 +1475,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Campbeltown",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Port Charlotte",
@@ -1353,7 +1486,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Islay",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Penderyn",
@@ -1363,7 +1497,8 @@
       "kind": "distillery",
       "country": "Wales",
       "region": "Wales",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Kilchoman",
@@ -1373,7 +1508,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Islay",
-      "distillery_type": "malt"
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     },
     {
       "canonical_name": "Chichibu",
@@ -1384,7 +1520,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Hanyu",
@@ -1394,7 +1531,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Karuizawa",
@@ -1404,7 +1542,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Westland",
@@ -1414,7 +1553,8 @@
       "kind": "distillery",
       "country": "United States",
       "region": "Washington",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Paul John",
@@ -1425,7 +1565,8 @@
       "kind": "distillery",
       "country": "India",
       "region": "India",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Loch Lomond",
@@ -1436,7 +1577,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Eden Mill",
@@ -1446,7 +1588,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "St George's",
@@ -1458,7 +1601,8 @@
       "kind": "distillery",
       "country": null,
       "region": "England",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Nantou",
@@ -1468,7 +1612,8 @@
       "kind": "distillery",
       "country": "Taiwan",
       "region": "Taiwan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Kavalan",
@@ -1478,7 +1623,8 @@
       "kind": "distillery",
       "country": "Taiwan",
       "region": "Taiwan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Balcones",
@@ -1488,7 +1634,8 @@
       "kind": "distillery",
       "country": "United States",
       "region": "Texas",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Fary Lochan",
@@ -1498,7 +1645,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Denmark",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Breuckelen",
@@ -1506,7 +1654,8 @@
       "kind": "distillery",
       "country": "United States",
       "region": "New York",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Copperworks",
@@ -1518,7 +1667,8 @@
       "kind": "distillery",
       "country": "United States",
       "region": "Washington",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "High Coast",
@@ -1529,7 +1679,8 @@
       "kind": "distillery",
       "country": "Sweden",
       "region": "Sweden",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Smogen",
@@ -1540,7 +1691,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Sweden",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Cotswolds",
@@ -1550,7 +1702,8 @@
       "kind": "distillery",
       "country": "England",
       "region": "England",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Archie Rose",
@@ -1561,7 +1714,8 @@
       "kind": "distillery",
       "country": "Australia",
       "region": "Australia",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Starward",
@@ -1571,7 +1725,8 @@
       "kind": "distillery",
       "country": "Australia",
       "region": "Australia",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Ardnamurchan",
@@ -1581,7 +1736,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Highland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "West Cork",
@@ -1592,7 +1748,8 @@
       "kind": "distillery",
       "country": "Ireland",
       "region": "Ireland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Mackmyra",
@@ -1602,7 +1759,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Sweden",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Shelter Point",
@@ -1612,7 +1770,8 @@
       "kind": "distillery",
       "country": "Canada",
       "region": "Canada",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Thy",
@@ -1622,7 +1781,8 @@
       "kind": "distillery",
       "country": "Denmark",
       "region": "Denmark",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Mosgaard",
@@ -1630,7 +1790,8 @@
       "kind": "distillery",
       "country": null,
       "region": "Denmark",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Milk & Honey",
@@ -1642,7 +1803,8 @@
       "kind": "distillery",
       "country": "Israel",
       "region": "Israel",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Glasgow",
@@ -1652,7 +1814,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Scotland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Warenghem (Armorik)",
@@ -1663,7 +1826,8 @@
       "kind": "distillery",
       "country": "France",
       "region": "France",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Yuza",
@@ -1673,7 +1837,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Komagatake",
@@ -1684,7 +1849,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Tsunuki",
@@ -1695,7 +1861,8 @@
       "kind": "distillery",
       "country": "Japan",
       "region": "Japan",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Nc'Nean",
@@ -1706,7 +1873,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Scotland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Raasay",
@@ -1716,7 +1884,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Scotland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Isle of Harris",
@@ -1727,7 +1896,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Scotland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     },
     {
       "canonical_name": "Annandale",
@@ -1737,7 +1907,8 @@
       "kind": "distillery",
       "country": "Scotland",
       "region": "Lowland",
-      "distillery_type": "unknown"
+      "distillery_type": "malt",
+      "distillery_type_basis": "operational_default"
     }
   ]
 }

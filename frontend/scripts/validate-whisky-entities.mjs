@@ -4,7 +4,8 @@ import { fileURLToPath } from "node:url";
 import { pathToFileURL } from "node:url";
 
 export const KINDS = new Set(["distillery", "brand", "unknown"]);
-export const DISTILLERY_TYPES = new Set(["malt", "grain", "mixed", "unknown"]);
+export const DISTILLERY_TYPES = new Set(["malt", "grain", "mixed"]);
+export const DISTILLERY_TYPE_BASES = new Set(["managed_reference", "operational_default"]);
 
 function normalized(value) {
   return value.normalize("NFKC").toLocaleLowerCase("en-US");
@@ -26,7 +27,7 @@ export function validateWhiskyEntities(value) {
   ) {
     throw new Error("reference document has an invalid structure");
   }
-  if (value.schema_version !== 1) throw new Error("unsupported schema_version");
+  if (value.schema_version !== 2) throw new Error("unsupported schema_version");
   cleanString(value.reference_id, "reference_id");
   if (!Array.isArray(value.entries) || value.entries.length === 0) {
     throw new Error("entries must be a non-empty array");
@@ -51,19 +52,29 @@ export function validateWhiskyEntities(value) {
       typeof entry !== "object" ||
       Array.isArray(entry) ||
       Object.keys(entry).sort().join(",") !==
-        "aliases,canonical_name,country,distillery_type,kind,region"
+        "aliases,canonical_name,country,distillery_type,distillery_type_basis,kind,region"
     ) {
       throw new Error(`entry ${index} has an invalid structure`);
     }
     cleanString(entry.canonical_name, `entry ${index} canonical_name`);
     if (!Array.isArray(entry.aliases)) throw new Error(`entry ${index} aliases must be an array`);
     if (!KINDS.has(entry.kind)) throw new Error(`entry ${index} kind is invalid`);
-    if (!DISTILLERY_TYPES.has(entry.distillery_type)) {
-      throw new Error(`entry ${index} distillery_type is invalid`);
-    }
     cleanString(entry.country, `entry ${index} country`, { nullable: true });
     cleanString(entry.region, `entry ${index} region`, { nullable: true });
-    if (entry.kind !== "distillery" && entry.distillery_type !== "unknown") {
+    if (entry.kind === "distillery") {
+      if (!DISTILLERY_TYPES.has(entry.distillery_type)) {
+        throw new Error(`entry ${index} distillery_type is invalid`);
+      }
+      if (!DISTILLERY_TYPE_BASES.has(entry.distillery_type_basis)) {
+        throw new Error(`entry ${index} distillery_type_basis is invalid`);
+      }
+      if (
+        entry.distillery_type_basis === "operational_default" &&
+        entry.distillery_type !== "malt"
+      ) {
+        throw new Error(`entry ${index} operational default must be malt`);
+      }
+    } else if (entry.distillery_type !== null || entry.distillery_type_basis !== null) {
       throw new Error(`entry ${index} non-distillery cannot declare a distillery type`);
     }
 
