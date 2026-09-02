@@ -5,7 +5,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "reference_id", "entries"],
   "properties": {
-    "schema_version": { "const": 1 },
+    "schema_version": { "const": 2 },
     "reference_id": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" },
     "entries": {
       "type": "array",
@@ -13,7 +13,7 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["canonical_name", "aliases", "kind", "country", "region", "distillery_type"],
+        "required": ["canonical_name", "aliases", "kind", "country", "region", "distillery_type", "distillery_type_basis"],
         "properties": {
           "canonical_name": { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" },
           "aliases": {
@@ -34,12 +34,38 @@
               { "type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$" }
             ]
           },
-          "distillery_type": { "enum": ["malt", "grain", "mixed", "unknown"] }
+          "distillery_type": {
+            "oneOf": [
+              { "type": "null" },
+              { "enum": ["malt", "grain", "mixed"] }
+            ]
+          },
+          "distillery_type_basis": {
+            "oneOf": [
+              { "type": "null" },
+              { "enum": ["managed_reference", "operational_default"] }
+            ]
+          }
         },
         "allOf": [
           {
-            "if": { "properties": { "kind": { "not": { "const": "distillery" } } } },
-            "then": { "properties": { "distillery_type": { "const": "unknown" } } }
+            "if": { "properties": { "kind": { "const": "distillery" } } },
+            "then": {
+              "properties": {
+                "distillery_type": { "enum": ["malt", "grain", "mixed"] },
+                "distillery_type_basis": { "enum": ["managed_reference", "operational_default"] }
+              }
+            },
+            "else": {
+              "properties": {
+                "distillery_type": { "const": null },
+                "distillery_type_basis": { "const": null }
+              }
+            }
+          },
+          {
+            "if": { "properties": { "distillery_type_basis": { "const": "operational_default" } } },
+            "then": { "properties": { "distillery_type": { "const": "malt" } } }
           }
         ]
       }

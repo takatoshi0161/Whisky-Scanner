@@ -14,7 +14,7 @@ function clone() {
   return structuredClone(reference);
 }
 
-test("the migrated reference is valid and retains 171 entities", () => {
+test("the version 2 reference is valid and retains 171 entities", () => {
   const value = validateWhiskyEntities(clone());
   assert.equal(value.entries.length, 171);
 });
@@ -28,6 +28,7 @@ test("Lagg has one explicit managed identity backed by its official location", (
   assert.equal(lagg.country, "Scotland");
   assert.equal(lagg.region, "Islands");
   assert.equal(lagg.distillery_type, "malt");
+  assert.equal(lagg.distillery_type_basis, "managed_reference");
 
   assert.equal(
     reference.entries.filter(
@@ -68,12 +69,52 @@ test("priority distilleries have confirmed metadata", () => {
     assert.equal(entry.country, country, name);
     assert.equal(entry.region, region, name);
     assert.equal(entry.distillery_type, "malt", name);
+    assert.equal(entry.distillery_type_basis, "managed_reference", name);
   }
   assert.equal(byName.has("Meikle Tòir"), false);
   for (const name of ["Johnnie Walker", "Chivas Regal", "Dewar's"]) {
     assert.equal(byName.get(name)?.kind, "brand", name);
-    assert.equal(byName.get(name)?.distillery_type, "unknown", name);
+    assert.equal(byName.get(name)?.distillery_type, null, name);
+    assert.equal(byName.get(name)?.distillery_type_basis, null, name);
   }
+});
+
+test("distillery types distinguish managed facts from the malt operational default", () => {
+  const distilleries = reference.entries.filter((entry) => entry.kind === "distillery");
+  assert.equal(distilleries.length, 168);
+  assert.equal(
+    distilleries.filter((entry) => entry.distillery_type_basis === "managed_reference").length,
+    10,
+  );
+  assert.equal(
+    distilleries.filter((entry) => entry.distillery_type_basis === "operational_default").length,
+    158,
+  );
+  assert.equal(reference.entries.some((entry) => entry.distillery_type === "unknown"), false);
+
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  for (const name of ["Lagavulin", "Miyagikyo"]) {
+    assert.equal(byName.get(name)?.distillery_type, "malt", name);
+    assert.equal(byName.get(name)?.distillery_type_basis, "operational_default", name);
+  }
+  assert.equal(byName.get("Laphroaig")?.distillery_type_basis, "managed_reference");
+
+  const unresolvedGeography = byName.get("Allt-a'Bhainne");
+  assert.equal(unresolvedGeography?.distillery_type, "malt");
+  assert.equal(unresolvedGeography?.distillery_type_basis, "operational_default");
+  assert.equal(unresolvedGeography?.country, null);
+  assert.equal(unresolvedGeography?.region, "Speyside");
+});
+
+test("confirmed grain remains representable but an operational default cannot claim grain", () => {
+  const confirmedGrain = clone();
+  const entry = confirmedGrain.entries.find((value) => value.canonical_name === "Lagavulin");
+  entry.distillery_type = "grain";
+  entry.distillery_type_basis = "managed_reference";
+  assert.doesNotThrow(() => validateWhiskyEntities(confirmedGrain));
+
+  entry.distillery_type_basis = "operational_default";
+  assert.throws(() => validateWhiskyEntities(confirmedGrain), /operational default must be malt/);
 });
 
 test("B15 country values are evidence-backed and Port Charlotte stays unresolved", () => {
@@ -536,21 +577,22 @@ test("B05-B08 official country values are confirmed and unresolved entries stay 
 test("audited Collection distilleries retain exact managed identities", () => {
   const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
   const expected = {
-    Linkwood: ["Scotland", "Speyside", "unknown"],
-    Bunnahabhain: ["Scotland", "Islay", "unknown"],
-    Springbank: ["Scotland", "Campbeltown", "unknown"],
-    Bruichladdich: ["Scotland", "Islay", "unknown"],
-    "Lindores Abbey": ["Scotland", "Lowland", "malt"],
-    Saburomaru: ["Japan", "Toyama", "unknown"],
-    Glasgow: ["Scotland", "Scotland", "unknown"],
+    Linkwood: ["Scotland", "Speyside", "malt", "operational_default"],
+    Bunnahabhain: ["Scotland", "Islay", "malt", "operational_default"],
+    Springbank: ["Scotland", "Campbeltown", "malt", "operational_default"],
+    Bruichladdich: ["Scotland", "Islay", "malt", "operational_default"],
+    "Lindores Abbey": ["Scotland", "Lowland", "malt", "managed_reference"],
+    Saburomaru: ["Japan", "Toyama", "malt", "operational_default"],
+    Glasgow: ["Scotland", "Scotland", "malt", "operational_default"],
   };
-  for (const [name, [country, region, type]] of Object.entries(expected)) {
+  for (const [name, [country, region, type, basis]] of Object.entries(expected)) {
     const entry = byName.get(name);
     assert.ok(entry, name);
     assert.equal(entry.kind, "distillery", name);
     assert.equal(entry.country, country, name);
     assert.equal(entry.region, region, name);
     assert.equal(entry.distillery_type, type, name);
+    assert.equal(entry.distillery_type_basis, basis, name);
   }
   assert.deepEqual(byName.get("Lindores Abbey")?.aliases, ["Lindores Abbey Distillery"]);
   assert.deepEqual(byName.get("Saburomaru")?.aliases, ["三郎丸蒸留所", "Saburomaru Distillery"]);
