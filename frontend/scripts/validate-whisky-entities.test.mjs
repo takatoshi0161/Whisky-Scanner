@@ -537,6 +537,30 @@ test("Teaninich and Annandale have exact managed Scotland identities", () => {
   assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
 });
 
+test("Collection company-style observations resolve only through explicit exact aliases", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+
+  const edradour = byName.get("Edradour");
+  assert.ok(edradour);
+  assert.deepEqual(edradour.aliases, ["Edradour Distillery Co. Ltd", "エドラダワー"]);
+  assert.equal(edradour.country, "Scotland");
+  assert.equal(edradour.region, "Highland");
+
+  const ardnamurchan = byName.get("Ardnamurchan");
+  assert.ok(ardnamurchan);
+  assert.deepEqual(ardnamurchan.aliases, ["The Ardnamurchan Distillery", "アードナムルッカン"]);
+  assert.equal(ardnamurchan.country, "Scotland");
+  assert.equal(ardnamurchan.region, "Highland");
+
+  for (const alias of ["Edradour Distillery Co. Ltd", "The Ardnamurchan Distillery"]) {
+    assert.equal(reference.entries.some((entry) => entry.canonical_name === alias), false);
+  }
+
+  const collision = clone();
+  collision.entries.find((entry) => entry.canonical_name === "Ardnamurchan").aliases.push("Edradour Distillery Co. Ltd");
+  assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
+});
+
 test("Annandale preserves the canonical naming policy without runtime suffix normalization", () => {
   const annandale = reference.entries.find((entry) => entry.canonical_name === "Annandale");
   assert.ok(annandale);
