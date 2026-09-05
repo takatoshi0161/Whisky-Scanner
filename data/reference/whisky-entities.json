@@ -67,7 +67,7 @@
         "グレンデヴェロン"
       ],
       "kind": "distillery",
-      "country": null,
+      "country": "Scotland",
       "region": "Highland",
       "distillery_type": "malt",
       "distillery_type_basis": "operational_default"
