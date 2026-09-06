@@ -455,7 +455,8 @@
       "canonical_name": "Saburomaru",
       "aliases": [
         "三郎丸蒸留所",
-        "Saburomaru Distillery"
+        "Saburomaru Distillery",
+        "WAKATSURU SABUROMARU DISTILLERY"
       ],
       "kind": "distillery",
       "country": "Japan",
@@ -1911,6 +1912,17 @@
       "region": "Lowland",
       "distillery_type": "malt",
       "distillery_type_basis": "operational_default"
+    },
+    {
+      "canonical_name": "Wolfburn",
+      "aliases": [
+        "Wolfburn Distillery"
+      ],
+      "kind": "distillery",
+      "country": "Scotland",
+      "region": "Highland",
+      "distillery_type": "malt",
+      "distillery_type_basis": "managed_reference"
     }
   ]
 }

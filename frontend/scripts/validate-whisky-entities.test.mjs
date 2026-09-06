@@ -14,9 +14,9 @@ function clone() {
   return structuredClone(reference);
 }
 
-test("the version 2 reference is valid and retains 171 entities", () => {
+test("the version 2 reference is valid and retains 172 entities", () => {
   const value = validateWhiskyEntities(clone());
-  assert.equal(value.entries.length, 171);
+  assert.equal(value.entries.length, 172);
 });
 
 test("Lagg has one explicit managed identity backed by its official location", () => {
@@ -81,10 +81,10 @@ test("priority distilleries have confirmed metadata", () => {
 
 test("distillery types distinguish managed facts from the malt operational default", () => {
   const distilleries = reference.entries.filter((entry) => entry.kind === "distillery");
-  assert.equal(distilleries.length, 168);
+  assert.equal(distilleries.length, 169);
   assert.equal(
     distilleries.filter((entry) => entry.distillery_type_basis === "managed_reference").length,
-    10,
+    11,
   );
   assert.equal(
     distilleries.filter((entry) => entry.distillery_type_basis === "operational_default").length,
@@ -632,9 +632,47 @@ test("audited Collection distilleries retain exact managed identities", () => {
     assert.equal(entry.distillery_type_basis, basis, name);
   }
   assert.deepEqual(byName.get("Lindores Abbey")?.aliases, ["Lindores Abbey Distillery"]);
-  assert.deepEqual(byName.get("Saburomaru")?.aliases, ["三郎丸蒸留所", "Saburomaru Distillery"]);
+  assert.deepEqual(byName.get("Saburomaru")?.aliases, [
+    "三郎丸蒸留所",
+    "Saburomaru Distillery",
+    "WAKATSURU SABUROMARU DISTILLERY",
+  ]);
   assert.deepEqual(byName.get("Glasgow")?.aliases, ["Glasgow Distillery"]);
   assert.equal(byName.has("Adelphi Distillery Ltd."), false);
+});
+
+test("Issue 236 observations resolve only through explicit exact managed labels", () => {
+  const exactOwners = new Map();
+  for (const entry of reference.entries) {
+    exactOwners.set(entry.canonical_name, entry);
+    for (const alias of entry.aliases) exactOwners.set(alias, entry);
+  }
+
+  const saburomaru = exactOwners.get("WAKATSURU SABUROMARU DISTILLERY");
+  assert.equal(saburomaru?.canonical_name, "Saburomaru");
+  assert.equal(saburomaru?.country, "Japan");
+  assert.equal(saburomaru?.region, "Toyama");
+
+  const wolfburn = exactOwners.get("Wolfburn Distillery");
+  assert.equal(wolfburn?.canonical_name, "Wolfburn");
+  assert.equal(wolfburn?.country, "Scotland");
+  assert.equal(wolfburn?.region, "Highland");
+  assert.equal(wolfburn?.distillery_type_basis, "managed_reference");
+
+  for (const unapproved of [
+    "Wakatsuru Saburomaru Distillery",
+    "WAKATSURU SABUROMARU",
+    "The Wolfburn Distillery",
+    "Wolfburn Distillery Ltd",
+  ]) {
+    assert.equal(exactOwners.has(unapproved), false, unapproved);
+  }
+
+  const collision = clone();
+  collision.entries.find((entry) => entry.canonical_name === "Wolfburn").aliases.push(
+    "WAKATSURU SABUROMARU DISTILLERY",
+  );
+  assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
 });
 
 test("canonical, alias, and kind/type collisions are rejected", () => {
