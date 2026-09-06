@@ -509,7 +509,7 @@ test("B09-B11 official country values are confirmed and unresolved entries stay 
     assert.equal(entry.country, "Scotland", name);
     assert.equal(entry.region, "Highland", name);
   }
-  for (const name of ["Glenesk", "Glenlochy", "Glenugie", "Glenury Royal", "Inchmurrin", "Knockdhu", "Lochside", "Macduff", "Millburn", "North Port", "Royal Lochnagar"]) {
+  for (const name of ["Glenesk", "Glenlochy", "Glenugie", "Glenury Royal", "Inchmurrin", "Knockdhu", "Lochside", "Millburn", "North Port", "Royal Lochnagar"]) {
     assert.equal(byName.get(name)?.country, null, name);
   }
 });
@@ -535,6 +535,19 @@ test("Teaninich and Annandale have exact managed Scotland identities", () => {
   const collision = clone();
   collision.entries.find((entry) => entry.canonical_name === "Teaninich").aliases.push("Annandale Distillery");
   assert.throws(() => validateWhiskyEntities(collision), /global alias collision/);
+});
+
+test("Macduff has exact managed Scotland and Highland geography", () => {
+  const byName = new Map(reference.entries.map((entry) => [entry.canonical_name, entry]));
+  const macduff = byName.get("Macduff");
+
+  assert.ok(macduff);
+  assert.deepEqual(macduff.aliases, ["glen deveron", "マクダフ", "グレンデヴェロン"]);
+  assert.equal(macduff.kind, "distillery");
+  assert.equal(macduff.country, "Scotland");
+  assert.equal(macduff.region, "Highland");
+  assert.equal(macduff.distillery_type, "malt");
+  assert.equal(macduff.distillery_type_basis, "operational_default");
 });
 
 test("Collection company-style observations resolve only through explicit exact aliases", () => {
